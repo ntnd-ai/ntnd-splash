@@ -1,7 +1,5 @@
 # ntnd.ai — splash site
 
-A single-screen splash: logo, tagline, "follow the stream" + "join on discord", and the social row. No scroll.
-
 ## Use
 Static. Just open `index.html`, or serve the folder:
 
