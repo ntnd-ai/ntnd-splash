@@ -1,0 +1,2825 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ntnd.ai · design system · single import bundle
+   loads: tokens → semantic aliases → primitives → core components.
+   patterns are NOT included; import patterns/<name>.css per page.
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─── inlined from system/tokens/tokens.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   ntnd.ai · design system · raw tokens
+   v1.0 · single source of truth for color, type, scale, radii.
+   palettes live in ./palettes/. semantic aliases in ./tokens.semantic.css.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── canonical mesh palette (default = pearl) ─────────── */
+  --mesh-base: #f4eee8;
+  --mesh-ink: #1a1320;
+  --mesh-c1: oklch(0.86 0.10 320);
+  --mesh-c2: oklch(0.92 0.08 60);
+  --mesh-c3: oklch(0.88 0.09 180);
+  --mesh-c4: oklch(0.86 0.10 30);
+  --mesh-grain: rgba(0,0,0,0.05);
+  --mesh-grain-opacity: 0.5;
+  --mesh-grain-blend: multiply;
+
+  /* ── chrome (the signature shimmer) ───────────────────── */
+  --chrome-1: oklch(0.62 0.18 340);
+  --chrome-2: oklch(0.84 0.10 30);
+  --chrome-3: oklch(0.7  0.14 220);
+  --chrome-4: oklch(0.84 0.10 60);
+
+  /* ── typography stack ─────────────────────────────────── */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display-wide: "Big Shoulders Display", sans-serif;
+  --font-display-mono: "Major Mono Display", monospace;
+  --font-display-condensed: "Oswald", sans-serif;
+  --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* condensed-face swap pool */
+  --font-condensed-oswald: "Oswald", sans-serif;
+  --font-condensed-barlow: "Barlow Condensed", sans-serif;
+  --font-condensed-fjalla: "Fjalla One", sans-serif;
+  --font-condensed-six:    "Six Caps", sans-serif;
+
+  /* default display = condensed (pick via .display-* on body) */
+  --font-display: var(--font-display-condensed);
+
+  /* ── type scale ───────────────────────────────────────── */
+  /* RECONCILED rc.3: matches what the patterns ship at.
+     eyebrow=11 (mono cap), body=16, display headlines walk
+     22 → 32 → 56 → 88 → 132 in a 1.5× rhythm. */
+  --t-eyebrow: 11px;
+  --t-meta:    13px;
+  --t-body:    16px;
+  --t-lead:    19px;
+  --t-h4:      22px;
+  --t-h3:      32px;
+  --t-h2:      56px;
+  --t-h1:      88px;
+  --t-display: 132px;
+
+  /* ── spacing scale (NEW rc.3) ─────────────────────────── */
+  /* canonical scale. all margin/padding/gap should pull from
+     here rather than hard-coded literals. */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 22px;
+  --s-6: 28px;
+  --s-7: 36px;
+  --s-8: 56px;
+  --s-9: 72px;
+  --s-10: 96px;
+
+  /* legacy aliases — patterns may still reference these */
+  --pad-page:    var(--s-7);   /* 36px outer page padding */
+  --gap-section: var(--s-10);  /* 96px between major sections */
+
+  /* ── radii ────────────────────────────────────────────── */
+  /* RECONCILED rc.3: added --r-xs and --r-xl to cover the full
+     range patterns use. md=14 (cards), lg=22 (feature surfaces),
+     xl=36 (hero stages). */
+  --r-xs:    4px;
+  --r-sm:   10px;
+  --r-md:   14px;
+  --r-lg:   22px;
+  --r-xl:   36px;
+  --r-pill: 999px;
+}
+
+
+
+/* ─── inlined from system/tokens/tokens.semantic.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   ntnd.ai · design system · semantic aliases
+   layered ON TOP of tokens.css. components SHOULD reference these
+   semantic vars (--color-fg, --color-bg, --color-accent, --type-*)
+   rather than the raw --mesh-*/--chrome-* tokens, so palette swaps
+   don't require a component rewrite.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* surface */
+  --color-bg:           var(--mesh-base);
+  --color-fg:           var(--mesh-ink);
+  --color-fg-muted:     color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+  --color-fg-subtle:    color-mix(in oklch, var(--mesh-ink) 40%, transparent);
+  --color-line:         color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  --color-line-strong:  color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+  --color-card:         color-mix(in oklch, var(--mesh-base) 60%, transparent);
+  --color-card-solid:   var(--mesh-base);
+
+  /* status (small, non-decorative palette) */
+  --color-good: oklch(0.7 0.18 145);
+  --color-bad:  oklch(0.65 0.20 25);
+
+  /* type aliases — use these in components */
+  --type-body:     var(--font-body);
+  --type-mono:     var(--font-mono);
+  --type-display:  var(--font-display);
+
+  /* size aliases */
+  --size-eyebrow:  var(--t-eyebrow);
+  --size-meta:     var(--t-meta);
+  --size-body:     var(--t-body);
+  --size-lead:     var(--t-lead);
+  --size-h4:       var(--t-h4);
+  --size-h3:       var(--t-h3);
+  --size-h2:       var(--t-h2);
+  --size-h1:       var(--t-h1);
+  --size-display:  var(--t-display);
+
+  /* shadow scale (for cards / pop-ups / fabs) */
+  --shadow-card:  0 12px 30px -12px color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+  --shadow-pop:   0 30px 60px color-mix(in oklch, var(--mesh-ink) 25%, transparent);
+  --shadow-fab:   0 10px 30px color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+
+  /* motion */
+  --ease-out: cubic-bezier(.2,.7,.3,1);
+  --dur-fast: .15s;
+  --dur-base: .25s;
+  --dur-slow: .6s;
+}
+
+
+
+/* ─── inlined from system/tokens/palettes/pearl.css ─── */
+/* default — pearl. apply as <body class="palette-pearl"> */
+.palette-pearl {
+  --mesh-base: #f4eee8;
+  --mesh-ink: #1a1320;
+  --mesh-c1: oklch(0.86 0.10 320);
+  --mesh-c2: oklch(0.92 0.08 60);
+  --mesh-c3: oklch(0.88 0.09 180);
+  --mesh-c4: oklch(0.86 0.10 30);
+  --mesh-grain: rgba(0,0,0,0.05);
+  --mesh-grain-opacity: 0.5;
+  --mesh-grain-blend: multiply;
+  --chrome-1: oklch(0.62 0.18 340);
+  --chrome-2: oklch(0.84 0.10 30);
+  --chrome-3: oklch(0.70 0.14 220);
+  --chrome-4: oklch(0.84 0.10 60);
+}
+
+
+
+/* ─── inlined from system/tokens/palettes/rose.css ─── */
+.palette-rose {
+  --mesh-base: #f7e9e2;
+  --mesh-ink: #2a0e1c;
+  --mesh-c1: oklch(0.78 0.18 20);
+  --mesh-c2: oklch(0.88 0.14 50);
+  --mesh-c3: oklch(0.82 0.16 350);
+  --mesh-c4: oklch(0.74 0.20 10);
+  --mesh-grain-opacity: 0.45;
+  --chrome-1: oklch(0.55 0.22 20);
+  --chrome-2: oklch(0.78 0.16 50);
+  --chrome-3: oklch(0.65 0.20 350);
+  --chrome-4: oklch(0.82 0.14 70);
+}
+
+
+
+/* ─── inlined from system/tokens/palettes/lagoon.css ─── */
+.palette-lagoon {
+  --mesh-base: #e7eef0;
+  --mesh-ink: #0d1f2a;
+  --mesh-c1: oklch(0.82 0.14 200);
+  --mesh-c2: oklch(0.86 0.12 170);
+  --mesh-c3: oklch(0.80 0.14 280);
+  --mesh-c4: oklch(0.84 0.12 220);
+  --chrome-1: oklch(0.55 0.18 200);
+  --chrome-2: oklch(0.72 0.16 170);
+  --chrome-3: oklch(0.55 0.20 280);
+  --chrome-4: oklch(0.78 0.14 220);
+}
+
+
+
+/* ─── inlined from system/tokens/palettes/citrus.css ─── */
+.palette-citrus {
+  --mesh-base: #f5f3e2;
+  --mesh-ink: #1a1a08;
+  --mesh-c1: oklch(0.92 0.18 110);
+  --mesh-c2: oklch(0.88 0.20 85);
+  --mesh-c3: oklch(0.82 0.20 40);
+  --mesh-c4: oklch(0.90 0.18 130);
+  --mesh-grain-opacity: 0.55;
+  --chrome-1: oklch(0.65 0.22 130);
+  --chrome-2: oklch(0.78 0.22 85);
+  --chrome-3: oklch(0.62 0.22 40);
+  --chrome-4: oklch(0.82 0.20 110);
+}
+
+
+
+/* ─── inlined from system/tokens/palettes/noir.css ─── */
+.palette-noir {
+  --mesh-base: #0a0612;
+  --mesh-ink: #f0e8f5;
+  --mesh-c1: oklch(0.45 0.20 320);
+  --mesh-c2: oklch(0.55 0.18 260);
+  --mesh-c3: oklch(0.42 0.18 200);
+  --mesh-c4: oklch(0.50 0.22 350);
+  --mesh-grain: rgba(255,255,255,0.06);
+  --mesh-grain-opacity: 0.6;
+  --mesh-grain-blend: screen;
+  --chrome-1: oklch(0.78 0.18 340);
+  --chrome-2: oklch(0.92 0.10 90);
+  --chrome-3: oklch(0.75 0.18 200);
+  --chrome-4: oklch(0.88 0.12 60);
+}
+
+
+
+
+/* ─── inlined from system/primitives/type.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   primitive · TYPE
+   load fonts + utility text classes. import order: AFTER tokens.css.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&family=Big+Shoulders+Display:wght@400;700;900&family=Major+Mono+Display&family=Oswald:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700;800&family=Fjalla+One&family=Six+Caps&display=swap");
+
+/* display-face modifiers — apply to body to swap the display register */
+.display-wide      { --font-display: var(--font-display-wide); }
+.display-mono      { --font-display: var(--font-display-mono); }
+.display-condensed { --font-display: var(--font-display-condensed); }
+
+/* condensed-face swap (re-targets --font-display-condensed) */
+.cf-oswald { --font-display-condensed: var(--font-condensed-oswald); }
+.cf-barlow { --font-display-condensed: var(--font-condensed-barlow); }
+.cf-fjalla { --font-display-condensed: var(--font-condensed-fjalla); }
+.cf-six    { --font-display-condensed: var(--font-condensed-six);    }
+
+/* utility classes */
+.mono      { font-family: var(--font-mono); }
+.body      { font-family: var(--font-body); }
+.display   { font-family: var(--font-display); }
+.uppercase { text-transform: uppercase; letter-spacing: 0.18em; }
+.muted     { color: var(--color-fg-muted); }
+
+/* the brand sets every display heading lowercase, ALWAYS */
+.display, .page-title, .section-title { text-transform: lowercase; }
+
+
+
+/* ─── inlined from system/primitives/motion.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   primitive · MOTION
+   shared keyframes. import once at app/page level.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes ntnd-drift {
+  0%, 100% { transform: translate(0,0) rotate(0deg); }
+  50%      { transform: translate(20px,-30px) rotate(2deg); }
+}
+@keyframes ntnd-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes ntnd-breath {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%      { transform: scale(1.08); opacity: 0.7; }
+}
+@keyframes ntnd-blink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes ntnd-spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes ntnd-progress {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+@keyframes ntnd-loading {
+  0%, 100% { width: 12%; }
+  50%      { width: 88%; }
+}
+
+
+
+/* ─── inlined from system/primitives/mesh.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   primitive · MESH
+   the canonical brand surface. four blurred radial blobs over a base
+   colour, finished with a multiplied (or screened, in noir) dot grain.
+   either drop .ntnd-mesh on a container, OR add the page-mesh element
+   as a fixed background.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ntnd-mesh {
+  background: var(--mesh-base);
+  color: var(--mesh-ink);
+  position: relative;
+  overflow: hidden;
+}
+.ntnd-mesh::before {
+  content: ''; position: absolute; inset: -10%; pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 25%, var(--mesh-c1) 0%, transparent 38%),
+    radial-gradient(circle at 80% 18%, var(--mesh-c2) 0%, transparent 35%),
+    radial-gradient(circle at 70% 75%, var(--mesh-c3) 0%, transparent 40%),
+    radial-gradient(circle at 25% 85%, var(--mesh-c4) 0%, transparent 38%);
+  filter: blur(40px) saturate(1.05);
+  animation: ntnd-drift 16s ease-in-out infinite;
+}
+.ntnd-mesh::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, var(--mesh-grain) 0.6px, transparent 1.2px);
+  background-size: 3px 3px;
+  mix-blend-mode: var(--mesh-grain-blend);
+  opacity: var(--mesh-grain-opacity);
+}
+.ntnd-mesh > * { position: relative; z-index: 1; }
+
+/* page-level fixed mesh — drifts behind all content */
+.page-mesh {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--mesh-base);
+}
+.page-mesh::before {
+  content: ''; position: absolute; inset: -10%;
+  background:
+    radial-gradient(circle at 20% 25%, var(--mesh-c1) 0%, transparent 38%),
+    radial-gradient(circle at 80% 18%, var(--mesh-c2) 0%, transparent 35%),
+    radial-gradient(circle at 70% 75%, var(--mesh-c3) 0%, transparent 40%),
+    radial-gradient(circle at 25% 85%, var(--mesh-c4) 0%, transparent 38%);
+  filter: blur(40px) saturate(1.05);
+  animation: ntnd-drift 16s ease-in-out infinite;
+}
+.page-mesh::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, var(--mesh-grain) 0.6px, transparent 1.2px);
+  background-size: 3px 3px;
+  mix-blend-mode: var(--mesh-grain-blend);
+  opacity: var(--mesh-grain-opacity);
+}
+
+@keyframes ntnd-drift {
+  0%,100% { transform: translate(0,0) rotate(0deg); }
+  50%     { transform: translate(20px,-30px) rotate(2deg); }
+}
+
+/* opt-out for static contexts (print, hero capture, reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .ntnd-mesh::before,
+  .page-mesh::before { animation: none; }
+}
+
+
+
+/* ─── inlined from system/primitives/chrome.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   primitive · CHROME
+   the signature shimmering text fill. wraps a span around the word(s)
+   you want to chrome — usually one accent word per heading, never a
+   whole sentence.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.chrome {
+  background: linear-gradient(
+    90deg,
+    var(--chrome-1) 0%,
+    var(--chrome-2) 22%,
+    var(--chrome-3) 48%,
+    var(--chrome-4) 76%,
+    var(--chrome-1) 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ntnd-shimmer 7s linear infinite;
+}
+
+/* static variant — for screenshots, exports, print */
+.chrome-static {
+  background: linear-gradient(
+    90deg,
+    var(--chrome-1) 0%,
+    var(--chrome-2) 22%,
+    var(--chrome-3) 48%,
+    var(--chrome-4) 76%,
+    var(--chrome-1) 100%
+  );
+  background-size: 220% auto;
+  background-position: 0% 50%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes ntnd-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chrome { animation: none; background-position: 0% 50%; }
+}
+
+
+
+/* ─── inlined from system/primitives/hud.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   primitive · HUD
+   the game-y bracket-corner frame + loading-bar accents. used to
+   wrap callouts, hero cards, status panels.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.hud-frame {
+  position: relative;
+  padding: 24px;
+}
+.hud-frame::before, .hud-frame::after,
+.hud-frame > .corner-bl, .hud-frame > .corner-br {
+  content: ''; position: absolute; width: 16px; height: 16px;
+  border-color: var(--mesh-ink); border-style: solid; border-width: 0;
+}
+.hud-frame::before { top: 0; left: 0;  border-top-width: 2px; border-left-width: 2px; }
+.hud-frame::after  { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+.hud-frame > .corner-bl { bottom: 0; left: 0;  border-bottom-width: 2px; border-left-width: 2px; }
+.hud-frame > .corner-br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+
+/* loading bar — chromatic gradient, animated */
+.hud-bar {
+  position: relative; height: 4px; border-radius: 2px;
+  background: color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  overflow: hidden;
+}
+.hud-bar::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 30%;
+  background: linear-gradient(90deg, var(--chrome-1), var(--chrome-3));
+  border-radius: 2px;
+  animation: ntnd-loading 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes ntnd-loading {
+  0%, 100% { width: 12%; }
+  50%      { width: 88%; }
+}
+
+
+
+
+/* ─── inlined from system/components/reset.css ─── */
+/* base reset + body posture */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  background: var(--mesh-base);
+  color: var(--mesh-ink);
+  font-size: var(--t-body);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+
+
+/* ─── inlined from system/components/page.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · PAGE
+   the standard page shell — wrapper, eyebrow, title, lede, section
+   header. all narrative content sits inside <main class="page">.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px var(--pad-page) 120px;
+  position: relative;
+}
+
+.page-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  display: flex; align-items: center; gap: 14px;
+}
+.page-eyebrow::after {
+  content: ''; flex: 1; height: 1px;
+  background: color-mix(in oklch, var(--mesh-ink) 20%, transparent);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--t-h1);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin: 24px 0 18px;
+  text-transform: lowercase;
+}
+
+.page-lede {
+  font-family: var(--font-mono);
+  font-size: var(--t-lead);
+  line-height: 1.55;
+  max-width: 720px;
+  font-weight: 500;
+  color: color-mix(in oklch, var(--mesh-ink) 92%, transparent);
+}
+.page-lede b { font-weight: 700; }
+
+.section { margin-top: var(--gap-section); }
+
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  font-weight: 600;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--t-h2);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 14px 0 10px;
+  text-transform: lowercase;
+}
+.section-sub {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 1.55;
+  color: color-mix(in oklch, var(--mesh-ink) 80%, transparent);
+  max-width: 640px;
+  font-weight: 500;
+}
+
+/* shared grid helpers */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+
+
+/* ─── inlined from system/components/nav.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · NAV
+   sticky top bar. monospace caps, breath-pulsing dot, blurred surface.
+   the canonical site/app nav for ntnd.ai surfaces.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.brand-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 32px;
+  background: color-mix(in oklch, var(--mesh-base) 78%, transparent);
+  backdrop-filter: blur(24px) saturate(1.1);
+  border-bottom: 1px solid color-mix(in oklch, var(--mesh-ink) 12%, transparent);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.brand-nav .logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--mesh-ink);
+}
+.brand-nav .logo .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: oklch(0.7 0.18 340);
+  animation: ntnd-breath 1.6s ease-in-out infinite;
+}
+.brand-nav .links { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+.brand-nav .nav-group { position: relative; display: inline-flex; align-items: center; }
+.brand-nav .nav-group:hover .nav-sub,
+.brand-nav .nav-group:focus-within .nav-sub { display: flex; }
+.brand-nav .nav-sub {
+  display: none; position: absolute; top: 100%; left: 0;
+  flex-direction: column; gap: 0;
+  background: var(--mesh-base);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  border-radius: 8px; padding: 4px;
+  box-shadow: 0 12px 30px -12px color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+  z-index: 110; min-width: 120px;
+}
+.brand-nav .nav-sub a {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; padding: 8px 12px; border-radius: 6px;
+  white-space: nowrap;
+}
+.brand-nav .nav-sub a:hover {
+  background: color-mix(in oklch, var(--mesh-ink) 8%, transparent);
+}
+.brand-nav a {
+  color: color-mix(in oklch, var(--mesh-ink) 70%, transparent);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  transition: all 0.2s;
+}
+.brand-nav a:hover {
+  color: var(--mesh-ink);
+  background: color-mix(in oklch, var(--mesh-ink) 6%, transparent);
+}
+.brand-nav a.active {
+  color: var(--mesh-base);
+  background: var(--mesh-ink);
+}
+.brand-nav .meta {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+}
+
+
+
+/* ─── inlined from system/components/logo.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · LOGO
+   the ntnd.ai mark. canonical lockup is the SHELL-PROMPT mark — a
+   chrome caret (▸) followed by the wordmark "ntnd.ai" and a blinking
+   block cursor, set in the mono register, lowercase, weight 700.
+   it reads as a terminal prompt because that's what the product is.
+
+   ── canonical anatomy ──
+   .ntnd-logo                 base wrapper
+   .ntnd-logo .caret          the ▸ glyph (chrome gradient by default)
+   .ntnd-logo .word           "ntnd.ai"
+   .ntnd-logo .word .dot      the pink bead between ntnd and ai
+   .ntnd-logo .cur            blinking block cursor at the end
+   .ntnd-logo .tag            optional tagline below ("a place to build")
+
+   ── lockup variants ──
+     (default)        horizontal caret + word + cursor
+     .stacked         caret above wordmark
+     .mark-only       just the caret (favicon, app icon)
+     .favicon-tile    caret on an ink tile, no word
+     .alt-cradle      legacy bracket-cradle mark (use sparingly —
+                      reserved for geometric chrome contexts where the
+                      caret read fights the surface)
+
+   ── color variants ──
+     (default)        ink word, chrome caret, pink bead
+     .on-ink          base word on dark surfaces
+
+   ── sizes ──
+     .sm   24px caret, 22px word
+     (default) 36px / 32px
+     .lg   56px / 48px
+     .xl   88px / 80px
+   ═══════════════════════════════════════════════════════════════════ */
+
+.ntnd-logo {
+  display: inline-flex; align-items: center; gap: 0.18em;
+  color: var(--mesh-ink);
+  text-decoration: none;
+  font-family: var(--font-mono, "IBM Plex Mono", "JetBrains Mono", monospace);
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-size: 32px;
+  max-width: 100%;
+}
+
+/* the caret — organic chrome bloom (radial + conic mix, not a flat sweep) */
+.ntnd-logo .caret {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1;
+  margin-right: 0.06em;
+  background:
+    radial-gradient(120% 90% at 18% 30%, var(--chrome-1) 0%, transparent 55%),
+    radial-gradient(110% 100% at 82% 20%, var(--chrome-2) 0%, transparent 60%),
+    radial-gradient(120% 110% at 80% 90%, var(--chrome-3) 0%, transparent 65%),
+    radial-gradient(140% 120% at 10% 95%, var(--chrome-4) 0%, transparent 70%),
+    conic-gradient(from 200deg at 50% 55%, var(--chrome-2), var(--chrome-1), var(--chrome-3), var(--chrome-4), var(--chrome-2));
+  background-blend-mode: screen, screen, screen, screen, normal;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ntnd-logo .word {
+  font: inherit;
+  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 0;
+}
+
+/* the pastel pink bead — soft, baseline-aligned with the wordmark like a `.` */
+.ntnd-logo .word .dot {
+  display: inline-block;
+  width: 0.18em; height: 0.18em;
+  border-radius: 50%;
+  margin: 0 0.10em;
+  align-self: flex-end;
+  margin-bottom: 0.18em;
+  background: oklch(0.86 0.09 350);
+}
+.ntnd-logo.on-ink .word .dot { background: oklch(0.86 0.09 350); }
+.ntnd-logo.chrome:not(.alt-cradle) .word .dot { background: oklch(0.86 0.09 350); }
+
+/* the blinking block cursor at the end — terminal read.
+   add as <span class="cur" aria-hidden="true"></span> after .word. */
+.ntnd-logo .cur {
+  display: inline-block;
+  width: 0.18em; height: 0.95em;
+  margin-left: 0.10em;
+  background: currentColor;
+  align-self: center;
+  animation: ntnd-logo-blink 1.05s steps(2) infinite;
+  flex: 0 0 auto;
+}
+@keyframes ntnd-logo-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .ntnd-logo .cur { animation: none; }
+}
+
+.ntnd-logo .tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+  margin-top: 4px;
+}
+
+/* lockups */
+.ntnd-logo.stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.ntnd-logo.stacked .caret { font-size: 1.6em; margin-right: 0; }
+
+.ntnd-logo.mark-only .word,
+.ntnd-logo.mark-only .cur,
+.ntnd-logo.mark-only .tag { display: none; }
+.ntnd-logo.mark-only { gap: 0; }
+
+.ntnd-logo.favicon-tile {
+  width: 64px; height: 64px;
+  background: var(--mesh-ink);
+  color: var(--mesh-base);
+  border-radius: 12px;
+  align-items: center; justify-content: center;
+  gap: 0; padding: 0;
+}
+.ntnd-logo.favicon-tile .caret { font-size: 38px; margin-right: 0; }
+.ntnd-logo.favicon-tile .word,
+.ntnd-logo.favicon-tile .cur,
+.ntnd-logo.favicon-tile .tag { display: none; }
+
+/* sizes */
+.ntnd-logo.sm  { font-size: 22px; }
+.ntnd-logo.lg  { font-size: 48px; }
+.ntnd-logo.xl  { font-size: 80px; }
+
+/* on dark surfaces — keep the chrome caret, swap word color */
+.ntnd-logo.on-ink { color: var(--mesh-base); }
+
+/* chrome wordmark — paints the wordmark with the SAME gradient
+   geometry as .alt-cradle.chrome's SVG mark. the cradle SVG uses
+   objectBoundingBox (gradient spans each letter individually like a
+   stroke), so we tile the gradient at 1em squares to match: each
+   glyph gets its own full top-left → bottom-right sweep, identical to
+   how each bracket stroke does. caret stays organic. */
+.ntnd-logo.chrome:not(.alt-cradle) .word,
+.ntnd-logo.chrome:not(.alt-cradle) .cur {
+  background-image: linear-gradient(to bottom right, var(--chrome-1) 0%, var(--chrome-2) 33%, var(--chrome-3) 66%, var(--chrome-4) 100%);
+  background-size: 1em 1em;
+  background-repeat: repeat;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.ntnd-logo.chrome:not(.alt-cradle) .cur {
+  -webkit-text-fill-color: initial;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+}
+
+/* ── alt: bracket-cradle mark (legacy, geometric contexts) ──
+   set .alt-cradle on root to swap the caret for the bracket SVG.
+   the SVG must be supplied as a child .mark; the gradient def needs
+   to be present once per page (see logo.snippet.txt). */
+.ntnd-logo.alt-cradle .caret { display: none; }
+.ntnd-logo.alt-cradle {
+  gap: 0.28em;
+}
+.ntnd-logo.alt-cradle .mark {
+  width: 1.2em; height: 1.2em;
+  flex: 0 0 auto;
+  display: inline-block;
+}
+.ntnd-logo.alt-cradle .mark svg {
+  width: 100%; height: 100%;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+.ntnd-logo.alt-cradle.chrome .mark svg { stroke: url(#ntnd-logo-chrome-grad); }
+.ntnd-logo:not(.alt-cradle) .mark { display: none; }
+.ntnd-logo.alt-cradle .cur { height: 1em; }
+
+
+
+/* ─── inlined from system/components/button.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · BUTTON (extended) — replaces button.css
+   variants: .btn-primary | .btn-secondary | .btn-ghost-cmp | .btn-chrome
+   sizes: .btn-sm | (default) | .btn-lg
+   modifiers: .btn-icon | .is-disabled | .is-loading
+   the legacy .btn-ink / .btn-ghost classes from rc.1 still work as aliases.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 22px;
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  text-decoration: none;
+  border: none; border-radius: var(--r-pill);
+  cursor: pointer;
+  background: transparent; color: inherit;
+  transition: transform var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn svg {
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+
+/* ── primary: ink fill ─────────────────── */
+.btn-primary {
+  background: var(--mesh-ink); color: var(--mesh-base);
+}
+.btn-primary:hover { box-shadow: 0 6px 20px -8px var(--mesh-ink); }
+
+/* ── secondary: outline ────────────────── */
+.btn-secondary {
+  border: 1.5px solid var(--mesh-ink); color: var(--mesh-ink);
+  padding: 10.5px 20.5px;
+}
+.btn-secondary:hover { background: var(--mesh-ink); color: var(--mesh-base); }
+
+/* ── ghost: dashed, low emphasis ───────── */
+.btn-ghost-cmp {
+  border: 1.5px dashed color-mix(in oklch, var(--mesh-ink) 45%, transparent);
+  color: color-mix(in oklch, var(--mesh-ink) 70%, transparent);
+  padding: 10.5px 20.5px;
+}
+.btn-ghost-cmp:hover {
+  border-color: var(--mesh-ink);
+  color: var(--mesh-ink);
+  border-style: solid;
+}
+
+/* ── chrome: celebration only ──────────── */
+.btn-chrome {
+  background: linear-gradient(135deg, var(--chrome-1), var(--chrome-2), var(--chrome-3), var(--chrome-4));
+  background-size: 220% auto;
+  color: var(--mesh-ink);
+  font-weight: 700;
+  box-shadow: 0 8px 30px -8px color-mix(in oklch, var(--chrome-1) 60%, transparent);
+  animation: ntnd-shimmer 6s linear infinite;
+}
+.btn-chrome:hover { box-shadow: 0 12px 40px -8px color-mix(in oklch, var(--chrome-1) 70%, transparent); }
+
+/* ── sizes ─────────────────────────────── */
+.btn-sm { padding: 8px 14px; font-size: 14px; min-height: 32px; }
+.btn-sm.btn-secondary, .btn-sm.btn-ghost-cmp { padding: 6.5px 12.5px; }
+.btn-lg { padding: 16px 28px; font-size: 18px; min-height: 56px; }
+.btn-lg.btn-secondary, .btn-lg.btn-ghost-cmp { padding: 14.5px 26.5px; }
+
+/* ── icon-only ─────────────────────────── */
+.btn-icon { padding: 0; width: 44px; height: 44px; justify-content: center; gap: 0; }
+.btn-icon.btn-sm { width: 32px; height: 32px; }
+.btn-icon.btn-lg { width: 56px; height: 56px; }
+
+/* ── states ────────────────────────────── */
+.btn.is-disabled, .btn:disabled {
+  opacity: 0.4; pointer-events: none; cursor: not-allowed;
+}
+.btn.is-loading svg { animation: ntnd-spin-slow 1s linear infinite; }
+
+/* ── rc.1 aliases ──────────────────────── */
+.btn-ink   { /* alias of .btn.btn-primary */
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 22px;
+  background: var(--mesh-ink); color: var(--mesh-base);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono); font-size: 15px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: transform 0.2s;
+}
+.btn-ink:hover { transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 13px 21px;
+  background: transparent; color: var(--mesh-ink);
+  border: 1.5px solid var(--mesh-ink); border-radius: var(--r-pill);
+  font-family: var(--font-mono); font-size: 15px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; transition: all 0.2s;
+}
+.btn-ghost:hover { background: var(--mesh-ink); color: var(--mesh-base); }
+
+
+
+/* ─── inlined from system/components/form.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · FORM
+   inputs, textareas, search, labels, helpers. mono uppercase labels,
+   quiet fields, loud errors. no cuteness.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.input-group { display: flex; flex-direction: column; gap: 8px; }
+.input-label {
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 65%, transparent);
+}
+
+.input, .field-search, .field-textarea {
+  width: 100%;
+  background: color-mix(in oklch, var(--mesh-base) 85%, transparent);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 18%, transparent);
+  border-radius: var(--r-md);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--mesh-ink);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.input:focus, .field-search:focus, .field-textarea:focus {
+  outline: none;
+  border-color: var(--mesh-ink);
+  background: var(--mesh-base);
+}
+.input::placeholder, .field-search::placeholder, .field-textarea::placeholder {
+  color: color-mix(in oklch, var(--mesh-ink) 40%, transparent);
+}
+.input.error { border-color: var(--color-bad); border-width: 1.5px; }
+
+.field-search {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M16 16l4 4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 14px 50%;
+  background-size: 18px 18px;
+  padding-left: 42px;
+}
+
+.field-textarea {
+  min-height: 96px;
+  resize: vertical;
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.input-helper {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+.input-helper.error { color: var(--color-bad); font-weight: 600; }
+
+/* ── select ──────────────────────────── */
+.select {
+  width: 100%;
+  appearance: none;
+  background: color-mix(in oklch, var(--mesh-base) 85%, transparent);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px 18px;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 18%, transparent);
+  border-radius: var(--r-md);
+  padding: 13px 44px 13px 16px;
+  font-family: var(--font-body); font-size: 16px;
+  color: var(--mesh-ink);
+  cursor: pointer;
+}
+.select:focus { outline: none; border-color: var(--mesh-ink); }
+
+/* ── toggle (switch) ─────────────────── */
+.switch {
+  display: inline-flex; align-items: center; gap: 12px;
+  cursor: pointer;
+}
+.switch .track {
+  position: relative;
+  width: 44px; height: 24px;
+  border-radius: var(--r-pill);
+  background: color-mix(in oklch, var(--mesh-ink) 16%, transparent);
+  transition: background var(--dur-fast);
+}
+.switch .knob {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--mesh-ink);
+  transition: transform var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+}
+.switch.on .track { background: var(--mesh-ink); }
+.switch.on .knob  { background: var(--mesh-base); transform: translateX(20px); }
+.switch .lbl {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 70%, transparent);
+}
+
+/* ── checkbox ────────────────────────── */
+.checkbox {
+  display: inline-flex; align-items: center; gap: 12px;
+  cursor: pointer;
+}
+.checkbox .box {
+  width: 20px; height: 20px;
+  border: 1.5px solid color-mix(in oklch, var(--mesh-ink) 35%, transparent);
+  border-radius: 4px;
+  background: transparent;
+  flex: 0 0 auto;
+  position: relative;
+  transition: all var(--dur-fast);
+}
+.checkbox.on .box {
+  background: var(--mesh-ink);
+  border-color: var(--mesh-ink);
+}
+.checkbox.on .box::after {
+  content: '';
+  position: absolute; left: 5px; top: 1px;
+  width: 6px; height: 11px;
+  border: solid var(--mesh-base);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox .lbl {
+  font-family: var(--font-body); font-size: 15px;
+  color: var(--mesh-ink);
+}
+
+/* ── radio (as chips, see tag.css) ─────
+   Use status pill chips for single-pick when visual emphasis is wanted.
+   For traditional radios, use .checkbox markup with [type="radio"]. */
+
+
+
+/* ─── inlined from system/components/tag.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · TAG (extended)
+   variants: default (quiet) | .solid | .chrome | .outline
+   tones: .tone-ship | .tone-wip | .tone-stuck | .tone-help
+   ═══════════════════════════════════════════════════════════════════ */
+
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 11px;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: color-mix(in oklch, var(--mesh-base) 50%, transparent);
+  color: var(--mesh-ink);
+  white-space: nowrap;
+}
+.tag.solid {
+  background: var(--mesh-ink); color: var(--mesh-base);
+  border-color: var(--mesh-ink);
+}
+.tag.outline {
+  background: transparent;
+  border-style: dashed;
+}
+.tag.chrome {
+  background: linear-gradient(90deg, var(--chrome-1), var(--chrome-3), var(--chrome-2));
+  background-size: 200% auto;
+  color: var(--mesh-ink);
+  border-color: transparent;
+  font-weight: 700;
+  animation: ntnd-shimmer 7s linear infinite;
+}
+.tag .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: currentColor;
+  flex: 0 0 auto;
+}
+.tag.tone-ship  { color: oklch(0.55 0.20 145); border-color: color-mix(in oklch, oklch(0.55 0.20 145) 35%, transparent); }
+.tag.tone-wip   { color: oklch(0.65 0.18 60);  border-color: color-mix(in oklch, oklch(0.65 0.18 60) 35%, transparent); }
+.tag.tone-stuck { color: oklch(0.60 0.20 25);  border-color: color-mix(in oklch, oklch(0.60 0.20 25) 35%, transparent); }
+.tag.tone-help  { color: oklch(0.55 0.18 280); border-color: color-mix(in oklch, oklch(0.55 0.18 280) 35%, transparent); }
+
+
+
+/* ─── inlined from system/components/card.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · CARD (extended)
+   variants: .card-base (quiet) | .card-hud (ink, bracket-corners)
+   parts: .card-eyebrow .card-title .card-body .card-foot
+   the rc.1 .card class is kept as a thin shorthand alias for .card-base.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.card-base, .card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 24px 26px;
+  background: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+  backdrop-filter: blur(28px) saturate(1.05);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  border-radius: var(--r-lg);
+  position: relative;
+}
+.card-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: var(--t-h4); line-height: 1;
+  letter-spacing: -0.02em; text-transform: lowercase;
+  margin: 0;
+}
+.card-body {
+  font-family: var(--font-body);
+  font-size: 15px; line-height: 1.5;
+  color: color-mix(in oklch, var(--mesh-ink) 85%, transparent);
+  margin: 0;
+}
+.card-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; margin-top: auto;
+  border-top: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+}
+
+/* ── HUD card — inverted, with bracket corners ─────── */
+.card-hud {
+  background: var(--mesh-ink);
+  color: var(--mesh-base);
+  border: 1px solid var(--mesh-ink);
+  border-radius: var(--r-lg);
+  padding: 24px 26px;
+  position: relative;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.card-hud .br1::before,
+.card-hud .br1::after,
+.card-hud::before,
+.card-hud::after {
+  content: ''; position: absolute;
+  width: 14px; height: 14px;
+  border-color: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+  border-style: solid; border-width: 0;
+}
+.card-hud::before { top: 8px; left: 8px;  border-top-width: 2px;    border-left-width: 2px; }
+.card-hud::after  { top: 8px; right: 8px; border-top-width: 2px;    border-right-width: 2px; }
+.card-hud .br1::before { content: ''; bottom: 8px; left: 8px;  border-bottom-width: 2px; border-left-width: 2px; }
+.card-hud .br1::after  { content: ''; bottom: 8px; right: 8px; border-bottom-width: 2px; border-right-width: 2px; }
+.card-hud .br1 { position: absolute; inset: 0; pointer-events: none; }
+.card-hud .card-title { color: var(--mesh-base); }
+.card-hud .card-body  { color: color-mix(in oklch, var(--mesh-base) 75%, transparent); }
+
+
+
+/* ─── inlined from system/components/quest-card.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · QUEST CARD
+   the most game-y surface in the system. reserved for active quests.
+   parts: .squiggle-line .quest-head .qtag (.live) .quest-xp .quest-title
+          .quest-desc .quest-prog (.quest-prog-meta .quest-prog-bar
+          .quest-prog-fill) .quest-foot .quest-cta
+   ═══════════════════════════════════════════════════════════════════ */
+
+.quest-card {
+  position: relative;
+  background: var(--mesh-ink); color: var(--mesh-base);
+  border-radius: var(--r-lg);
+  padding: 24px 26px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+  overflow: hidden;
+}
+.squiggle-line {
+  position: absolute; left: 0; right: 0; top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--chrome-1), var(--chrome-2), var(--chrome-3), var(--chrome-4), var(--chrome-1));
+  background-size: 200% auto;
+  animation: ntnd-shimmer 6s linear infinite;
+}
+.quest-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; }
+.quest-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.qtag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in oklch, var(--mesh-base) 30%, transparent);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.qtag.live::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: oklch(0.7 0.18 145);
+  animation: ntnd-breath 1.4s ease-in-out infinite;
+}
+.quest-xp {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 700;
+  background: linear-gradient(90deg, var(--chrome-2), var(--chrome-1));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.quest-title {
+  font-family: var(--font-display);
+  font-size: 30px; line-height: 1; letter-spacing: -0.02em;
+  text-transform: lowercase; margin: 0;
+}
+.quest-desc {
+  font-family: var(--font-body); font-size: 14px; line-height: 1.5;
+  color: color-mix(in oklch, var(--mesh-base) 75%, transparent);
+  margin: 0;
+}
+.quest-prog { display: flex; flex-direction: column; gap: 6px; }
+.quest-prog-meta {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+}
+.quest-prog-bar {
+  height: 6px; border-radius: 3px;
+  background: color-mix(in oklch, var(--mesh-base) 14%, transparent);
+  overflow: hidden;
+}
+.quest-prog-fill {
+  height: 100%; width: 60%;
+  background: linear-gradient(90deg, var(--chrome-1), var(--chrome-3));
+  border-radius: 3px;
+}
+.quest-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 12px;
+  border-top: 1px solid color-mix(in oklch, var(--mesh-base) 14%, transparent);
+}
+.quest-cta {
+  background: transparent; border: none;
+  color: var(--mesh-base);
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  letter-spacing: -0.01em; text-transform: lowercase;
+  cursor: pointer; padding: 0;
+}
+
+
+
+/* ─── inlined from system/components/avatar.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · AVATAR
+   initials in a chrome tile. sizes: .sm | (default) | .lg
+   parts: .av | .av-row (horizontal list) | .av-stack (overlapping pile)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.av {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--chrome-1), var(--chrome-3));
+  color: var(--mesh-base);
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+  border: 1.5px solid var(--mesh-base);
+}
+.av.sm { width: 28px; height: 28px; font-size: 10px; }
+.av.lg { width: 56px; height: 56px; font-size: 18px; border-width: 2px; }
+.av.xl { width: 96px; height: 96px; font-size: 32px; border-width: 3px; }
+
+.av.active { box-shadow: 0 0 0 2px var(--mesh-ink); }
+
+.av-row { display: inline-flex; gap: 10px; align-items: center; }
+.av-stack { display: inline-flex; align-items: center; }
+.av-stack > .av { margin-left: -10px; }
+.av-stack > .av:first-child { margin-left: 0; }
+
+
+
+/* ─── inlined from system/components/progress.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · PROGRESS · XP METER · STREAK · LEADERBOARD
+   the gamified bits. live in profile + room sidebar only.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── linear progress bar (generic) ───────── */
+.progress {
+  width: 100%; height: 6px;
+  background: color-mix(in oklch, var(--mesh-ink) 12%, transparent);
+  border-radius: 3px; overflow: hidden;
+}
+.progress > .fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--chrome-1), var(--chrome-3));
+  border-radius: 3px;
+  transition: width var(--dur-slow) var(--ease-out);
+}
+.progress.hud > .fill {
+  background: var(--mesh-ink);
+}
+
+/* ── XP meter ────────────────────────────── */
+.xp-meter { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.xp-meter .row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 70%, transparent);
+}
+.xp-meter .row .lvl b { color: var(--mesh-ink); font-weight: 700; }
+.xp-meter .row .pts { font-weight: 700; color: var(--mesh-ink); }
+.xp-meter .bar {
+  height: 8px; border-radius: 4px;
+  background: color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  overflow: hidden;
+}
+.xp-meter .bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--chrome-1), var(--chrome-2), var(--chrome-3));
+  border-radius: 4px;
+}
+.xp-meter .foot {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+}
+/* dark variant */
+.xp-meter.on-ink .row .lvl,
+.xp-meter.on-ink .row .lvl b,
+.xp-meter.on-ink .row .pts { color: var(--mesh-base); }
+.xp-meter.on-ink .row,
+.xp-meter.on-ink .foot { color: color-mix(in oklch, var(--mesh-base) 70%, transparent); }
+.xp-meter.on-ink .bar { background: color-mix(in oklch, var(--mesh-base) 14%, transparent); }
+
+/* ── streak grid ─────────────────────────── */
+.streak {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 6px; max-width: 360px;
+}
+.streak .day {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in oklch, var(--mesh-ink) 8%, transparent);
+  color: color-mix(in oklch, var(--mesh-ink) 40%, transparent);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 12%, transparent);
+}
+.streak .day.on {
+  background: var(--mesh-ink); color: var(--mesh-base);
+  border-color: var(--mesh-ink);
+}
+.streak .day.today {
+  background: linear-gradient(135deg, var(--chrome-1), var(--chrome-3));
+  color: var(--mesh-base);
+  border-color: transparent;
+  animation: ntnd-breath 1.6s ease-in-out infinite;
+}
+
+/* ── leaderboard row ─────────────────────── */
+.lb-row {
+  display: grid; grid-template-columns: 32px 1fr auto;
+  align-items: center; gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: color-mix(in oklch, var(--mesh-ink) 4%, transparent);
+}
+.lb-row.top {
+  background: var(--mesh-ink); color: var(--mesh-base);
+}
+.lb-row .rank {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.lb-row .who { display: flex; flex-direction: column; gap: 2px; }
+.lb-row .who .name {
+  font-family: var(--font-display); font-size: 18px;
+  text-transform: lowercase; letter-spacing: -0.01em;
+}
+.lb-row .who .meta {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, currentColor 60%, transparent);
+}
+.lb-row .pts {
+  font-family: var(--font-mono); font-size: 14px; font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ── badge tile (profile) ────────────────── */
+.big-badge {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 16px 12px;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 16%, transparent);
+  border-radius: var(--r-md);
+  background: color-mix(in oklch, var(--mesh-base) 50%, transparent);
+  width: 100px;
+}
+.big-badge .bb-mark {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--chrome-1), var(--chrome-3));
+  color: var(--mesh-base);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 700;
+}
+.big-badge .bb-name {
+  font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 70%, transparent);
+  text-align: center; line-height: 1.3;
+}
+.big-badge.locked { opacity: 0.4; }
+.big-badge.locked .bb-mark {
+  background: color-mix(in oklch, var(--mesh-ink) 12%, transparent);
+  color: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+}
+
+
+
+/* ─── inlined from system/components/app-shell.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · APP SHELL
+   the canonical app frame: window chrome, side rail, top bar,
+   breadcrumbs, content area. all in-product surfaces sit inside this.
+
+   skeleton:
+     <article class="app-frame">
+       <div class="app-chrome">…dots + url…</div>
+       <div class="app-body">
+         <aside class="app-side">…nav-ic + av…</aside>
+         <section class="app-main">
+           <div class="app-topbar">…crumbs + actions…</div>
+           <div class="app-content">…</div>
+         </section>
+       </div>
+     </article>
+   ═══════════════════════════════════════════════════════════════════ */
+
+.app-frame {
+  background: var(--mesh-base);
+  border-radius: var(--r-lg);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 12%, transparent);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+  display: flex; flex-direction: column;
+  min-height: 600px;
+}
+.app-chrome {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 16px;
+  background: color-mix(in oklch, var(--mesh-ink) 6%, transparent);
+  border-bottom: 1px solid color-mix(in oklch, var(--mesh-ink) 10%, transparent);
+}
+.app-chrome .dots { display: flex; gap: 6px; }
+.app-chrome .dots .dot {
+  width: 11px; height: 11px; border-radius: 50%;
+  background: color-mix(in oklch, var(--mesh-ink) 18%, transparent);
+}
+.app-chrome .dots .dot:nth-child(1) { background: oklch(0.7 0.2 25); }
+.app-chrome .dots .dot:nth-child(2) { background: oklch(0.78 0.2 80); }
+.app-chrome .dots .dot:nth-child(3) { background: oklch(0.7 0.2 145); }
+.app-chrome .url {
+  flex: 1; text-align: center;
+  font-family: var(--font-mono); font-size: 12px;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  letter-spacing: 0.02em;
+}
+.app-body { display: flex; flex: 1; min-height: 0; }
+
+/* ── side rail ──────────────────────────── */
+.app-side {
+  width: 64px;
+  background: color-mix(in oklch, var(--mesh-ink) 4%, transparent);
+  border-right: 1px solid color-mix(in oklch, var(--mesh-ink) 10%, transparent);
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 16px 0;
+}
+.app-side .logo {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--mesh-ink); color: var(--mesh-base);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.app-side .nav-ic {
+  position: relative;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.app-side .nav-ic svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.app-side .nav-ic:hover {
+  background: color-mix(in oklch, var(--mesh-ink) 6%, transparent);
+  color: var(--mesh-ink);
+}
+.app-side .nav-ic.active {
+  background: var(--mesh-ink); color: var(--mesh-base);
+}
+.app-side .nav-ic .badge-dot {
+  position: absolute; top: 8px; right: 8px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: oklch(0.65 0.22 25);
+}
+.app-side .av { margin-top: auto; }
+
+/* ── main column ────────────────────────── */
+.app-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.app-topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid color-mix(in oklch, var(--mesh-ink) 10%, transparent);
+}
+.crumbs {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+}
+.crumbs .here { color: var(--mesh-ink); font-weight: 700; }
+
+.app-topbar .actions { display: flex; align-items: center; gap: 10px; }
+.ic-btn {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.ic-btn svg {
+  width: 16px; height: 16px;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.ic-btn:hover {
+  background: color-mix(in oklch, var(--mesh-ink) 6%, transparent);
+  color: var(--mesh-ink);
+}
+
+.app-content {
+  flex: 1; padding: 28px 32px; overflow: auto;
+}
+
+/* ── pill (in-app status pill, used in app-topbar etc) ─── */
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 22%, transparent);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 75%, transparent);
+  background: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+}
+.pill.help  { color: oklch(0.6 0.18 280); border-color: color-mix(in oklch, oklch(0.6 0.18 280) 30%, transparent); }
+.pill.q     { background: var(--mesh-ink); color: var(--mesh-base); border-color: var(--mesh-ink); }
+
+/* ── feed item ──────────────────────────── */
+.feed-list { display: flex; flex-direction: column; gap: 12px; }
+.feed-item {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 14px; align-items: flex-start;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 10%, transparent);
+  background: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+}
+.feed-item.featured { border-color: var(--mesh-ink); }
+.feed-item .who {
+  font-family: var(--font-display); font-size: 16px;
+  text-transform: lowercase; letter-spacing: -0.01em;
+}
+.feed-item .who .at {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+  margin-left: 6px;
+}
+.feed-item .text {
+  font-family: var(--font-body); font-size: 14px; line-height: 1.5;
+  color: color-mix(in oklch, var(--mesh-ink) 88%, transparent);
+  margin-top: 4px;
+}
+.feed-item .meta {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.feed-item .meta .when { color: color-mix(in oklch, var(--mesh-ink) 45%, transparent); }
+
+/* ── tabs (feed / project / quest) ──────── */
+.feed-tabs, .proj-tabs {
+  display: flex; gap: 4px;
+  padding: 4px; margin-bottom: 18px;
+  background: color-mix(in oklch, var(--mesh-ink) 6%, transparent);
+  border-radius: var(--r-pill);
+  width: fit-content;
+}
+.feed-tabs .tab, .proj-tabs .tab {
+  padding: 7px 14px;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  border-radius: var(--r-pill);
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.feed-tabs .tab.active, .proj-tabs .tab.active {
+  background: var(--mesh-ink); color: var(--mesh-base);
+}
+.feed-tabs .tab:hover:not(.active),
+.proj-tabs .tab:hover:not(.active) {
+  color: var(--mesh-ink);
+}
+
+.feed-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 16px;
+}
+.feed-head .ttl {
+  font-family: var(--font-display); font-size: 56px;
+  letter-spacing: -0.02em; text-transform: lowercase;
+  margin: 0; line-height: 1;
+}
+.feed-head .meta {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+
+
+
+/* ─── inlined from system/components/data.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · DATA & STATE
+   small utility components: badge, divider, kbd, code-block,
+   empty-state, skeleton, toast, modal.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── badge (counter) ─────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--mesh-ink); color: var(--mesh-base);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+}
+.badge.dot {
+  width: 8px; min-width: 8px; height: 8px; padding: 0;
+  border-radius: 50%;
+}
+.badge.alert { background: oklch(0.65 0.22 25); }
+
+/* ── divider ─────────────────────────────── */
+.divider {
+  height: 1px; width: 100%;
+  background: color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  border: 0; margin: 24px 0;
+}
+.divider.heavy { background: var(--mesh-ink); height: 2px; }
+.divider.dashed {
+  background: transparent;
+  border-top: 1px dashed color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+}
+
+/* ── kbd ─────────────────────────────────── */
+kbd, .kbd {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; height: 22px; padding: 0 7px;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 22%, transparent);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: color-mix(in oklch, var(--mesh-base) 80%, transparent);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0; text-transform: none;
+  color: color-mix(in oklch, var(--mesh-ink) 80%, transparent);
+}
+
+/* ── code block ──────────────────────────── */
+.code-block {
+  display: block;
+  padding: 16px 18px;
+  border-radius: var(--r-md);
+  background: var(--mesh-ink); color: var(--mesh-base);
+  font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+}
+.code-block .c { color: color-mix(in oklch, var(--mesh-base) 50%, transparent); }
+.code-block .k { color: oklch(0.78 0.18 200); }
+.code-block .s { color: oklch(0.85 0.15 130); }
+
+/* ── empty state ─────────────────────────── */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 14px;
+  padding: 48px 24px;
+  border: 1px dashed color-mix(in oklch, var(--mesh-ink) 25%, transparent);
+  border-radius: var(--r-lg);
+  background: color-mix(in oklch, var(--mesh-base) 30%, transparent);
+}
+.empty-state .glyph {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1.5px dashed color-mix(in oklch, var(--mesh-ink) 35%, transparent);
+  display: flex; align-items: center; justify-content: center;
+  color: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+}
+.empty-state .glyph svg {
+  width: 24px; height: 24px;
+  fill: none; stroke: currentColor; stroke-width: 1.5;
+}
+.empty-state h4 {
+  font-family: var(--font-display); font-size: 28px;
+  text-transform: lowercase; letter-spacing: -0.02em;
+  margin: 0;
+}
+.empty-state p {
+  font-family: var(--font-body); font-size: 14px;
+  color: color-mix(in oklch, var(--mesh-ink) 65%, transparent);
+  margin: 0; max-width: 360px;
+}
+
+/* ── skeleton ────────────────────────────── */
+.skeleton {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--mesh-ink) 6%, transparent) 0%,
+    color-mix(in oklch, var(--mesh-ink) 12%, transparent) 50%,
+    color-mix(in oklch, var(--mesh-ink) 6%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 6px;
+  animation: ntnd-skel-shimmer 1.4s linear infinite;
+  height: 14px; width: 100%;
+}
+.skeleton.title { height: 24px; max-width: 60%; }
+.skeleton.line  { height: 12px; }
+.skeleton.line.short { max-width: 40%; }
+.skeleton.av    { width: 36px; height: 36px; border-radius: 50%; }
+@keyframes ntnd-skel-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ── toast ───────────────────────────────── */
+.toast {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--r-md);
+  background: var(--mesh-ink); color: var(--mesh-base);
+  font-family: var(--font-mono); font-size: 13px;
+  letter-spacing: 0.04em;
+  box-shadow: 0 12px 30px -10px color-mix(in oklch, var(--mesh-ink) 40%, transparent);
+}
+.toast .glyph {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: oklch(0.7 0.18 145);
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+.toast.error .glyph { background: oklch(0.65 0.22 25); }
+.toast.warn  .glyph { background: oklch(0.78 0.2 80); }
+
+/* ── modal / sheet ──────────────────────── */
+.modal-veil {
+  position: fixed; inset: 0; z-index: 500;
+  background: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.modal {
+  width: 100%; max-width: 480px;
+  background: var(--mesh-base);
+  border-radius: var(--r-lg);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  padding: 28px 30px;
+  box-shadow: 0 30px 80px -10px color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+}
+.modal .modal-eyebrow {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+}
+.modal .modal-title {
+  font-family: var(--font-display); font-size: 36px; line-height: 1;
+  letter-spacing: -0.02em; text-transform: lowercase;
+  margin: 8px 0 14px;
+}
+.modal .modal-body {
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+}
+.modal .modal-foot {
+  display: flex; gap: 10px; justify-content: flex-end;
+  margin-top: 22px;
+}
+
+
+
+/* ─── inlined from system/components/marketing.css ─── */
+/* ═══════════════════════════════════════════════════════════════════
+   component · MARKETING
+   landing surfaces: hero, feature row, testimonial, footer, CTA band.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── hero ────────────────────────────────── */
+.mkt-hero {
+  display: flex; flex-direction: column; gap: 28px;
+  padding: 90px 0 60px;
+  max-width: 1080px;
+}
+.mkt-hero .eyebrow {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  display: flex; align-items: center; gap: 12px;
+}
+.mkt-hero .eyebrow .live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: oklch(0.7 0.18 145);
+  animation: ntnd-breath 1.6s ease-in-out infinite;
+}
+.mkt-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 11vw, 160px); line-height: 0.92;
+  letter-spacing: -0.03em; text-transform: lowercase;
+  margin: 0;
+}
+.mkt-hero .lede {
+  font-family: var(--font-mono); font-size: 20px; line-height: 1.55;
+  max-width: 600px; margin: 0;
+  color: color-mix(in oklch, var(--mesh-ink) 88%, transparent);
+}
+.mkt-hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── feature row ─────────────────────────── */
+.mkt-features {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin: 60px 0;
+}
+.mkt-feature {
+  padding: 26px;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  border-radius: var(--r-lg);
+  background: color-mix(in oklch, var(--mesh-base) 50%, transparent);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.mkt-feature .num {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+.mkt-feature h3 {
+  font-family: var(--font-display); font-size: 36px; line-height: 1;
+  letter-spacing: -0.02em; text-transform: lowercase; margin: 0;
+}
+.mkt-feature p {
+  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  color: color-mix(in oklch, var(--mesh-ink) 80%, transparent);
+  margin: 0;
+}
+
+/* ── testimonial ─────────────────────────── */
+.mkt-testimonial {
+  padding: 36px 40px;
+  border-radius: var(--r-lg);
+  background: var(--mesh-ink); color: var(--mesh-base);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.mkt-testimonial .q {
+  font-family: var(--font-display); font-size: 36px;
+  line-height: 1.15; letter-spacing: -0.01em;
+  text-transform: lowercase; margin: 0;
+}
+.mkt-testimonial .att {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-base) 70%, transparent);
+}
+
+/* ── CTA band ────────────────────────────── */
+.mkt-cta-band {
+  padding: 80px 60px;
+  border-radius: var(--r-lg);
+  border: 2px solid var(--mesh-ink);
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 18px;
+  margin: 60px 0;
+}
+.mkt-cta-band h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.95; letter-spacing: -0.02em;
+  text-transform: lowercase; margin: 0;
+  max-width: 14ch;
+}
+.mkt-cta-band p {
+  font-family: var(--font-mono); font-size: 15px;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--mesh-ink) 75%, transparent);
+  max-width: 50ch; margin: 0;
+}
+
+/* ── footer ──────────────────────────────── */
+.mkt-footer {
+  padding: 60px 0 40px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+  border-top: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+}
+.mkt-footer .col-h {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  margin-bottom: 14px;
+}
+.mkt-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.mkt-footer ul a {
+  font-family: var(--font-body); font-size: 14px;
+  color: var(--mesh-ink); text-decoration: none;
+}
+.mkt-footer ul a:hover { text-decoration: underline; text-decoration-thickness: 1.5px; }
+.mkt-footer .colophon {
+  font-family: var(--font-mono); font-size: 12px;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+  line-height: 1.6;
+  max-width: 32ch;
+}
+
+
+
+/* ─── inlined from system/components/voice-table.css ─── */
+/* component · VOICE TABLE — we-say / we-don't comparison rows */
+.voice-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-mono);
+}
+.voice-table th, .voice-table td {
+  text-align: left; padding: 16px 14px;
+  border-bottom: 1px solid color-mix(in oklch, var(--mesh-ink) 16%, transparent);
+  vertical-align: top;
+}
+.voice-table th {
+  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  font-weight: 600;
+  border-bottom: 2px solid var(--mesh-ink);
+}
+.voice-table .we  { color: var(--mesh-ink); font-weight: 500; }
+.voice-table .not { color: color-mix(in oklch, var(--mesh-ink) 55%, transparent); text-decoration: line-through; }
+
+
+
+/* ─── inlined from system/components/pillar.css ─── */
+/* component · PILLAR — numbered concept tile.
+   shares the card surface (translucent, blurred, bordered) so .card and
+   .pillar read as one family — pillar just adds a numbered eyebrow + an
+   h3-scale title and a body paragraph below. */
+.pillar {
+  background: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+  backdrop-filter: blur(28px) saturate(1.05);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  position: relative;
+}
+.pillar .num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+.pillar h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-h4);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 8px 0 14px;
+}
+.pillar p {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.55;
+  color: color-mix(in oklch, var(--mesh-ink) 88%, transparent);
+  margin: 0;
+}
+
+
+
+/* ─── inlined from system/components/tagline-card.css ─── */
+/* component · TAGLINE CARD — bold tagline with use-case footnote.
+   flex column so .use bottom-aligns regardless of how many lines the
+   tagline takes — siblings in a row stay visually consistent. */
+.tagline-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 2px solid var(--mesh-ink);
+  border-radius: var(--r-lg);
+  background: var(--mesh-ink); color: var(--mesh-base);
+  position: relative;
+  min-height: 220px;
+}
+.tagline-card.alt {
+  background: transparent; color: var(--mesh-ink);
+}
+.tagline-card .meta {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  opacity: 0.6;
+}
+.tagline-card .line {
+  font-family: var(--font-display);
+  font-size: 56px; line-height: 0.98;
+  letter-spacing: -0.02em; text-transform: lowercase;
+  margin: 14px 0 0;
+}
+.tagline-card .use {
+  font-family: var(--font-mono); font-size: 13px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in oklch, currentColor 25%, transparent);
+  opacity: 0.75;
+}
+.tagline-card > .meta + .line { margin-bottom: 20px; }
+
+
+
+/* ─── inlined from system/components/quote-block.css ─── */
+/* component · QUOTE BLOCK — left-rule pull-quote */
+.quote-block {
+  padding: 24px 28px;
+  border-left: 3px solid var(--mesh-ink);
+  background: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+  backdrop-filter: blur(24px);
+}
+.quote-block .q {
+  font-family: var(--font-display);
+  font-size: 30px; line-height: 1.15;
+  text-transform: lowercase;
+  letter-spacing: -0.01em;
+}
+.quote-block .att {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  margin-top: 12px;
+}
+
+
+
+/* ─── inlined from system/components/copy-rule.css ─── */
+/* component · COPY DO/DONT RULE — green/red dot prefix, mono body */
+.copy-do, .copy-dont {
+  padding: 18px 22px;
+  border-radius: var(--r-md);
+  font-family: var(--font-mono); font-size: 15px; line-height: 1.5;
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 18%, transparent);
+}
+.copy-do::before, .copy-dont::before {
+  content: ''; display: inline-block;
+  width: 8px; height: 8px; border-radius: 50%; margin-right: 10px; vertical-align: middle;
+}
+.copy-do::before   { background: var(--color-good); }
+.copy-dont::before { background: var(--color-bad);  }
+.copy-tag {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em;
+  text-transform: uppercase; font-weight: 700;
+  margin-right: 10px;
+}
+
+
+
+/* ─── inlined from system/components/tweaks-panel.css ─── */
+/* component · TWEAKS PANEL — floating dev-time control surface */
+.tweaks-fab {
+  position: fixed; right: 24px; bottom: 24px; z-index: 200;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--mesh-ink); color: var(--mesh-base);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 18px;
+  box-shadow: 0 10px 30px color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+}
+.tweaks-panel {
+  position: fixed; right: 24px; bottom: 92px; z-index: 200;
+  width: 320px;
+  background: color-mix(in oklch, var(--mesh-base) 92%, transparent);
+  backdrop-filter: blur(28px) saturate(1.1);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 14%, transparent);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  box-shadow: 0 30px 60px color-mix(in oklch, var(--mesh-ink) 25%, transparent);
+}
+.tweaks-panel h3 {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
+  text-transform: uppercase; margin: 0 0 12px;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+}
+.tweaks-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tweaks-row button {
+  background: color-mix(in oklch, var(--mesh-base) 60%, transparent);
+  border: 1px solid color-mix(in oklch, var(--mesh-ink) 18%, transparent);
+  color: var(--mesh-ink);
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  padding: 7px 11px; border-radius: var(--r-pill);
+  cursor: pointer;
+  letter-spacing: 0.06em;
+}
+.tweaks-row button.on {
+  background: var(--mesh-ink); color: var(--mesh-base);
+  border-color: var(--mesh-ink);
+}
+.tweaks-row button:hover:not(.on) {
+  background: color-mix(in oklch, var(--mesh-ink) 8%, transparent);
+}
+.tweaks-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px; gap: 10px;
+}
+.tweaks-toggle label {
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 70%, transparent);
+}
+.tweaks-toggle .switch {
+  width: 38px; height: 22px; border-radius: var(--r-pill);
+  background: color-mix(in oklch, var(--mesh-ink) 18%, transparent);
+  position: relative; cursor: pointer; border: none;
+}
+.tweaks-toggle .switch::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--mesh-ink);
+  transition: transform 0.2s;
+}
+.tweaks-toggle .switch.on { background: var(--mesh-ink); }
+.tweaks-toggle .switch.on::after {
+  background: var(--mesh-base); transform: translateX(16px);
+}
+
+
+/* rc.4 promotions — duplicated rules pulled from patterns/ */
+
+/* ─── inlined from system/components/eyebrow.css ─── */
+/* eyebrow · component
+ * promoted from inline rules in 8 patterns (rc.4).
+ *
+ * canonical mono caps label. used as section eyebrow, card eyebrow,
+ * pattern-shell eyebrow, and standalone meta-row.
+ *
+ * default: 11px / 0.24em / 55% ink.
+ * modifiers: .tight (0.18em) · .loose (0.28em)
+ *           .meta (13px, no caps) · .micro (10px)
+ *           .on-ink (light, for dark surfaces)
+ *           .with-rule (small leading line, for hero eyebrows)
+ */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-eyebrow, 11px);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow.tight  { letter-spacing: 0.18em; }
+.eyebrow.loose  { letter-spacing: 0.28em; }
+.eyebrow.micro  { font-size: 10px; }
+.eyebrow.meta {
+  font-size: var(--t-meta, 13px);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.eyebrow.on-ink {
+  color: color-mix(in oklch, white 70%, transparent);
+}
+.eyebrow.with-rule::before {
+  content: "";
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* live dot — small pulsing marker that often rides with an eyebrow.
+   keep it inside .eyebrow so spacing is automatic. */
+.eyebrow .live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--color-good, oklch(0.72 0.16 145));
+  box-shadow: 0 0 0 0 var(--color-good, oklch(0.72 0.16 145));
+  animation: eyebrow-pulse 2s ease-out infinite;
+}
+@keyframes eyebrow-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklch, var(--color-good, oklch(0.72 0.16 145)) 50%, transparent); }
+  100% { box-shadow: 0 0 0 8px transparent; }
+}
+
+
+
+/* ─── inlined from system/components/pattern-shell.css ─── */
+/* pattern-shell · component
+ * promoted from the boilerplate header block duplicated across all
+ * 7 pattern files (rc.4).
+ *
+ * every pattern html ships with the same wrapper + eyebrow + h1 + lede
+ * + section heading. this is that shell, in one place.
+ *
+ * usage:
+ *   <body class="palette-pearl">
+ *   <div class="pattern-wrap">
+ *     <div class="pattern-eyebrow">PATTERN · APP · 12A</div>
+ *     <h1 class="pattern-h1">the <span class="chrome">room</span>.</h1>
+ *     <p class="pattern-lede">…the brief…</p>
+ *     <div class="sec-h">// section</div>
+ *     …pattern content…
+ *   </div>
+ */
+
+body { padding: var(--s-7, 40px); background: var(--surface-2, #efece6); }
+
+.pattern-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.pattern-wrap.tight   { max-width: 980px;  }   /* app screens */
+.pattern-wrap.narrow  { max-width: 760px;  }   /* email-style */
+
+.pattern-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  margin-bottom: var(--s-2, 8px);
+}
+
+.pattern-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-h2, 56px);
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  text-transform: lowercase;
+  margin: 0 0 var(--s-3, 12px);
+  color: var(--mesh-ink);
+}
+
+.pattern-lede {
+  font-family: var(--font-body);
+  font-size: var(--t-body, 16px);
+  line-height: 1.55;
+  max-width: 640px;
+  color: color-mix(in oklch, var(--mesh-ink) 80%, transparent);
+  margin: 0 0 var(--s-7, 32px);
+}
+
+.sec-h {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 60%, transparent);
+  margin: var(--s-9, 60px) 0 var(--s-5, 22px);
+  padding-bottom: var(--s-2, 8px);
+  border-bottom: 1px solid var(--color-line, color-mix(in oklch, currentColor 12%, transparent));
+}
+.sec-h:first-of-type { margin-top: var(--s-7, 32px); }
+
+
+
+/* ─── inlined from system/components/terminal.css ─── */
+/* terminal · component
+ * promoted from install/install.css (rc.4).
+ *
+ * the canonical CLI surface. dark, monospace, with a fixed two-line
+ * meta header and a body that scrolls.
+ *
+ * usage:
+ *   <div class="terminal">
+ *     <div class="term-head">
+ *       <span class="term-dots"><i></i><i></i><i></i></span>
+ *       <span class="term-title">~/projects/cms</span>
+ *     </div>
+ *     <pre class="term-body">
+ * <span class="prompt">$</span> ntnd ship
+ * <span class="ok">✓</span> shipped quiet little cms
+ * <span class="err">!</span> no commits in 7 days
+ * <span class="hint">→</span> try `ntnd stuck` to ask the room
+ *     </pre>
+ *   </div>
+ */
+
+.terminal {
+  position: relative;
+  border-radius: var(--r-md, 16px);
+  background: var(--surface-deep, oklch(0.10 0.02 270));
+  color: oklch(0.92 0.02 270);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.55;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -32px rgba(0,0,0,0.55);
+}
+
+.term-head {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 16px;
+  background: color-mix(in oklch, white 6%, transparent);
+  border-bottom: 1px solid color-mix(in oklch, white 8%, transparent);
+}
+.term-dots { display: inline-flex; gap: 6px; }
+.term-dots i {
+  display: inline-block; width: 11px; height: 11px; border-radius: 50%;
+  background: color-mix(in oklch, white 18%, transparent);
+}
+.term-dots i:nth-child(1) { background: oklch(0.70 0.18 22); }
+.term-dots i:nth-child(2) { background: oklch(0.82 0.16 88); }
+.term-dots i:nth-child(3) { background: oklch(0.72 0.16 145); }
+.term-title {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, white 55%, transparent);
+}
+
+.term-body {
+  margin: 0;
+  padding: var(--s-5, 22px) var(--s-5, 22px) var(--s-6, 28px);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* glyph token colors — match install/install.css exactly */
+.term-body .prompt { color: color-mix(in oklch, white 50%, transparent); }
+.term-body .ok     { color: oklch(0.78 0.18 145); }
+.term-body .err    { color: oklch(0.78 0.20 28); }
+.term-body .warn   { color: oklch(0.86 0.18 88); }
+.term-body .hint   { color: oklch(0.78 0.14 230); }
+.term-body .muted  { color: color-mix(in oklch, white 40%, transparent); }
+.term-body .cmd    { color: oklch(0.95 0.02 270); }
+.term-body .chrome-line { /* one-shot chrome moment in stderr */
+  background: linear-gradient(135deg,
+    oklch(0.85 0.16 88), oklch(0.78 0.18 28),
+    oklch(0.78 0.14 280), oklch(0.85 0.10 200));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* blinking caret — only the last `_` should pulse */
+.term-body .caret {
+  display: inline-block; width: 0.55em; height: 1em;
+  background: currentColor; vertical-align: -0.15em;
+  animation: term-blink 1.05s steps(2) infinite;
+}
+@keyframes term-blink { 50% { opacity: 0; } }
+
+
+
+/* ─── inlined from system/components/marquee.css ─── */
+/* marquee · component
+ * promoted from launch/launch.css (rc.4).
+ *
+ * an infinite horizontal ticker. used on the launch holding-site for
+ * the live ship feed; reusable for any rolling status row.
+ *
+ * usage:
+ *   <div class="marquee">
+ *     <div class="marquee-track">
+ *       <span class="marquee-item">…</span>
+ *       <span class="marquee-item">…</span>
+ *       <!-- duplicate the items for seamless loop -->
+ *       <span class="marquee-item" aria-hidden="true">…</span>
+ *     </div>
+ *   </div>
+ *
+ * modifiers:
+ *   .marquee.slow  · 60s loop (default 30s)
+ *   .marquee.fast  · 15s loop
+ *   .marquee.reverse · scroll right to left
+ *   .marquee.bare  · no border, no padding
+ */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-block: 1px solid var(--color-line, color-mix(in oklch, currentColor 12%, transparent));
+  padding-block: var(--s-3, 12px);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+          mask-image:
+    linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.marquee.bare { border: none; padding-block: 0; }
+
+.marquee-track {
+  display: flex;
+  gap: var(--s-7, 36px);
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+.marquee.slow .marquee-track { animation-duration: 60s; }
+.marquee.fast .marquee-track { animation-duration: 15s; }
+.marquee.reverse .marquee-track { animation-direction: reverse; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--mesh-ink) 75%, transparent);
+  white-space: nowrap;
+}
+.marquee-item .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-good, oklch(0.72 0.16 145));
+  flex-shrink: 0;
+}
+.marquee-item .who { color: var(--mesh-ink); font-weight: 500; }
+.marquee-item .verb { color: color-mix(in oklch, var(--mesh-ink) 55%, transparent); }
+
+@keyframes marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+}
+
+
+
+/* ─── inlined from system/components/streak-meter.css ─── */
+/* streak-meter · component
+ * promoted from app/profile.html ad-hoc markup (rc.4).
+ *
+ * 7-day ship streak. one cell per day, lit when the day shipped.
+ * shows current run + best run as small meta on the right.
+ *
+ * usage:
+ *   <div class="streak">
+ *     <div class="streak-grid">
+ *       <div class="day on">M</div>
+ *       <div class="day on">T</div>
+ *       <div class="day on">W</div>
+ *       <div class="day on">T</div>
+ *       <div class="day">F</div>
+ *       <div class="day">S</div>
+ *       <div class="day">S</div>
+ *     </div>
+ *     <div class="streak-meta">
+ *       <div class="run"><b>4</b><span>day run</span></div>
+ *       <div class="best">best · 11</div>
+ *     </div>
+ *   </div>
+ *
+ * modifier: .streak.compact — no meta, just the cells (e.g. for cards).
+ */
+
+.streak {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5, 22px);
+  padding: var(--s-4, 16px) var(--s-5, 22px);
+  border: 1px solid var(--color-line, color-mix(in oklch, currentColor 12%, transparent));
+  border-radius: var(--r-md, 16px);
+  background: color-mix(in oklch, var(--mesh-base, #f6f4ef) 60%, transparent);
+}
+
+.streak-grid {
+  display: flex;
+  gap: var(--s-2, 8px);
+}
+
+.streak .day {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm, 8px);
+  background: color-mix(in oklch, var(--mesh-ink) 6%, transparent);
+  color: color-mix(in oklch, var(--mesh-ink) 40%, transparent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  transition: all .2s;
+}
+.streak .day.on {
+  background: var(--mesh-ink);
+  color: var(--mesh-base, #f6f4ef);
+  box-shadow: 0 6px 18px -10px var(--mesh-ink);
+}
+.streak .day.today {
+  outline: 2px solid var(--mesh-ink);
+  outline-offset: 2px;
+}
+
+.streak-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-mono);
+}
+.streak-meta .run {
+  display: flex; align-items: baseline; gap: 6px;
+  color: var(--mesh-ink);
+}
+.streak-meta .run b {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.streak-meta .run span {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+.streak-meta .best {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 50%, transparent);
+}
+
+.streak.compact { padding: 0; border: none; background: none; }
+.streak.compact .streak-meta { display: none; }
+.streak.compact .day { width: 22px; height: 22px; font-size: 9px; }
+
+
+
+/* ─── inlined from system/components/leaderboard-row.css ─── */
+/* leaderboard-row · component
+ * promoted from app/profile.html ad-hoc markup (rc.4).
+ *
+ * a single row in a ranked list — rank · avatar · name · meta · stat.
+ * works for ship counts, streak charts, room leaderboards, etc.
+ *
+ * usage:
+ *   <ol class="lb">
+ *     <li class="lb-row top">
+ *       <span class="lb-rank">1</span>
+ *       <span class="lb-avatar"><img src="…" alt=""></span>
+ *       <div class="lb-who">
+ *         <div class="lb-name">linnea</div>
+ *         <div class="lb-meta">@linnea.is · 12 ships</div>
+ *       </div>
+ *       <span class="lb-stat"><b>47</b><span>xp</span></span>
+ *     </li>
+ *     <li class="lb-row">…</li>
+ *   </ol>
+ *
+ * modifiers:
+ *   .lb-row.top  — rank 1, slight glow + ink-on-fill
+ *   .lb-row.you  — current user row, soft mesh-tint background
+ *   .lb-row.muted — fade out (e.g. for users below cutoff)
+ *   .lb.dense    — tighter padding, smaller avatars
+ */
+
+.lb {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+  gap: var(--s-2, 8px);
+}
+
+.lb-row {
+  display: grid;
+  grid-template-columns: 28px 40px 1fr auto;
+  align-items: center;
+  gap: var(--s-3, 12px);
+  padding: var(--s-3, 12px) var(--s-4, 16px);
+  border: 1px solid var(--color-line, color-mix(in oklch, currentColor 12%, transparent));
+  border-radius: var(--r-md, 16px);
+  background: color-mix(in oklch, var(--mesh-base, #f6f4ef) 70%, transparent);
+  transition: all .15s;
+}
+.lb-row:hover { border-color: var(--mesh-ink); }
+
+.lb-rank {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  text-align: right;
+}
+
+.lb-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%; overflow: hidden;
+  background: color-mix(in oklch, var(--mesh-ink) 12%, transparent);
+  flex-shrink: 0;
+}
+.lb-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.lb-who { min-width: 0; }
+.lb-name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-body, 16px);
+  color: var(--mesh-ink);
+  line-height: 1.2;
+}
+.lb-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+  margin-top: 2px;
+  text-overflow: ellipsis; overflow: hidden; white-space: nowrap;
+}
+
+.lb-stat {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  font-family: var(--font-display);
+}
+.lb-stat b {
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--mesh-ink);
+}
+.lb-stat span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+
+.lb-row.top {
+  background: var(--mesh-ink);
+  color: var(--mesh-base, #f6f4ef);
+  border-color: var(--mesh-ink);
+}
+.lb-row.top .lb-name,
+.lb-row.top .lb-stat b   { color: var(--mesh-base, #f6f4ef); }
+.lb-row.top .lb-rank,
+.lb-row.top .lb-meta,
+.lb-row.top .lb-stat span { color: color-mix(in oklch, white 60%, transparent); }
+
+.lb-row.you {
+  background: color-mix(in oklch, var(--mesh-ink) 8%, transparent);
+  border-color: color-mix(in oklch, var(--mesh-ink) 30%, transparent);
+}
+.lb-row.muted { opacity: 0.55; }
+
+.lb.dense .lb-row { padding: var(--s-2, 8px) var(--s-3, 12px); }
+.lb.dense .lb-avatar { width: 28px; height: 28px; }
+.lb.dense .lb-name { font-size: 14px; }
+.lb.dense .lb-stat b { font-size: 18px; }
+
+
+
+/* ─── inlined from system/components/empty-state.css ─── */
+/* empty-state · component
+ * referenced in guidelines/voice.md but never had a component file (rc.4).
+ *
+ * the canonical "nothing here yet" surface. dashed border, soft mesh
+ * background, mono eyebrow + display headline + warm tail copy + one
+ * primary action.
+ *
+ * usage:
+ *   <div class="empty">
+ *     <div class="empty-eyebrow">YOUR ROOM</div>
+ *     <h3 class="empty-head">no projects yet.</h3>
+ *     <p class="empty-body">that's how every project starts. tell us what you're building, even if it's one sentence.</p>
+ *     <button class="btn-ink">start a project</button>
+ *   </div>
+ *
+ * modifiers:
+ *   .empty.tone-stuck — used for "this is broken" not "this is empty"
+ *   .empty.compact   — small, fits inside a card
+ *   .empty.flush     — no border, just spacing (for app shell rails)
+ */
+
+.empty {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: var(--s-3, 12px);
+  padding: var(--s-8, 56px) var(--s-5, 22px);
+  border: 1px dashed color-mix(in oklch, var(--mesh-ink) 22%, transparent);
+  border-radius: var(--r-md, 16px);
+  background: color-mix(in oklch, var(--mesh-base, #f6f4ef) 50%, transparent);
+  text-align: center;
+  color: var(--mesh-ink);
+}
+
+.empty-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, var(--mesh-ink) 55%, transparent);
+}
+
+.empty-head {
+  font-family: var(--font-display);
+  font-size: var(--t-h4, 22px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  margin: 0;
+  color: var(--mesh-ink);
+}
+
+.empty-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body, 16px);
+  line-height: 1.55;
+  max-width: 44ch;
+  color: color-mix(in oklch, var(--mesh-ink) 75%, transparent);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.empty .btn-ink,
+.empty .btn-ghost { margin-top: var(--s-2, 8px); }
+
+.empty.tone-stuck {
+  border-color: color-mix(in oklch, oklch(0.78 0.20 28) 60%, transparent);
+  background: color-mix(in oklch, oklch(0.78 0.20 28) 5%, var(--mesh-base, #f6f4ef));
+}
+.empty.tone-stuck .empty-eyebrow { color: oklch(0.62 0.20 28); }
+
+.empty.compact {
+  padding: var(--s-4, 16px) var(--s-4, 16px);
+  gap: var(--s-2, 8px);
+}
+.empty.compact .empty-head { font-size: var(--t-lead, 19px); }
+.empty.compact .empty-body { font-size: 14px; }
+
+.empty.flush {
+  border: none;
+  background: none;
+  padding: var(--s-5, 22px) 0;
+}
+
+
+
+/* ── default body posture (palette + display register) ──────
+   override by adding palette-* / display-* / cf-* classes to body. */
+body { /* ensure pearl + condensed unless caller overrides */ }
