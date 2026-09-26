@@ -167,7 +167,7 @@ function paint() {
   dimensions.style.opacity=String(dimensionsReveal);
   dimensions.style.visibility=dimensionsReveal>0?'visible':'hidden';
   buttons.forEach(button=>{button.tabIndex=dimensionsReveal>0?0:-1;});
-  prompt.textContent=progress<.7?'Scroll to see the whole picture.':selected<0?'Explore a plane or point.':'Click empty space or press Esc to see the whole brain.';
+  prompt.textContent=progress<.7?'Scroll to see the whole picture.':selected<0?'Choose a dimension.':'Choose another dimension.';
   dirty=false;
  }
  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);
