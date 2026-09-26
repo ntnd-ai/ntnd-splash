@@ -7,6 +7,7 @@ const panels = [...root.querySelectorAll('[data-context-details]')];
 const examples = panels.map(panel=>panel.dataset.examples.split('|'));
 const exampleTypes = panels.map(panel=>panel.dataset.exampleTypes.split('|'));
 const heading = root.querySelector('.context-stage-heading'), dimensions = root.querySelector('.context-floors');
+const dimensionsTitle = root.querySelector('.context-dimensions-title');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const colors = ['#ed83ad','#d5f45a','#87d5ef','#ffc17b','#dd68b8','#f1c7ab','#aa9ee7'];
 const T = Math.PI * 2, clamp = (n,a=0,b=1) => Math.max(a,Math.min(b,n));
@@ -139,7 +140,8 @@ function paint() {
  const origin=canvas.getBoundingClientRect(),controls=dimensions.getBoundingClientRect();
  const left=w>720?40:20,right=w>720?controls.left-origin.left-40:w-40;
  const graphWidth=Math.max(1,right-left-(w>720?labelColumnWidth()+24:0)),graphCenter=(left+right)/2-(w>720?Math.min(32,w*.02):0);
- const scale=Math.min(graphWidth/800,(h-190)/590)*(w>720?1.08:1)*zoom*(3.6-e*2.6),cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ const revealScale=w>720?3.6-e*2.6:1.85-e*.85;
+ const scale=Math.min(graphWidth/800,(h-190)/590)*(w>720?1.08:1)*zoom*revealScale,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
  const project=p=>{const x=p.x*cy-p.z*sy,z=p.x*sy+p.z*cy,y=(p.y-focusY)*cp-z*sp,depth=(p.y-focusY)*sp+z*cp,s=scale*1200/(1200+depth);return {x:graphCenter+x*s+panX,y:h*(.60-.14*progress)+y*s+panY};};
  hitNodes.length=0;
  if(dirty) {
@@ -160,8 +162,11 @@ function paint() {
    back.fillStyle=glow;back.beginPath();back.arc(0,0,1,0,T);back.fill();back.restore();
   });
   back.globalCompositeOperation='source-over';
-  for(const line of lines) {back.beginPath();line.points.forEach((p,i)=>{const q=project(p);if(i)back.lineTo(q.x,q.y);else back.moveTo(q.x,q.y);});back.strokeStyle=rgba(line.color,line.alpha);back.lineWidth=line.weight;back.stroke();}
-  buttons.forEach((button,i)=>{const opacity=clamp((progress-(.68+i*.025))/.08);button.parentElement.style.opacity=String(opacity);button.parentElement.style.visibility=opacity>0?'visible':'hidden';button.tabIndex=opacity>0?0:-1;});
+  for(const line of lines) {back.beginPath();line.points.forEach((p,i)=>{const q=project(p);if(i)back.lineTo(q.x,q.y);else back.moveTo(q.x,q.y);});back.strokeStyle=rgba(line.color,Math.min(1,line.alpha*(w<=720?1.5:1)));back.lineWidth=line.weight*(w<=720?1.12:1);back.stroke();}
+  const mobileReveal=clamp((progress-.65)/.1);
+  buttons.forEach((button,i)=>{const opacity=w<=720?mobileReveal:clamp((progress-(.68+i*.025))/.08);button.parentElement.style.opacity=String(opacity);button.parentElement.style.visibility=opacity>0?'visible':'hidden';button.tabIndex=opacity>0?0:-1;});
+  const titleOpacity=w<=720?mobileReveal:clamp((progress-.68)/.08);
+  dimensionsTitle.style.opacity=String(titleOpacity);dimensionsTitle.style.visibility=titleOpacity>0?'visible':'hidden';
   prompt.textContent=progress<.7?'Scroll to see the whole picture.':selected<0?'Explore a plane or point.':'Click empty space or press Esc to see the whole brain.';
   dirty=false;
  }
