@@ -16,11 +16,16 @@ export async function visitorPost(path, body, { preview, endpoint, fetcher = glo
   return { ok: true };
 }
 
-export function mountVisitorPage({ document, location, history, fetcher = globalThis.fetch }) {
+export function mountVisitorPage({ document, location, history, fetcher = globalThis.fetch, embedded = false }) {
   const root = document.querySelector('[data-visitor-page]');
   if (!root) return;
   const preview = root.dataset.preview === '1', allowLocal = root.dataset.localTest === '1' && ['localhost', '127.0.0.1'].includes(location.hostname), endpoint = allowLocal ? location.href : root.dataset.endpoint;
   const message = document.querySelector('[data-result]'), button = document.querySelector('main button');
+  if (embedded) {
+    history.replaceState(null, '', location.pathname);
+    message.textContent = 'Open this page directly to use the form. No details have been sent.';
+    return;
+  }
   if (root.dataset.visitorPage === 'unsubscribe') {
     const token = takeUnsubscribeToken(location, history);
     button.disabled = !token;
@@ -49,4 +54,4 @@ export function mountVisitorPage({ document, location, history, fetcher = global
     });
   }
 }
-if (typeof document !== 'undefined') mountVisitorPage({ document, location, history });
+if (typeof document !== 'undefined') mountVisitorPage({ document, location, history, embedded: window.top !== window.self });
