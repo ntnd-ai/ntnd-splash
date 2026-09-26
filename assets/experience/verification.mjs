@@ -21,12 +21,16 @@ export async function confirmEmail(token, { preview = false, endpoint, fetcher =
   return { kind: 'verified', ...(data.updatesStatus ? { updatesStatus: data.updatesStatus } : {}) };
 }
 
-export function mountVerification({ document, location, history, fetcher = globalThis.fetch }) {
+export function mountVerification({ document, location, history, fetcher = globalThis.fetch, embedded = false }) {
   const root = document.querySelector('[data-email-verification]');
   if (!root) return;
   let token = takeVerificationToken(location, history);
   const button = document.querySelector('[data-verify-email]');
   const message = document.querySelector('[data-verification-message]');
+  if (embedded) {
+    message.textContent = 'Open this link directly to confirm your email.';
+    return;
+  }
   const preview = root.dataset.preview === '1';
   let endpoint = '';
   try { endpoint = preview ? '' : ['localhost','127.0.0.1'].includes(location.hostname) ? (root.dataset.localTest === '1' ? new URL('/email/verify', location.href).href : 'http://127.0.0.1:4872/email/verify') : new URL('/email/verify', root.dataset.endpoint).href; } catch { /* Unconfigured builds fail closed. */ }
@@ -50,4 +54,4 @@ export function mountVerification({ document, location, history, fetcher = globa
   });
 }
 
-if (typeof document !== 'undefined') mountVerification({ document, location, history });
+if (typeof document !== 'undefined') mountVerification({ document, location, history, embedded: window.top !== window.self });
