@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "baf58f6182c78e8e916d8ca225a2b5fa21cd8663"
+    "commit": "e76ad908904faea94c12e5b9735a2e41a678d473"
   },
   "config": {
     "sha256": "66704a7bf12a85d92e29e3b62157323115e9799492a1e1170bdafbd056167c23"
@@ -14,7 +14,7 @@
   "files": {
     "404.html": {
       "algorithm": "sha256",
-      "hash": "2880223ec16e39218cc22dc6808567bb244f31c9be414176b38487c8d824330d"
+      "hash": "2f7318fd16e32372458bd0d9536243f3d8c23e5a46a0d71758eb54ad6099a3ea"
     },
     "CNAME": {
       "algorithm": "sha256",
@@ -22,23 +22,23 @@
     },
     "agents.html": {
       "algorithm": "sha256",
-      "hash": "0c4e552a55e9b7490f6739bcc3a26aa9bdcbf3b851c06b5e4febc5a9a7fec2c9"
+      "hash": "ea297c1bf92fa6752019b2e84de6020e11c5be9ff6660eab8815fa1f2db071cc"
     },
     "alpha-access.html": {
       "algorithm": "sha256",
-      "hash": "616613805dcea4b9a45e3c442004c1d8af16898b98921ca213759a08e713a500"
+      "hash": "51f3b4ed75f6cee93de9b52f954e70d2daf96dc37ac7fe99b212d6a2d0b02f60"
     },
     "alpha-licence.html": {
       "algorithm": "sha256",
-      "hash": "b00a019e73d2ef3f6b323af436bf64a3202595b28ab20faff28eb70d14199db3"
+      "hash": "0b81b6c22e1a5d73fc142a76aaa7f769ec58d6b035da76d422fc2aeea2f76b5a"
     },
     "app-privacy.html": {
       "algorithm": "sha256",
-      "hash": "9eaa56d5f3165e4c5153977300a209c3e2db883dac5978163dc71e6cd65af6f9"
+      "hash": "fd76403ec59058de2739cdf03fb6f83fa35725b4ed4b0e3d9796efda04f0a92e"
     },
     "apply.html": {
       "algorithm": "sha256",
-      "hash": "0c1fa1449c4ba95ff9ec37105a6a7a46442a441b05cf2bffa51ba429c5fa3fe5"
+      "hash": "cf4cd28c0b4627112649f86d736a43cd4feb86fe508d4424e7d6e3fddbe8aaa6"
     },
     "assets/app-agents-2026-09-08.jpg": {
       "algorithm": "sha256",
@@ -156,9 +156,9 @@
       "algorithm": "sha256",
       "hash": "de2dd38ae2f3f2ea53d6dfc58ee19f87a4e129823f5c8001889c273cc5674c80"
     },
-    "assets/editorial/roadmap-2026.png": {
+    "assets/editorial/roadmap-2026-optimized.jpg": {
       "algorithm": "sha256",
-      "hash": "2c7ee00a79c97967020cedadb9cec20dd1c3b31543411ddb72d680f733b35a9f"
+      "hash": "31f97eb5f9ccb9f6174d8a1e4bab4bb4d94dab317658aa16574673e8fe487fa1"
     },
     "assets/experience/atlas-data.mjs": {
       "algorithm": "sha256",
@@ -218,7 +218,7 @@
     },
     "assets/experience/context-loop.mjs": {
       "algorithm": "sha256",
-      "hash": "bab248e30d13cc368583ef1fc635a1efdb5546c057500c1be7aa2369ca475c24"
+      "hash": "a41627069f660fbe616b59c868568f5b7b19de14306069cc5330e7f46ab91a81"
     },
     "assets/experience/flow.png": {
       "algorithm": "sha256",
@@ -231,6 +231,10 @@
     "assets/experience/nova-guide.png": {
       "algorithm": "sha256",
       "hash": "5b4d31ca6160da46fbde39cbe495d100c58d49e2fdbf5dee55173999690f172e"
+    },
+    "assets/experience/security-optimized.jpg": {
+      "algorithm": "sha256",
+      "hash": "cb396d393c2070615da105e0f58397498da5f2b273f5e66b31330b3ab3922cc9"
     },
     "assets/experience/security.png": {
       "algorithm": "sha256",
@@ -354,59 +358,59 @@
     },
     "atlas.html": {
       "algorithm": "sha256",
-      "hash": "bc6fc121f1f5233666b46af490f4841123325cd9736c3fd89625d24656985bfb"
+      "hash": "aa226ee9a2fd1f1543c558b414bc1f3322515a34419e745ddbe269073580a122"
     },
     "brain.html": {
       "algorithm": "sha256",
-      "hash": "3ef761b2aae692dec70f24a121e2720a74f4b2d4eb2bd7e1f3fde5707c381ee1"
+      "hash": "8423ae39990d280ed669219cdc7fa7a38eb5d1e2b6eb396c0ec86e8a7db78b34"
     },
     "chatrooms.html": {
       "algorithm": "sha256",
-      "hash": "7e7aa37e551d6d95203d0c76de128d9e31de018545132b07a9e0256b2aa73a25"
+      "hash": "d3342ae75ccec303117c5bedaf29b8b3048f073b3764825f1653ec3f836ba6e2"
     },
     "company-brain.html": {
       "algorithm": "sha256",
-      "hash": "3ef6d07dc8ff3f60cd32b513554c3aa5a372d81b9395bb3b2ce495e5fee4274a"
+      "hash": "830cb01bd27d1bcf72c7950fa5145a15bdb1feb2793972f8288ecffbe0fc5a01"
     },
     "company.html": {
       "algorithm": "sha256",
-      "hash": "ffd665efbce35cb81854dc56171c248034ae5d417e5201c34e81bbbde068c754"
+      "hash": "e4fbe5e81c1fc4a77d5bf6b55ed99ad0af50ed2a4e4332d0d9450342e4de382b"
     },
     "contact.html": {
       "algorithm": "sha256",
-      "hash": "cc6ca7a4c700416d0fc3132150797f0ac44f08a413a0ce3b61de08b155525064"
+      "hash": "ae40389057ea3de0f973c4ac3844b652032fb7663ca3ad1ee30c395b64fd58a3"
     },
     "download.html": {
       "algorithm": "sha256",
-      "hash": "313d9917eff07cc344ca3cb8d24387855905ed09e3f819e7f0dbf9bada661d9f"
+      "hash": "5b44d093f207cc9d33527feeade65d7ff2725b29d87c0670c2fc787466767f46"
     },
     "govern.html": {
       "algorithm": "sha256",
-      "hash": "52329fee1a96d5d1121a2f33ed920d6c166fe1f59e49c8a9d1415883085e6812"
+      "hash": "1eb0d5e3dff6a3b3f6617a78479c97df90333165ed17e55b29e87f04d4ee848b"
     },
     "index.html": {
       "algorithm": "sha256",
-      "hash": "bfaa4032828fe8f528246ac8cda8fe57c2c1786e904b8cff7038fcc717e77fd8"
+      "hash": "fe19e0293574e16ca462db5c4ad4a0fbb21977a94fb6b461cead8eff13e3fcc1"
     },
     "legal.html": {
       "algorithm": "sha256",
-      "hash": "20b5686e77172594f8315b8a2254e4dad651f7ebcd64d555dee4ec0f3a2a7c2a"
+      "hash": "2cf4b4c56d5b309a7eef5823777cb25f1b482d928535cb439fe2ff64e3789af0"
     },
     "partners.html": {
       "algorithm": "sha256",
-      "hash": "85b02dc3f5df7abda49954a6913feebc4cce44e818c2fdbc6bdaaa4f46ea94fd"
+      "hash": "9cc92964367e6ee634013a9d6b54a143bf8421e852ed48b2faa13acda4b24cd0"
     },
     "privacy.html": {
       "algorithm": "sha256",
-      "hash": "190b39137503909e823f6e52b905a1521690291779b89823689fdbf57aad3930"
+      "hash": "e98d2f5d781cc96fa51b64994ba262eef19abe37eb4a94719dca4fedee2469d1"
     },
     "product.html": {
       "algorithm": "sha256",
-      "hash": "47d8069edd5d94ebe1cf7da5098dea06f352b910c771f45aa15aa3d79ca8e46e"
+      "hash": "be0dafb31af1dc16fee800da5638f7c69ec0d51818331b27b900b92fc1e65303"
     },
     "roadmap.html": {
       "algorithm": "sha256",
-      "hash": "65a22d38242a278b90b3494d0a818e82117a9834751132e710777dcc17d98f3f"
+      "hash": "f2f6d0b8a274c1aa0bcc8456e022b25f99eacd7c34a617877d5b6ec8dd92f55c"
     },
     "robots.txt": {
       "algorithm": "sha256",
@@ -414,7 +418,7 @@
     },
     "site.css": {
       "algorithm": "sha256",
-      "hash": "59402121ce5b080b4677e3074cf818f564936b62cc2e998dc51a231b35563f8a"
+      "hash": "005bffe73e649b12999bda0a11860994d0b36ae48f15a79da6e8be13d61621fc"
     },
     "sitemap.xml": {
       "algorithm": "sha256",
@@ -422,15 +426,15 @@
     },
     "start.html": {
       "algorithm": "sha256",
-      "hash": "6d68907a8607a111faefc72a6d576ba568a946dbf5eba23ca9e2d92a97cee1bd"
+      "hash": "3ac61bbf7cbe61ee361004c29da42efa39782c992b5c11dac8a295b6482359a1"
     },
     "technology.html": {
       "algorithm": "sha256",
-      "hash": "d067fb24b4e93038b34c014c9d9706ef1784b21051979ab4d8ec20b078fe3222"
+      "hash": "96098a66511056cf816505cb718c123a6512441d6ca7ad9bcec933e08d8c0b8f"
     },
     "terms.html": {
       "algorithm": "sha256",
-      "hash": "d6a668eb8ad7a472c91f27f8f2d7b99d51f6d12a04b45477f91d3cd9455c3c0c"
+      "hash": "b1920b8eb2dd0341eab40852361ffd9c29494a356931bb8a47e952034751deee"
     },
     "unsubscribe.html": {
       "algorithm": "sha256",
@@ -442,7 +446,7 @@
     },
     "vision.html": {
       "algorithm": "sha256",
-      "hash": "9c938613b0fef2d8e8e477068df34f56fc4c317218e6ab7fbef6cc6f7c966ff7"
+      "hash": "9c234dec56fe413163be677260a0ddcf87e47f069cc54d09d7555e89f2b40b8b"
     }
   }
 }

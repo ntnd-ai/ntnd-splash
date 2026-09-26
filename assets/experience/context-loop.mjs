@@ -7,7 +7,6 @@ const panels = [...root.querySelectorAll('[data-context-details]')];
 const examples = panels.map(panel=>panel.dataset.examples.split('|'));
 const exampleTypes = panels.map(panel=>panel.dataset.exampleTypes.split('|'));
 const heading = root.querySelector('.context-stage-heading'), dimensions = root.querySelector('.context-floors');
-const dimensionsTitle = root.querySelector('.context-dimensions-title');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const colors = ['#ed83ad','#d5f45a','#87d5ef','#ffc17b','#dd68b8','#f1c7ab','#aa9ee7'];
 const T = Math.PI * 2, clamp = (n,a=0,b=1) => Math.max(a,Math.min(b,n));
@@ -163,9 +162,11 @@ function paint() {
   });
   back.globalCompositeOperation='source-over';
   for(const line of lines) {back.beginPath();line.points.forEach((p,i)=>{const q=project(p);if(i)back.lineTo(q.x,q.y);else back.moveTo(q.x,q.y);});back.strokeStyle=rgba(line.color,Math.min(1,line.alpha*(w<=720?1.5:1)));back.lineWidth=line.weight*(w<=720?1.12:1);back.stroke();}
-  const dimensionsReveal=clamp((progress-.65)/.1);
-  buttons.forEach(button=>{button.parentElement.style.opacity=String(dimensionsReveal);button.parentElement.style.visibility=dimensionsReveal>0?'visible':'hidden';button.tabIndex=dimensionsReveal>0?0:-1;});
-  dimensionsTitle.style.opacity=String(dimensionsReveal);dimensionsTitle.style.visibility=dimensionsReveal>0?'visible':'hidden';
+  const dimensionsReveal=clamp((progress-.6)/.08);
+  // Reveal the title and all seven controls as one unit on both layouts.
+  dimensions.style.opacity=String(dimensionsReveal);
+  dimensions.style.visibility=dimensionsReveal>0?'visible':'hidden';
+  buttons.forEach(button=>{button.tabIndex=dimensionsReveal>0?0:-1;});
   prompt.textContent=progress<.7?'Scroll to see the whole picture.':selected<0?'Explore a plane or point.':'Click empty space or press Esc to see the whole brain.';
   dirty=false;
  }
