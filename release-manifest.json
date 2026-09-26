@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "e76ad908904faea94c12e5b9735a2e41a678d473"
+    "commit": "927ca9044e6f67880a041728a4725d6c90c723bd"
   },
   "config": {
     "sha256": "66704a7bf12a85d92e29e3b62157323115e9799492a1e1170bdafbd056167c23"
@@ -242,7 +242,7 @@
     },
     "assets/experience/site.mjs": {
       "algorithm": "sha256",
-      "hash": "ca29db5def93ed902af30ad5b2efe23e0e954f6b22857ff4e348e9f38d8ddae4"
+      "hash": "0373c25f73a0592f91b2267bbc4ced0b172314d5b900a672ee08d00308d66440"
     },
     "assets/experience/state.mjs": {
       "algorithm": "sha256",
@@ -374,7 +374,7 @@
     },
     "company.html": {
       "algorithm": "sha256",
-      "hash": "e4fbe5e81c1fc4a77d5bf6b55ed99ad0af50ed2a4e4332d0d9450342e4de382b"
+      "hash": "3d1fcfe1d08dbdeb9677fa119d4a918b713ed3b309cea1f3e64e3ad46d0eafe4"
     },
     "contact.html": {
       "algorithm": "sha256",
@@ -406,7 +406,7 @@
     },
     "product.html": {
       "algorithm": "sha256",
-      "hash": "be0dafb31af1dc16fee800da5638f7c69ec0d51818331b27b900b92fc1e65303"
+      "hash": "40a29bdae99a60f4915b03b5540c45d9a67589d57ab032acc4c7b1e0e409b246"
     },
     "roadmap.html": {
       "algorithm": "sha256",
@@ -426,7 +426,7 @@
     },
     "start.html": {
       "algorithm": "sha256",
-      "hash": "3ac61bbf7cbe61ee361004c29da42efa39782c992b5c11dac8a295b6482359a1"
+      "hash": "ebd5c44e72e6ce4e6d9c8bb602ba6bc5b28475c66b265e3bcd5c06066a0e2f82"
     },
     "technology.html": {
       "algorithm": "sha256",
