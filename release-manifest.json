@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "800ee153b7c36717ddb4c78a90a46c0df3218e4a"
+    "commit": "46934074ecbcb4513c68fa0361e077e8b2fb5bc6"
   },
   "config": {
     "sha256": "66704a7bf12a85d92e29e3b62157323115e9799492a1e1170bdafbd056167c23"
@@ -14,7 +14,7 @@
   "files": {
     "404.html": {
       "algorithm": "sha256",
-      "hash": "6dc3e54d6924917cec25584532c883454c013e3aa6fed4508dfb07c36921ac4c"
+      "hash": "2880223ec16e39218cc22dc6808567bb244f31c9be414176b38487c8d824330d"
     },
     "CNAME": {
       "algorithm": "sha256",
@@ -22,23 +22,23 @@
     },
     "agents.html": {
       "algorithm": "sha256",
-      "hash": "0b863540dceae917ad2507a11c507a1ebdfff20c765ca6513e54c8425787379a"
+      "hash": "0c4e552a55e9b7490f6739bcc3a26aa9bdcbf3b851c06b5e4febc5a9a7fec2c9"
     },
     "alpha-access.html": {
       "algorithm": "sha256",
-      "hash": "ac15f4337e793a7c6b2fde5715e555fcb8c6fc1b7ac9aab1e92ed582b9eb21b9"
+      "hash": "616613805dcea4b9a45e3c442004c1d8af16898b98921ca213759a08e713a500"
     },
     "alpha-licence.html": {
       "algorithm": "sha256",
-      "hash": "5b40c2cb063d6b377d02a553e71eeb0ff15e5c158c20c8aa724c1c7f1eb09e64"
+      "hash": "b00a019e73d2ef3f6b323af436bf64a3202595b28ab20faff28eb70d14199db3"
     },
     "app-privacy.html": {
       "algorithm": "sha256",
-      "hash": "f477f50949de68fe737d5b2f0d53bfeb90f11ee9aab21b30336046a3aaf8ce94"
+      "hash": "9eaa56d5f3165e4c5153977300a209c3e2db883dac5978163dc71e6cd65af6f9"
     },
     "apply.html": {
       "algorithm": "sha256",
-      "hash": "d5b459e7998e2c3c2a61ce9e6f1a0d1b0c9694f00df146b6cb0734d9f2c16498"
+      "hash": "0c1fa1449c4ba95ff9ec37105a6a7a46442a441b05cf2bffa51ba429c5fa3fe5"
     },
     "assets/app-agents-2026-09-08.jpg": {
       "algorithm": "sha256",
@@ -354,59 +354,59 @@
     },
     "atlas.html": {
       "algorithm": "sha256",
-      "hash": "ce19cc122c51167120008fe599a58907ca0339e5e8c1c2b643ea5694bc752cfe"
+      "hash": "bc6fc121f1f5233666b46af490f4841123325cd9736c3fd89625d24656985bfb"
     },
     "brain.html": {
       "algorithm": "sha256",
-      "hash": "7c0cf369d3e3061e2ec86aa5c154b5411c5f4e90a8d709541d3eecfb8f0ab787"
+      "hash": "3ef761b2aae692dec70f24a121e2720a74f4b2d4eb2bd7e1f3fde5707c381ee1"
     },
     "chatrooms.html": {
       "algorithm": "sha256",
-      "hash": "c1db9860e5edc77a3320c45c27516621581a79844e0542f4474d2defff48bd56"
+      "hash": "7e7aa37e551d6d95203d0c76de128d9e31de018545132b07a9e0256b2aa73a25"
     },
     "company-brain.html": {
       "algorithm": "sha256",
-      "hash": "9007583585630175669332afe9882fd3e11e7d92774282bec0ee90f7bea2a366"
+      "hash": "3ef6d07dc8ff3f60cd32b513554c3aa5a372d81b9395bb3b2ce495e5fee4274a"
     },
     "company.html": {
       "algorithm": "sha256",
-      "hash": "dcccba7103b2cb8078037553a230e2748ac13e61bbf20c00d7d68c936785fbc3"
+      "hash": "ffd665efbce35cb81854dc56171c248034ae5d417e5201c34e81bbbde068c754"
     },
     "contact.html": {
       "algorithm": "sha256",
-      "hash": "eb25c7ae6d93bd7850414c533bf9516ebc51b8d222a14fb84bddde55da0344da"
+      "hash": "cc6ca7a4c700416d0fc3132150797f0ac44f08a413a0ce3b61de08b155525064"
     },
     "download.html": {
       "algorithm": "sha256",
-      "hash": "744abbad620ace5aace7a9931282af3314602af0964fbb0a2d09b8b77f82a5b9"
+      "hash": "313d9917eff07cc344ca3cb8d24387855905ed09e3f819e7f0dbf9bada661d9f"
     },
     "govern.html": {
       "algorithm": "sha256",
-      "hash": "7d11ea90db02fd8759baa28367efbbd596ca72490d1d395e7ce767cef559bce5"
+      "hash": "52329fee1a96d5d1121a2f33ed920d6c166fe1f59e49c8a9d1415883085e6812"
     },
     "index.html": {
       "algorithm": "sha256",
-      "hash": "b32c4a905b7251d1d13f9b8efc1507c3db055552197374b83651704f425acff4"
+      "hash": "bfaa4032828fe8f528246ac8cda8fe57c2c1786e904b8cff7038fcc717e77fd8"
     },
     "legal.html": {
       "algorithm": "sha256",
-      "hash": "e188160bf06f53b6dc090d9d9356440db0a0d73daaa6149509b40fb16a5f06e3"
+      "hash": "20b5686e77172594f8315b8a2254e4dad651f7ebcd64d555dee4ec0f3a2a7c2a"
     },
     "partners.html": {
       "algorithm": "sha256",
-      "hash": "4d9e3023c85502e7fec4b43bea64ccb7afb76c5c6819f19b551cb76e3854fb30"
+      "hash": "85b02dc3f5df7abda49954a6913feebc4cce44e818c2fdbc6bdaaa4f46ea94fd"
     },
     "privacy.html": {
       "algorithm": "sha256",
-      "hash": "b2b76e70ebe689506646660ed9024cb492abea1d665b7c97177d2e10c93dedcc"
+      "hash": "190b39137503909e823f6e52b905a1521690291779b89823689fdbf57aad3930"
     },
     "product.html": {
       "algorithm": "sha256",
-      "hash": "288d16a883a56524051b154e398f398ac3e035d7270e895d2a5b82ba4600623d"
+      "hash": "47d8069edd5d94ebe1cf7da5098dea06f352b910c771f45aa15aa3d79ca8e46e"
     },
     "roadmap.html": {
       "algorithm": "sha256",
-      "hash": "a0a4663c7474c15be43af48596eae148410319f0c503a2d7c78750d071f9fd11"
+      "hash": "65a22d38242a278b90b3494d0a818e82117a9834751132e710777dcc17d98f3f"
     },
     "robots.txt": {
       "algorithm": "sha256",
@@ -414,7 +414,7 @@
     },
     "site.css": {
       "algorithm": "sha256",
-      "hash": "501a7b72f7148aefd0cbe5edc8fb7610af76ccdd8cef31ada7af2f506f82ac45"
+      "hash": "59402121ce5b080b4677e3074cf818f564936b62cc2e998dc51a231b35563f8a"
     },
     "sitemap.xml": {
       "algorithm": "sha256",
@@ -422,15 +422,15 @@
     },
     "start.html": {
       "algorithm": "sha256",
-      "hash": "877992313a83a138d56321dcf6cc3a6695b847cc6a143a3d9af56a07d2c4805a"
+      "hash": "6d68907a8607a111faefc72a6d576ba568a946dbf5eba23ca9e2d92a97cee1bd"
     },
     "technology.html": {
       "algorithm": "sha256",
-      "hash": "36a691f9ff64c7000c8b41ff748944e0e4f199a338eb7e2281215003e60e1086"
+      "hash": "d067fb24b4e93038b34c014c9d9706ef1784b21051979ab4d8ec20b078fe3222"
     },
     "terms.html": {
       "algorithm": "sha256",
-      "hash": "571943644a0ff70ada43028822be9bff1c654c3464973638c08bc5b2da2f056c"
+      "hash": "d6a668eb8ad7a472c91f27f8f2d7b99d51f6d12a04b45477f91d3cd9455c3c0c"
     },
     "unsubscribe.html": {
       "algorithm": "sha256",
@@ -442,7 +442,7 @@
     },
     "vision.html": {
       "algorithm": "sha256",
-      "hash": "4d705d4bb43b044e1da88204096c1eb2b4801326a571750e6629c18464e53796"
+      "hash": "9c938613b0fef2d8e8e477068df34f56fc4c317218e6ab7fbef6cc6f7c966ff7"
     }
   }
 }
