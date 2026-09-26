@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" role="img" aria-labelledby="title desc">
+  <title id="title">People and functions in the ntnd company brain</title>
+  <desc id="desc">Human and AI agents connect through the company brain to strategy, operations, finance, research, marketing and community functions.</desc>
+  <defs>
+    <radialGradient id="glow"><stop stop-color="#522436" stop-opacity=".62"/><stop offset="1" stop-color="#522436" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bridge" x1="0" x2="1"><stop stop-color="#db83ae"/><stop offset=".55" stop-color="#f5e8d7"/><stop offset="1" stop-color="#d5f45a"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+  <circle cx="280" cy="260" r="250" fill="url(#glow)"/>
+  <g fill="none" stroke="#f5e8d7" stroke-opacity=".12">
+    <ellipse cx="280" cy="260" rx="240" ry="210"/>
+    <ellipse cx="280" cy="260" rx="212" ry="188"/>
+    <path d="M280 48v424M45 260h470M73 160c120 48 290 48 414 0M73 360c120-48 290-48 414 0"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif" letter-spacing="2.3" font-size="10" font-weight="700">
+    <text x="70" y="75" fill="#db83ae">PEOPLE &amp; AGENTS</text>
+    <text x="356" y="75" fill="#d5f45a">FUNCTIONS</text>
+  </g>
+  <g fill="none" stroke="url(#bridge)" stroke-width="1.2" stroke-opacity=".48">
+    <path d="M156 164C204 170 218 215 265 245M156 225C204 225 226 240 265 255M156 286C204 286 224 270 265 265M156 347C204 340 218 305 265 275"/>
+    <path d="M295 245C340 208 360 151 411 140M295 251C340 233 360 207 411 205M295 258C340 258 360 258 411 270M295 265C340 281 360 312 411 335M295 273C340 309 360 365 411 400"/>
+  </g>
+  <g fill="#db83ae" filter="url(#soft)" opacity=".5"><circle cx="156" cy="164" r="8"/><circle cx="156" cy="225" r="8"/><circle cx="156" cy="286" r="8"/><circle cx="156" cy="347" r="8"/></g>
+  <g fill="#d5f45a" filter="url(#soft)" opacity=".4"><circle cx="411" cy="140" r="8"/><circle cx="411" cy="205" r="8"/><circle cx="411" cy="270" r="8"/><circle cx="411" cy="335" r="8"/><circle cx="411" cy="400" r="8"/></g>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#f4eadb">
+    <circle cx="156" cy="164" r="5" fill="#db83ae"/><text x="46" y="168">Direction</text>
+    <circle cx="156" cy="225" r="5" fill="#db83ae"/><text x="46" y="229">Decisions</text>
+    <circle cx="156" cy="286" r="5" fill="#db83ae"/><text x="46" y="290">AI roles</text>
+    <circle cx="156" cy="347" r="5" fill="#db83ae"/><text x="46" y="351">Collaboration</text>
+    <circle cx="411" cy="140" r="5" fill="#d5f45a"/><text x="426" y="144">Strategy</text>
+    <circle cx="411" cy="205" r="5" fill="#d5f45a"/><text x="426" y="209">Operations</text>
+    <circle cx="411" cy="270" r="5" fill="#d5f45a"/><text x="426" y="274">Finance</text>
+    <circle cx="411" cy="335" r="5" fill="#d5f45a"/><text x="426" y="339">Research</text>
+    <circle cx="411" cy="400" r="5" fill="#d5f45a"/><text x="426" y="404">Marketing</text>
+  </g>
+  <circle cx="280" cy="260" r="31" fill="#28171f" stroke="url(#bridge)" stroke-width="1.5"/>
+  <circle cx="280" cy="260" r="42" fill="none" stroke="#f4eadb" stroke-opacity=".2"/>
+  <text x="280" y="265" text-anchor="middle" fill="#f4eadb" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">ntnd</text>
+  <text x="280" y="490" text-anchor="middle" fill="#c6b8c0" font-family="Arial,Helvetica,sans-serif" font-size="10" letter-spacing="2">A COMPANY OF AGENTS</text>
+</svg>
