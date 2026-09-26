@@ -163,10 +163,9 @@ function paint() {
   });
   back.globalCompositeOperation='source-over';
   for(const line of lines) {back.beginPath();line.points.forEach((p,i)=>{const q=project(p);if(i)back.lineTo(q.x,q.y);else back.moveTo(q.x,q.y);});back.strokeStyle=rgba(line.color,Math.min(1,line.alpha*(w<=720?1.5:1)));back.lineWidth=line.weight*(w<=720?1.12:1);back.stroke();}
-  const mobileReveal=clamp((progress-.65)/.1);
-  buttons.forEach((button,i)=>{const opacity=w<=720?mobileReveal:clamp((progress-(.68+i*.025))/.08);button.parentElement.style.opacity=String(opacity);button.parentElement.style.visibility=opacity>0?'visible':'hidden';button.tabIndex=opacity>0?0:-1;});
-  const titleOpacity=w<=720?mobileReveal:clamp((progress-.68)/.08);
-  dimensionsTitle.style.opacity=String(titleOpacity);dimensionsTitle.style.visibility=titleOpacity>0?'visible':'hidden';
+  const dimensionsReveal=clamp((progress-.65)/.1);
+  buttons.forEach(button=>{button.parentElement.style.opacity=String(dimensionsReveal);button.parentElement.style.visibility=dimensionsReveal>0?'visible':'hidden';button.tabIndex=dimensionsReveal>0?0:-1;});
+  dimensionsTitle.style.opacity=String(dimensionsReveal);dimensionsTitle.style.visibility=dimensionsReveal>0?'visible':'hidden';
   prompt.textContent=progress<.7?'Scroll to see the whole picture.':selected<0?'Explore a plane or point.':'Click empty space or press Esc to see the whole brain.';
   dirty=false;
  }
