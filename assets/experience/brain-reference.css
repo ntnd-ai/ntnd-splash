@@ -1,0 +1,17 @@
+/* The bitmap and all light share one plane so the jewel settings stay intact. */
+.brain-reference{position:relative;aspect-ratio:1;perspective:1100px;isolation:isolate}
+.brain-reference-plane{position:absolute;inset:0;transform-origin:51% 49%;
+ /* Remove the image backdrop from display, rather than feathering a rectangle. */
+ mask-image:url('./brain-reference-silhouette.svg?v=1');
+ mask-mode:alpha;mask-size:100% 100%;mask-position:center;mask-repeat:no-repeat;
+}
+.brain-reference-plane img{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.brain-reference-plane canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
+.hero-art--reference .brain-marker{top:1%;right:5%;z-index:1}
+.hero-art--reference .art-foot{bottom:3%;left:10%;right:8%;z-index:1}
+@media(max-width:720px){
+ .hero-art.hero-art--reference{margin:20px -14px -4px 0}
+ .hero-art--reference .brain-marker{font-size:.62rem;top:0;right:4%}
+ .hero-art--reference .art-foot{bottom:1%;left:3%;right:5%}
+}
+@media(prefers-reduced-motion:reduce){.brain-reference-plane{transform:none!important;will-change:auto!important}.brain-reference-plane canvas{visibility:hidden}}
