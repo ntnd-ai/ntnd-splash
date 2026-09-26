@@ -40,7 +40,7 @@ function renderTour(){
  scene.querySelector('h3')?.setAttribute('tabindex','-1');
  if(guide.open)scene.querySelector('h3')?.focus({preventScroll:true});
 }
-$$('[data-guide-open]').forEach(b=>b.addEventListener('click',()=>{const frame=$('[data-guide-frame]',guide);if(frame)frame.src='assets/mockups/nova-journey/index.html?embed=1';showDialog(guide)}));
+$$('[data-guide-open]').forEach(b=>b.addEventListener('click',()=>{const frame=$('[data-guide-frame]',guide);if(frame)frame.src=frame.dataset.src;showDialog(guide)}));
 $('[data-guide-close]')?.addEventListener('click',()=>guide.close());
 scene?.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.tourRoute){tour.route=b.dataset.tourRoute;tour.step=1;}else if(b.hasAttribute('data-tour-back')){tour.step=Math.max(0,tour.step-1);if(tour.step===4){tour.state=initialDecision();tour.choice=null;}if(tour.step===5)tour.state=decide(initialDecision(),tour.choice);}else if(b.hasAttribute('data-tour-next'))tour.step++;else if(b.hasAttribute('data-tour-restart'))tour={route:'research',step:0,state:initialDecision(),choice:null};else if(b.dataset.tourDecision){tour.choice=b.dataset.tourDecision;tour.state=decide(tour.state,tour.choice);tour.step=5;}else if(b.hasAttribute('data-tour-repeat')){tour.state=repeatRequest(tour.state);tour.step=6;}else return;renderTour()});
 // Tabs keep complete semantic panels in the document.
