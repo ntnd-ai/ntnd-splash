@@ -98,6 +98,7 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
 
 .context-examples{display:block;margin-top:10px;color:var(--floor);font-size:13px;line-height:1.5}
 .context-dimensions-title{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#d5b7c7;padding:0 12px 5px;opacity:0;visibility:hidden}
+.form-privacy-link{margin-bottom:16px}.form-privacy-link a{display:inline-block;padding-block:5px}
 @media(max-width:720px){.context-floors{padding-top:25px}.context-dimensions-title{position:absolute;top:0;left:4px;padding:0}}
 
 .context-controls{display:contents}
@@ -613,4 +614,4 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
 .contact-form .button:disabled{opacity:.6;cursor:default}
 .contact-alternate{max-width:760px;margin-top:26px;color:var(--muted)}
 @media(max-width:720px){.contact-page{padding-block:56px 80px}.contact-form{padding:24px}.contact-intro h1{font-size:3.5rem}}
-@media(max-width:600px){body[data-page="contact"] .guide-dock{width:52px;height:52px;right:12px;bottom:12px;padding:4px;justify-content:center}body[data-page="contact"] .guide-dock img{width:38px;height:38px}body[data-page="contact"] .guide-dock span{display:none}}
+@media(max-width:600px){body[data-page="contact"] .guide-dock{width:52px;height:52px;right:12px;bottom:12px;padding:4px;justify-content:center}body[data-page="contact"] .guide-dock img{width:38px;height:38px}body[data-page="contact"] .guide-dock span:first-of-type{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}body[data-page="contact"] .guide-dock span[aria-hidden]{display:none}}
