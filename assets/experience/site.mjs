@@ -112,10 +112,10 @@ if(form){
  else if(submit.disabled)msg.textContent='Alpha requests are not enabled for this release. Please use the contact form for help.';
  form.addEventListener('submit',async e=>{e.preventDefault();if(embedded||submit.disabled||!form.reportValidity())return;submit.disabled=true;msg.textContent=preview?'Trying the preview…':'Sending your request…';
   try{const result=await submitApplication(Object.fromEntries(new FormData(form)),{preview,endpoint});
-   if(result.kind==='duplicate'){msg.textContent='A request already exists for this email. It does not reserve access; we will contact selected cohorts later.';submit.disabled=false;return;}
+   if(result.kind==='duplicate'){msg.textContent='A request already exists for this email. It does not reserve access; we will contact selected applicants directly.';submit.disabled=false;return;}
    if(result.kind==='preview'){msg.textContent='Your details have not been sent.';submit.disabled=false;}
    else if(result.kind==='verification-required'){msg.textContent='Check your inbox and junk folder for a verification link. If this address is awaiting confirmation, we will send one; if you already confirmed, your request is already recorded. You can submit again after a minute to request a fresh link. This does not grant alpha access.';submit.textContent='Send another verification link';submit.disabled=false;}
-   else{msg.textContent='Request received. It does not reserve access or promise a reply. We will send a verification link or next steps by email if a future invite-only cohort is a fit.';submit.textContent='Request received';form.reset();}
+   else{msg.textContent='Request received. It does not reserve access or promise a reply. Check your inbox for a verification link or next steps.';submit.textContent='Request received';form.reset();}
   }catch(error){msg.textContent=error.name==='AbortError'?'The service took too long to respond. Your details are still here. Try again or use the contact form.':error instanceof TypeError?'We could not reach the request service. Your details are still here. Try again or use the contact form.':error.message;submit.disabled=false;}
  });
 }
