@@ -15,7 +15,20 @@ if('IntersectionObserver'in window){const mediaObserver=new IntersectionObserver
 document.addEventListener('visibilitychange',applyMotion);applyMotion();
 const menu=$('[data-menu]'),nav=$('#primary-nav');menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');nav.classList.toggle('is-open',open)});
 document.addEventListener('click',e=>$$('.nav-group[open]').forEach(d=>{if(!d.contains(e.target))d.open=false}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav?.classList.remove('is-open');menu?.setAttribute('aria-expanded','false');$$('.nav-group[open]').forEach(d=>d.open=false)}});
+document.addEventListener('keydown',e=>{
+ if(e.key!=='Escape')return;
+ const focused=document.activeElement;
+ const openGroups=$$('.nav-group[open]');
+ const focusedGroup=openGroups.find(group=>group.contains(focused));
+ const mobileOpen=nav?.classList.contains('is-open');
+ if(!mobileOpen&&!openGroups.length)return;
+ nav?.classList.remove('is-open');
+ menu?.setAttribute('aria-expanded','false');
+ menu?.setAttribute('aria-label','Open navigation');
+ openGroups.forEach(group=>group.open=false);
+ if(mobileOpen&&nav?.contains(focused))menu?.focus();
+ else if(focusedGroup)$('summary',focusedGroup)?.focus();
+});
 function showDialog(d){if(!d.open)d.showModal();modalOpen=true;applyMotion();document.body.style.overflow='hidden'}
 function afterDialog(){modalOpen=$$('dialog[open]').length>0;if(!modalOpen)document.body.style.overflow='';applyMotion()}
 $$('dialog').forEach(d=>{d.addEventListener('close',afterDialog);d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}})});
