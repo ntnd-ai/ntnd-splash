@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "54f294a8174c8bc861acb2c78514fa7376973aef"
+    "commit": "d64776e9d2b73c8126fda26780b7609499483f05"
   },
   "config": {
     "sha256": "66704a7bf12a85d92e29e3b62157323115e9799492a1e1170bdafbd056167c23"
@@ -38,7 +38,7 @@
     },
     "apply.html": {
       "algorithm": "sha256",
-      "hash": "cf4cd28c0b4627112649f86d736a43cd4feb86fe508d4424e7d6e3fddbe8aaa6"
+      "hash": "ba85cf8abacdc6114b526ef40f3b882f2631a5261504d2d60ce6beabdd550e8b"
     },
     "assets/app-agents-2026-09-08.jpg": {
       "algorithm": "sha256",
@@ -246,7 +246,7 @@
     },
     "assets/experience/state.mjs": {
       "algorithm": "sha256",
-      "hash": "a9155815d55dc7ff32d204921640adf42fce1c4976ee8bf878fd4eb296c9c2d3"
+      "hash": "05e2bd7e8bc098da4e8acb6e30157cc01c0b76d00e588d20ab67c332cd5909a6"
     },
     "assets/experience/surface.png": {
       "algorithm": "sha256",
