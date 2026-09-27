@@ -27,7 +27,10 @@ export const demoKnowledge=[
 export function applicationPayload(fields){
  const name=String(fields.name||'').trim(),email=String(fields.email||'').trim(),company=String(fields.company||'').trim();
  const building=String(fields.building||'').trim(),platform=String(fields.platform||'').trim(),interest=String(fields.interest||'').trim();
- if(!name||name.length>120||!email||email.length>254||company.length>160||building.length<20||building.length>1900||!platform||!interest)throw Error('Complete the required fields, including your platform and main interest.');
+ if(!name||name.length>120||!email||email.length>254||company.length>160)throw Error('Check your name, email, and company or project fields.');
+ if(!platform||!interest)throw Error('Choose your platform and main interest.');
+ if(building.length<20)throw Error('Describe the first task in at least 20 characters.');
+ if(building.length>1900)throw Error('Keep the first task description under 1,900 characters.');
  // Submission of the explicitly labelled joint form, followed by email confirmation.
  return {name,email,company,building,platform,interest,website:String(fields.website||''),signupConsent:{accepted:true,wordingVersion:'joint-alpha-product-updates-2026-09-20'}};
 }
