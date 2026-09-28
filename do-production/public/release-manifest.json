@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "c2a2cf0f462a972173d0a696325acb306ceb8ef3"
+    "commit": "e281c626841812ee94f26819b12aaed9931c78b7"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
@@ -34,7 +34,7 @@
     },
     "app-privacy.html": {
       "algorithm": "sha256",
-      "hash": "e23c055aec49cfa66ba4e4868b4691cb928189b5cbf8d374041954948ce04e07"
+      "hash": "3677d7fab78036f6a908d55b2bb67c4027c53cc5c6a7669e5f9f8e6733eec4bd"
     },
     "apply.html": {
       "algorithm": "sha256",
@@ -406,7 +406,7 @@
     },
     "privacy.html": {
       "algorithm": "sha256",
-      "hash": "2ef00481bf7d124edc4eaff2861e762362cd3d9e9d26cb0b8e9c139756631d3f"
+      "hash": "b337be83255b49791948aa53180edba5ecdd3dc18412ab7044c9a05d1c8ebb84"
     },
     "product.html": {
       "algorithm": "sha256",
