@@ -89,6 +89,8 @@ $$('[data-resource-library]').forEach(root=>{
 // Roadmap horizon filter. Every detail remains native and keyboard accessible.
 const roadmapPlatformGrid=$('.roadmap-platform-grid');
 if(roadmapPlatformGrid){
+ const phase=Math.max(1,Math.min(3,Number(roadmapPlatformGrid.dataset.releasePhase)||1));
+ $$('article',roadmapPlatformGrid).forEach((article,index)=>article.classList.toggle('is-reached',index<phase));
  if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){roadmapPlatformGrid.classList.add('is-active');observer.disconnect()}},{threshold:.25});observer.observe(roadmapPlatformGrid)}
  else roadmapPlatformGrid.classList.add('is-active');
 }

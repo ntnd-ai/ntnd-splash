@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#180810"><meta name="color-scheme" content="dark">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=aeb4bf77">
+<link rel="stylesheet" href="site.css?v=61802930">
 
 <link rel="stylesheet" href="assets/experience/brain-reference.css?v=3">
 
@@ -53,7 +53,7 @@
 
 <section class="section shell roadmap-platform-path" id="alpha" aria-labelledby="platform-path-title">
   <div class="section-head"><div><span class="eyebrow">Release path</span><h2 id="platform-path-title">From alpha<br>to beta v1.</h2></div></div>
-  <div class="roadmap-platform-grid">
+  <div class="roadmap-platform-grid" data-release-phase="1">
     <article><span class="roadmap-stage-node" aria-hidden="true"></span><span class="micro">First alpha</span><h3>macOS</h3><p>Invite people into the initial app, learn from real work and improve the first-run experience.</p></article>
     <article><span class="roadmap-stage-node" aria-hidden="true"></span><span class="micro">Following alpha</span><h3>Linux</h3><p>Bring the tested experience to Linux, with packaging and platform-specific checks.</p></article>
     <article><span class="roadmap-stage-node" aria-hidden="true"></span><span class="micro">Following alpha</span><h3>Windows</h3><p>Bring the tested experience to Windows, with its own installation and release checks.</p></article>
@@ -103,8 +103,7 @@
         <ul class="roadmap-points"><li>Show each node’s required access, inputs, outputs and approval point before a run.</li><li>Extend existing connections only where their permissions and failure handling are clear.</li><li>Explore Buffer for reviewed social drafts; scheduling or posting would need its own tested permissions and human controls.</li></ul>
         <div class="roadmap-details"><details><summary>Is Buffer connected today?</summary><p>No. It is a candidate for future workflow integration, not a current ntndOS capability or an announced partnership.</p></details></div>
         <div class="roadmap-reading-slot" aria-label="Reading slot: article or paper to come">
-          <span class="roadmap-reading-rail" aria-hidden="true"></span>
-          <div class="roadmap-reading-socket"><span class="roadmap-reading-core" aria-hidden="true">+</span><div><span class="micro">Reading slot · open</span><strong>A closer look at this work</strong><span>Article or paper to come</span></div></div>
+          <div class="roadmap-reading-socket"><span class="roadmap-reading-core" aria-hidden="true">+</span><div><span class="micro">Reading slot · open</span><strong>Workflow integrations</strong><span>A future article or paper about the connections, permissions and design behind this work.</span></div></div>
         </div>
       </div>
     </article>
@@ -157,6 +156,19 @@
 </section>
 
 
+<section class="section shell roadmap-built" id="already-built" aria-labelledby="already-built-title">
+  <div class="section-head"><div><span class="eyebrow">The foundation today</span><h2 id="already-built-title">Already built<br>into ntndOS.</h2></div><p>A desktop workspace for people and AI agents, with company knowledge, conversations, workflows and human decisions in one place.</p></div>
+  <div class="roadmap-built-grid">
+    <article><span class="micro">01 / Agents</span><h3>A roster you can configure.</h3><p>Give an agent a role, instructions, a model and relevant company context. Choose the tools and connections it can reach.</p><details><summary>Inside the agent setup</summary><p>A name and portrait make the role recognizable; its configuration determines how it works. Instructions describe the job, methods describe how to approach it, and tool access defines what it can use. Agent memory and activity are separate from the shared company knowledge. You can inspect the role and adjust its setup rather than treating it as an anonymous chat window.</p><a class="inline-link" href="agents.html">Explore agents ↗︎</a></details></article>
+    <article><span class="micro">02 / Chatrooms</span><h3>People and agents in conversation.</h3><p>Matrix-native rooms bring people together across their ntnd instances. An agent joins the work within the access its company allows.</p><details><summary>Rooms, identity and passports</summary><p>Private rooms give a conversation a named home. Matrix identity verification helps establish who is behind an account. A passport gives an agent’s company a private introduction to review. Room membership, a current passport and permission to use an agent remain separate checks; joining a room does not open the whole company. Agent-to-agent work across companies remains a future direction.</p><a class="inline-link" href="chatrooms.html">Explore Chatrooms ↗︎</a></details></article>
+    <article><span class="micro">03 / Brain</span><h3>Company knowledge with context.</h3><p>Explore the company through its map and Files views: people, functions, knowledge, governance, commercial work, estate and the wider world.</p><details><summary>Sources, relationships and access</summary><p>The map shows how material belongs to the company, rather than presenting every document as an isolated search result. Files provides another route into that material. Documents, admitted facts and working methods have different purposes. What an agent can use depends on its access and model route, not simply on whether the material exists in the Brain.</p><a class="inline-link" href="company-brain.html">Explore the Brain ↗︎</a></details></article>
+    <article><span class="micro">04 / Workflows</span><h3>Connected steps you can inspect.</h3><p>Arrange work in a node graph, configure the steps and follow a run through the local engine.</p><details><summary>From a configured flow to a run</summary><p>A workflow connects model work, tools and decisions into a repeatable process. Its available actions depend on the tools and integrations you have configured. Runs expose activity and approval points rather than making consequential actions invisible. The next step is improving how a whole job moves through human review, revision and acceptance—not assuming a completed run is automatically a useful result.</p><a class="inline-link" href="product.html">See the workspace ↗︎</a></details></article>
+    <article><span class="micro">05 / Human work</span><h3>A place for the person in charge.</h3><p>Home, Work and Approvals bring tasks, pending decisions and agent activity into view.</p><details><summary>What needs your attention</summary><p>People are part of the company, not an exception to its automation. The workspace gives you routes to the work in progress, the requests waiting on you and the agent behind a task. You can review a proposed action and return to its record. Making questions, handoffs and revisions easier to handle is an alpha priority, building on these existing surfaces.</p><a class="inline-link" href="product.html">Explore human–AI work ↗︎</a></details></article>
+    <article><span class="micro">06 / Govern</span><h3>Authority you can review.</h3><p>Inspect requests before approving them. Keep one-time decisions separate from standing permissions, and withdraw access when it changes.</p><details><summary>Decisions and their boundaries</summary><p>Govern brings the proposed action, its scope and the decision record together. A one-time approval does not create permanent authority. Where a standing permission is supported, it has a defined scope rather than granting unrestricted freedom. Knowledge access, room membership and permission to act are different relationships. The app keeps those distinctions visible instead of reducing them to a single trust score.</p><a class="inline-link" href="govern.html">Explore Govern ↗︎</a></details></article>
+    <article><span class="micro">07 / Calendar</span><h3>Time belongs in the workspace.</h3><p>View calendar events alongside the company’s work, with a Google Calendar connection available for supported event actions.</p><details><summary>Events and connected calendars</summary><p>The Calendar provides a time-based view rather than asking you to reconstruct commitments from conversation alone. The current Google connection can mirror events and add new events you create. It is not a claim of complete edit/delete synchronization or reminder delivery. Further work on proposals and accepted commitments sits in the work-cycle priorities above.</p><a class="inline-link" href="technology.html#integrations">See integration scope ↗︎</a></details></article>
+    <article><span class="micro">08 / Models and tools</span><h3>Your machine. Your setup.</h3><p>Use a compatible local model through Ollama or a supported cloud provider with your own credentials. Connect services and configured MCP tools.</p><details><summary>What stays local, what connects</summary><p>The desktop app works with a local engine and local company state. A cloud-model request sends its included context to the provider you select; a connected service has its own data handling. Existing connections include GitHub, Slack, Gmail, Notion, Google Drive, Google Calendar and local Obsidian notes, each with a specific scope. For example, GitHub is read-only and Gmail prepares drafts. Connecting a service is not a promise that every action it offers is available.</p><a class="inline-link" href="technology.html">See models and connections ↗︎</a></details></article>
+  </div>
+</section>
 <section class="section shell roadmap-feedback"><div><h2>Bring a job worth doing.</h2><p>Tell us what you want your company’s agents to help with. Keep confidential information out of your access request; a clear description of the work is enough.</p></div><div><a class="button" href="apply.html">Request alpha access <span aria-hidden="true">↗︎</span></a><a class="inline-link" href="https://discord.gg/nv9TB74rcV" target="_blank" rel="noopener">Discuss the direction on Discord ↗︎</a></div></section>
 </main>
 <footer class="site-footer">
@@ -171,7 +183,7 @@
  <iframe class="guide-journey-frame" data-guide-frame data-src="assets/mockups/nova-journey/index.html?embed=1" title="Explore a simulated working session with Nova"></iframe>
 </dialog>
 <dialog id="image-dialog" class="image-dialog" aria-label="Expanded product screenshot"><button class="icon-button" data-image-close type="button" aria-label="Close screenshot">×</button><img alt="Expanded product screenshot" width="1500" height="944"><p></p></dialog>
-<script type="module" src="assets/experience/site.mjs?v=961fcee2"></script>
+<script type="module" src="assets/experience/site.mjs?v=f96e4795"></script>
 
 <script type="module" src="assets/experience/brain-reference-motion.mjs?v=fe393414"></script>
 
