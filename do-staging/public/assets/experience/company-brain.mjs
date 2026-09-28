@@ -1,3 +1,4 @@
+import {mobileTour} from './mobile-tour.mjs';
 const tour=document.querySelector('[data-brain-tour]');
 
 if(tour){
@@ -11,11 +12,13 @@ if(tour){
  const overlayCopy=overlay?.querySelector('[data-brain-tour-overlay-copy]');
  const theatre=tour.closest('.brain-tour-theatre');
  let activeStep='';
+ let syncMobile=()=>{};
  const activate=chapter=>{
   if(!chapter||chapter.dataset.brainTourStep===activeStep)return;
   activeStep=chapter.dataset.brainTourStep;
   tour.dataset.brainStep=activeStep;
   chapters.forEach(item=>item.setAttribute('aria-pressed',String(item===chapter)));
+  syncMobile();
   if(title)title.textContent=chapter.dataset.brainTourTitle||'';
   if(caption)caption.textContent=chapter.dataset.brainTourCaption||'';
   if(live)live.textContent=chapter.dataset.brainTourLive||'actual ntndOS product';
@@ -28,6 +31,7 @@ if(tour){
  };
  const syncToScroll=()=>{
   if(!theatre||!chapters.length)return;
+  if(window.innerWidth<=820)return;
   const bounds=theatre.getBoundingClientRect();
   const viewport=window.innerHeight||1;
   if(bounds.top>viewport*.52){activate(chapters[0]);return;}
@@ -40,6 +44,7 @@ if(tour){
   },{chapter:chapters[0],distance:Infinity});
   activate(current.chapter);
  };
+ syncMobile=mobileTour(tour,chapters,activate);
  chapters.forEach(chapter=>chapter.addEventListener('click',()=>activate(chapter)));
  window.addEventListener('scroll',syncToScroll,{passive:true});
  window.addEventListener('resize',syncToScroll,{passive:true});

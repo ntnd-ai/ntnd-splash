@@ -1,3 +1,4 @@
+import {mobileTour} from './mobile-tour.mjs';
 const tour=document.querySelector('[data-room-tour]');
 
 if(tour){
@@ -9,6 +10,7 @@ if(tour){
  const theatre=tour.closest('.chatrooms-tour-theatre');
  const chapterTrack=theatre?.querySelector('.chatrooms-tour-chapters');
  let activeStep='';
+ let syncMobile=()=>{};
 
  const activate=chapter=>{
   if(!chapter||chapter.dataset.roomTourStep===activeStep)return;
@@ -16,6 +18,7 @@ if(tour){
   tour.dataset.roomStep=activeStep;
   if(theatre)theatre.dataset.roomStep=activeStep;
   chapters.forEach(item=>item.setAttribute('aria-pressed',String(item===chapter)));
+  syncMobile();
   if(title)title.textContent=chapter.dataset.roomTourTitle||'';
   if(caption)caption.textContent=chapter.dataset.roomTourCaption||'';
   if(live)live.textContent=chapter.dataset.roomTourLive||'illustrative Chatrooms direction';
@@ -49,6 +52,7 @@ if(tour){
   }
  };
 
+ syncMobile=mobileTour(tour,chapters,activate);
  chapters.forEach(chapter=>chapter.addEventListener('click',()=>activate(chapter)));
  window.addEventListener('scroll',syncToScroll,{passive:true});
  window.addEventListener('resize',syncToScroll,{passive:true});

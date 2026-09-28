@@ -377,6 +377,34 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
 @media(max-height:850px) and (min-width:821px){.brain-tour-pin .brain-tour-heading{margin-bottom:20px}.brain-tour-pin .brain-tour-heading .eyebrow{margin-bottom:0}.brain-tour-pin .brain-tour-heading h2{margin-top:8px;font-size:clamp(2.5rem,4vw,3.5rem)}}
 @media(max-height:850px) and (min-width:821px){.brain-tour-overlay{right:20px;bottom:88px;width:min(320px,31vw);padding:17px 20px}.brain-tour-overlay[data-side="left"]{left:20px}}
 @media(max-width:820px){.brain-tour-theatre{padding-bottom:0}.brain-tour-theatre:after{display:none}.brain-tour-pin{position:relative;top:auto;display:block;height:auto}.brain-tour-pin .brain-tour-heading{display:block;width:100%;margin-bottom:40px}.brain-tour-pin .brain-tour-stage{height:auto}.brain-tour-overlay{display:none}.brain-tour-chapters{display:grid;grid-template-rows:none;gap:0;margin:28px 0 0;padding:0 0 74px}.brain-tour-chapter,.brain-tour-chapter:nth-child(n){display:flex;width:100%;height:auto;min-height:0;margin:0;padding:25px 0;border:0;border-top:1px solid #8d677642;opacity:1;visibility:visible;pointer-events:auto}}
+/* Narrow screens use manual chapters and flowing, readable Files panels. */
+@media(max-width:820px){
+ .brain-tour-theatre .brain-tour-heading h2 br{display:none}
+ .brain-tour-theatre .brain-tour-heading{margin-bottom:28px}
+ .brain-tour-theatre .brain-tour-stage .brain-tour-files{display:none;position:relative;inset:auto;transform:none;overflow:visible;transition:none}
+ .brain-tour-theatre .brain-tour-stage:is([data-brain-step="files"],[data-brain-step="routes"],[data-brain-step="teams"],[data-brain-step="scope"]) .brain-tour-image{display:none}
+ .brain-tour-theatre .brain-tour-stage:is([data-brain-step="files"],[data-brain-step="routes"],[data-brain-step="teams"],[data-brain-step="scope"]) .brain-tour-files{display:flex}
+ .brain-tour-theatre .brain-files-scenes{overflow:visible}
+ .brain-tour-theatre .brain-files-scene{display:none;position:relative;inset:auto;transform:none!important;transition:none}
+ .brain-tour-theatre [data-brain-step="files"] [data-files-scene="files"],
+ .brain-tour-theatre [data-brain-step="routes"] [data-files-scene="routes"],
+ .brain-tour-theatre [data-brain-step="teams"] [data-files-scene="teams"],
+ .brain-tour-theatre [data-brain-step="scope"] [data-files-scene="scope"]{display:block}
+ .brain-tour-theatre .brain-files-layout{grid-template-columns:1fr;height:auto}
+ .brain-tour-theatre .brain-files-tree{display:none}
+ .brain-tour-theatre .brain-files-list{padding:20px 16px;border-right:0}
+ .brain-tour-theatre .brain-files-list button strong{font-size:.85rem}
+ .brain-tour-theatre .brain-files-list button small{font-size:.72rem}
+ .brain-tour-theatre .brain-files-reading{display:block;padding:24px 18px;border-top:1px solid var(--line)}
+ .brain-tour-theatre .brain-files-reading h3{font-size:1.5rem}
+ .brain-tour-theatre .brain-files-reading p{font-size:.86rem}
+ .brain-tour-theatre .brain-files-reading .brain-files-meta{font-size:.7rem}
+ .brain-tour-theatre .brain-files-facts{display:grid}
+ .brain-tour-theatre .brain-files-facts span{font-size:.65rem}
+ .brain-tour-theatre .brain-files-facts b{font-size:.75rem;white-space:normal;overflow-wrap:anywhere}
+ .brain-tour-theatre .brain-tour-stage[data-brain-step="dimensions"] .brain-tour-image img{position:absolute;top:0;left:0;width:400%;max-width:none;height:auto;transform:none!important}
+ .brain-tour-theatre .brain-tour-stage[data-brain-step="relationships"] .brain-tour-image img{transform:scale(1.4);transform-origin:55% 50%}
+}
 
 /* Chatrooms: a Matrix-native room is shown as a product surface, rather than a chat screenshot. */
 .chatrooms-hero{position:relative;overflow:hidden;padding:154px 0 105px;background:radial-gradient(64% 106% at 95% 0,#82cbeb18,transparent 70%),radial-gradient(53% 90% at 5% 94%,#d5f45a12,transparent 66%),linear-gradient(155deg,#1d0b16 0%,#16070f 65%,#1c0d16 100%)}
@@ -491,6 +519,45 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
 .chatrooms-tour-stage[data-room-step="passport"] .chatrooms-tour-overlay,.chatrooms-tour-stage[data-room-step="permission"] .chatrooms-tour-overlay{display:none}
 @media(max-width:760px){.room-passport-paper .pp-cells{grid-template-columns:1fr}.matrix-ai-consent .mac-target,.matrix-ai-consent .mac-steps{grid-template-columns:1fr}}
 @media(max-width:560px){.room-paper-scene .room-passport-paper,.room-paper-scene .room-permission-paper{inset:10px auto auto 50%;width:calc(100% - 20px);max-height:calc(100% - 20px)}}
+
+/* On phones, read the selected app state in the page rather than inside a
+   clipped desktop canvas. Passport and permission keep the app's exact markup. */
+@media(max-width:820px){
+ .chatrooms-tour-theatre .chatrooms-tour-heading h2 br{display:none}
+ .chatrooms-tour-theatre .chatrooms-tour-heading{margin-bottom:28px}
+ .chatrooms-tour-stage .chatrooms-window,.chatrooms-tour-stage .chatrooms-scenes{min-height:0;overflow:visible}
+ .chatrooms-tour-stage .chatrooms-scene{display:none;position:relative;inset:auto;grid-template-columns:1fr;transform:none!important;transition:none}
+ .chatrooms-tour-stage[data-room-step="create"] [data-room-scene="create"],
+ .chatrooms-tour-stage[data-room-step="verify"] [data-room-scene="verify"],
+ .chatrooms-tour-stage[data-room-step="agent"] [data-room-scene="agent"],
+ .chatrooms-tour-stage[data-room-step="boundaries"] [data-room-scene="boundaries"],
+ .chatrooms-tour-stage[data-room-step="passport"] [data-room-scene="passport"],
+ .chatrooms-tour-stage[data-room-step="permission"] [data-room-scene="permission"]{display:grid;min-height:0}
+ .chatrooms-tour-stage .room-sidebar,.chatrooms-tour-stage .room-paper-context{display:none}
+ .chatrooms-tour-stage .room-verify,.chatrooms-tour-stage .room-agent-panel{display:block;padding:24px 18px;border-top:1px solid var(--line)}
+ .chatrooms-tour-stage .room-verify h4,.chatrooms-tour-stage .room-agent-panel h4{max-width:none;font-size:1.3rem}
+ .chatrooms-tour-stage .room-create,.chatrooms-tour-stage .room-members,.chatrooms-tour-stage .room-conversation,.chatrooms-tour-stage .room-boundaries{padding:24px 18px}
+ .chatrooms-tour-stage :is(.room-kicker,.room-field span,.room-create-footer,.room-agent-request>span){font-size:.68rem}
+ .chatrooms-tour-stage :is(.room-field b,.room-person strong,.room-message strong,.room-agent-request h4,.room-boundary-card span,.room-boundary-card b){font-size:.85rem}
+ .chatrooms-tour-stage :is(.room-person small,.room-message small,.room-boundary-card small){font-size:.72rem}
+ .chatrooms-tour-stage :is(.room-message p,.room-agent-request p,.room-verify p,.room-agent-panel p){font-size:.86rem}
+ .chatrooms-tour-stage :is(.room-create-footer button,.room-verify button,.room-agent-request button){min-height:40px;font-size:.75rem}
+ .chatrooms-tour-stage .room-message>div{max-width:100%}
+ .chatrooms-tour-stage .room-field{flex-wrap:wrap;gap:8px}
+ .chatrooms-tour-stage .room-field b{white-space:normal}
+ .chatrooms-tour-stage .room-create-footer{flex-wrap:wrap}
+ .chatrooms-tour-stage .room-paper-scene .room-passport-paper,
+ .chatrooms-tour-stage .room-paper-scene .room-permission-paper{position:relative;inset:auto;transform:none;width:calc(100% - 20px);max-height:none;overflow:visible;margin:10px;box-shadow:none}
+ .chatrooms-tour-stage[data-room-step="passport"] .chatrooms-scenes,
+ .chatrooms-tour-stage[data-room-step="permission"] .chatrooms-scenes{min-height:0}
+ .chatrooms-tour-stage .pp-top{flex-wrap:wrap;gap:10px;padding:16px}
+ .chatrooms-tour-stage .pp-cells{padding-inline:16px;grid-template-columns:1fr}
+ .chatrooms-tour-stage .pp-term{padding-inline:16px;overflow-wrap:anywhere}
+ .chatrooms-tour-stage .pp-sec.pp-decide{padding-inline:16px;flex-wrap:wrap}
+ .chatrooms-tour-stage .matrix-ai-consent .mac-main{padding:18px 16px}
+ .chatrooms-tour-stage .matrix-ai-consent .mac-target,
+ .chatrooms-tour-stage .matrix-ai-consent .mac-steps{grid-template-columns:1fr}
+}
 
 /* Profile-owned community callout. X and Discord are destinations, not a
    substitute for the email access lifecycle. */
@@ -648,6 +715,19 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
  .resource-feature-art{aspect-ratio:1.46}
 }
 @media print{.article-cover{max-width:650px;break-inside:avoid}.article-cover img{max-height:280px;object-fit:contain}.article-table{overflow:visible}.article-table table{min-width:0}.harness-flow,.article-table{break-inside:avoid}.article-toc{display:none}.article-layout{display:block}.article-body{max-width:none}}
+/* Mobile walkthrough controls are adjacent to the surface they change. */
+.mobile-tour-controls{display:none}
+@media(max-width:820px){
+ .mobile-tour-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 18px}
+ .mobile-tour-controls label{grid-column:1/-1;display:grid;gap:8px;color:var(--muted);font-size:.8rem}
+ .mobile-tour-controls select,.mobile-tour-controls button{min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#271522;color:var(--text);font:inherit}
+ .mobile-tour-controls select{width:100%;font-size:1rem}
+ .mobile-tour-controls button{font-size:.9rem;cursor:pointer}
+ .mobile-tour-controls button:disabled{opacity:.4;cursor:default}
+ .mobile-tour-controls :focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+ .has-mobile-tour .brain-tour-chapters,.has-mobile-tour .chatrooms-tour-chapters{display:none}
+ .has-mobile-tour{padding-bottom:64px}
+}
 
 .alpha-legal-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:42px}
 .alpha-legal-nav a{border:1px solid var(--line);border-radius:7px;padding:10px 16px;font-size:.9rem;text-decoration:none}
