@@ -13,7 +13,9 @@
   function showBanner(opener = null) {
     focusReturn = opener;
     banner.hidden = false;
-    banner.focus({ preventScroll: true });
+    // A notice appearing on page load should not steal focus or acquire the
+    // browser's dialog outline. Move focus only when someone reopens it.
+    if (opener) banner.focus({ preventScroll: true });
   }
 
   function gtag() { window.dataLayer.push(arguments); }
