@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "release": {
+    "id": "closed_alpha",
+    "version": 1,
+    "access": "invite_only"
+  },
+  "source": {
+    "commit": "0f79fe5488fb39c729efef3acdc4ae8eaa164253"
+  },
+  "config": {
+    "sha256": "cfbea65565b8a4b9af3e4f2401acb89842b9e2c1a65975eeadb109ace3f2d0f0"
+  },
+  "files": {
+    "404.html": {
+      "algorithm": "sha256",
+      "hash": "89975bd3eebdb0105af45f02df15539f53cf3dd6a917ca68f26af0496a9f2c2d"
+    },
+    "agents.html": {
+      "algorithm": "sha256",
+      "hash": "5d819ed3c14fc598a391c320ed384c2a4178447266b07db40001dc3815581019"
+    },
+    "alpha-access.html": {
+      "algorithm": "sha256",
+      "hash": "3312bc78b6fefbcad94963feefe59c3a10227f0bb2d6db0dcd15ac10e9d0f2dc"
+    },
+    "alpha-licence.html": {
+      "algorithm": "sha256",
+      "hash": "adc69c6466cc193713504e293b6d9f4debf99409613251000b2b15d2eea1bd0f"
+    },
+    "app-privacy.html": {
+      "algorithm": "sha256",
+      "hash": "d09e14c1ea43d80e9848848e856582f831bfd837a63def2af652899ce2419f6f"
+    },
+    "apply.html": {
+      "algorithm": "sha256",
+      "hash": "bb1e3a39fd4c4ea2c8ace2488f89df4ee312174b19061a2978b757e8384a9bf8"
+    },
+    "assets/app-agents-2026-09-08.jpg": {
+      "algorithm": "sha256",
+      "hash": "8cc616a665ee136e775c5b36d43c3c1869188f94ceaa8b761b8254f08d6a9dbe"
+    },
+    "assets/app-approvals-2026-09-08.jpg": {
+      "algorithm": "sha256",
+      "hash": "675e6af410c258616f6054c8bfcd07292aab6ba56f3976b7eda2a93be0aac48f"
+    },
+    "assets/app-approvals-dark.jpg": {
+      "algorithm": "sha256",
+      "hash": "344b68301e156b77264dc6984b918f8d37853563a2ac8f17ad3553373ad87fad"
+    },
+    "assets/app-approvals-light.jpg": {
+      "algorithm": "sha256",
+      "hash": "907238d0c12b668a62128a74cceb94bd5a5e33b45c05447d34fbcc8ce3bf2932"
+    },
+    "assets/app-company-brain-2026-09-11.png": {
+      "algorithm": "sha256",
+      "hash": "bb2d2f9e9b1470b205c76d85f7b3f54b4f35efd82e92d22b27179bfcc3c23b25"
+    },
+    "assets/app-company-brain-map-2026-09-11.jpg": {
+      "algorithm": "sha256",
+      "hash": "9d3c72cd3fde22a1167ff088e19b379fec6e4514fd84874fd5469bfeb3925e97"
+    },
+    "assets/app-company-brain-orbit-2026-09-11.png": {
+      "algorithm": "sha256",
+      "hash": "0ec0fa3e390a129b68a9092aece3991963b4e020e1db8819d3efa7172b0083b6"
+    },
+    "assets/app-flow-2026-09-08.jpg": {
+      "algorithm": "sha256",
+      "hash": "d49d1a6b746e765ca0acce27db9ce6776ae0596d1663acf888fe1c3f49a2975f"
+    },
+    "assets/app-flow-dark.jpg": {
+      "algorithm": "sha256",
+      "hash": "bcb2b913baadb2633694bb524bdc6b273bc313b468c906bf60f4be5991a14e69"
+    },
+    "assets/app-flow-light.jpg": {
+      "algorithm": "sha256",
+      "hash": "6a3df9138c6ed7be465e3ddc76e2fbb87b8374e44311c85b65dd2955575921ab"
+    },
+    "assets/app-govern-2026-09-08.jpg": {
+      "algorithm": "sha256",
+      "hash": "6412684cd959c9eb3e679461c06ddc0e1df27557cfea12147595e4f665da5333"
+    },
+    "assets/app-govern-dark.jpg": {
+      "algorithm": "sha256",
+      "hash": "a492f95323e5d966cf0aaf9eb8355268b5ee385e6e7d786a8fb700b42167e150"
+    },
+    "assets/app-govern-light.jpg": {
+      "algorithm": "sha256",
+      "hash": "d5187b763e6b998030a839af34bb163236ac183832d94b900960c89b7b4e10f1"
+    },
+    "assets/app-home-2026-09-08.jpg": {
+      "algorithm": "sha256",
+      "hash": "06e613dc4e6b1a390065f52f5b4d9ca9e2721eafdc1ad0259c4fc7efb7086f23"
+    },
+    "assets/app-home-dark.jpg": {
+      "algorithm": "sha256",
+      "hash": "3231e2567a6ea77d266b241083eb22d2d4b2641e828767d28c6073e9e5acee8b"
+    },
+    "assets/app-map-2026-09-08.jpg": {
+      "algorithm": "sha256",
+      "hash": "997a500a172b8853c922b0ccafeea7518af4f007102a79ee81c8f54425cd50b9"
+    },
+    "assets/apple-touch-icon.png": {
+      "algorithm": "sha256",
+      "hash": "4e13b9fe5d3a4324dcdbab0d5383f59e3dc198069e87dc0fca656825f4a4b222"
+    },
+    "assets/atlas-estate-embed.jpg": {
+      "algorithm": "sha256",
+      "hash": "befeac757caa4e8b671691f4e2c6f867be1f0ced544d34f2ca78ae6fba07f4e7"
+    },
+    "assets/atlas-floor-knowledge.jpg": {
+      "algorithm": "sha256",
+      "hash": "f1bcf84f82c1a7bd24144d02f2473bd621e0d8118bfcadde51f9ce1b6b3016b7"
+    },
+    "assets/atlas-stacked.jpg": {
+      "algorithm": "sha256",
+      "hash": "0807d0c1376a0f3bdb4cecf6ce755ae2d376e00fb099bbff8a7656a8b7ea9bc9"
+    },
+    "assets/atlas-vera-anatomy.jpg": {
+      "algorithm": "sha256",
+      "hash": "b8fb4ef24653b015e20a7badadd66872b6bd1f80ace5074896b4226fbcaf47f4"
+    },
+    "assets/brand/Comfortaa-OFL.txt": {
+      "algorithm": "sha256",
+      "hash": "bc85bae0b512b799bbfb2b916e4d0a34cfd963d09778cd783e248b479e67760a"
+    },
+    "assets/brand/comfortaa-master.svg": {
+      "algorithm": "sha256",
+      "hash": "c2baa163bf605c4e7037d5a360c5a30de05740710f20c24649a73386f8551f4a"
+    },
+    "assets/brand/logo-dark-animated.svg": {
+      "algorithm": "sha256",
+      "hash": "534b1ec82a71c2487ba479fcd654f1d1c49296f98f073c13abf429e8e30a7d04"
+    },
+    "assets/brand/logo-dark.svg": {
+      "algorithm": "sha256",
+      "hash": "9dea87ff08332a962064fd5612b0db8cde67eaeb1396033611da4d7382ee0e9d"
+    },
+    "assets/brand/logo-light-animated.svg": {
+      "algorithm": "sha256",
+      "hash": "e58bcca4b7ba36597bbde625884faeec7defd57b8531a6fe1863b4f027f61579"
+    },
+    "assets/brand/logo-light.svg": {
+      "algorithm": "sha256",
+      "hash": "930697937f1b09cb037018f22d187a3dc88f6f2695e599c013d20fa90dd65272"
+    },
+    "assets/brand/logo.css": {
+      "algorithm": "sha256",
+      "hash": "27bbbf41142c9dcb4eb955ba8d0c41a9c46c3d9df2160398b100c2b8486b6ea0"
+    },
+    "assets/brand/logo.svg": {
+      "algorithm": "sha256",
+      "hash": "de2dd38ae2f3f2ea53d6dfc58ee19f87a4e129823f5c8001889c273cc5674c80"
+    },
+    "assets/experience/analytics-consent.js": {
+      "algorithm": "sha256",
+      "hash": "dd9deee06f036be89127444aa70be8a97d5ff6c3496dafad2472a3b36b096d03"
+    },
+    "assets/experience/atlas-data.mjs": {
+      "algorithm": "sha256",
+      "hash": "d8e6f64597f4c1f89b56407f2e4bf2466b12a308166faa7f935be6c5b4257bc1"
+    },
+    "assets/experience/atlas.mjs": {
+      "algorithm": "sha256",
+      "hash": "cdbbb774a1304603ef02432a08c9d724081536e8d1a70391e20bccb0e10800f3"
+    },
+    "assets/experience/brain-motion.mp4": {
+      "algorithm": "sha256",
+      "hash": "3b88fc3e2daa7bd4a4c554104e16239fbbab4cffca8a432407ff2d5ec7ebe34b"
+    },
+    "assets/experience/brain-poster.png": {
+      "algorithm": "sha256",
+      "hash": "ecb0c36e3e7b7b2b4b050619cb81669ac8bfaf7c7ef42c7bbc9bba9f6430f6b5"
+    },
+    "assets/experience/brain-reference-mobile.jpg": {
+      "algorithm": "sha256",
+      "hash": "385e759206c95ecd6914450c19a5c718883b0352b70b433250aee422710bd190"
+    },
+    "assets/experience/brain-reference-motion.mjs": {
+      "algorithm": "sha256",
+      "hash": "f0f32c618170bcea7bd0a23cee9556e16babccf878dca2a3910c99d43e0e6213"
+    },
+    "assets/experience/brain-reference-silhouette.svg": {
+      "algorithm": "sha256",
+      "hash": "a3c88b87b827e7a1aeb0ee9b77b852d56f407e20e6ea782fbc27940a6f2ed4ac"
+    },
+    "assets/experience/brain-reference.css": {
+      "algorithm": "sha256",
+      "hash": "b42031a02eb7daee495ef7197d49d6f0b2a680326754f43cefc7c8b59288893d"
+    },
+    "assets/experience/brain-reference.jpg": {
+      "algorithm": "sha256",
+      "hash": "692899ccefa9931b35000428b3a5ec52bb9c4c1bf1454e8dca8bb456af2dc186"
+    },
+    "assets/experience/brain-sculpture.glb": {
+      "algorithm": "sha256",
+      "hash": "1086f75a665561e1bdb263531037a6b9a4ef83e35cfa7dfd088ddf003d0ef7ca"
+    },
+    "assets/experience/chatrooms.mjs": {
+      "algorithm": "sha256",
+      "hash": "a629d3603fe2f8980b2f5882e0679ee3e32cd77266aa3ebefa9274f1676fccd4"
+    },
+    "assets/experience/company-brain.mjs": {
+      "algorithm": "sha256",
+      "hash": "8df064a6d7a01b1d4b3f65f000a36d43e3fdba6667c829b1df6b2f4faafcaf8e"
+    },
+    "assets/experience/company-people-functions.svg": {
+      "algorithm": "sha256",
+      "hash": "6d6f0bd0c5a4c3afe3e1e75593ed64ace96c2f6826c55641bfb973eb1152df40"
+    },
+    "assets/experience/contact-preferences.mjs": {
+      "algorithm": "sha256",
+      "hash": "dd60f26ab4c0771ae6d7b41293cd6b473039d66ef0b37da496c6366905ce1fab"
+    },
+    "assets/experience/context-loop.mjs": {
+      "algorithm": "sha256",
+      "hash": "2e5ab39e3085453414d827de9ab9f99681a9ebaf01ab00bdab5f928250e14324"
+    },
+    "assets/experience/flow.png": {
+      "algorithm": "sha256",
+      "hash": "2e7d5041b762f805414c841e0636aed9bdcf85a36913e7cf766b0ba315ff2a37"
+    },
+    "assets/experience/matrix-logo-white.png": {
+      "algorithm": "sha256",
+      "hash": "2fcb59b19cf1dbe74365ec30127f42edb7ad55782cf6f30d8dc85b94ee3a434f"
+    },
+    "assets/experience/nova-guide.png": {
+      "algorithm": "sha256",
+      "hash": "5b4d31ca6160da46fbde39cbe495d100c58d49e2fdbf5dee55173999690f172e"
+    },
+    "assets/experience/security-optimized.jpg": {
+      "algorithm": "sha256",
+      "hash": "cb396d393c2070615da105e0f58397498da5f2b273f5e66b31330b3ab3922cc9"
+    },
+    "assets/experience/security.png": {
+      "algorithm": "sha256",
+      "hash": "e58c0851a8a012f5ae59e383a6a9e037a5bf1c019cb11f03c8bb9f8c784ac604"
+    },
+    "assets/experience/site.mjs": {
+      "algorithm": "sha256",
+      "hash": "c9167d509a4acbad82538c6ea501725b5030c75f952ab31cf6f9e0ad88fbe854"
+    },
+    "assets/experience/state.mjs": {
+      "algorithm": "sha256",
+      "hash": "a9155815d55dc7ff32d204921640adf42fce1c4976ee8bf878fd4eb296c9c2d3"
+    },
+    "assets/experience/surface.png": {
+      "algorithm": "sha256",
+      "hash": "8d5803327f4e383ead7ebc0f3f6f1e26e7dbfee3306be49d08e25252ef05a9fb"
+    },
+    "assets/experience/verification.mjs": {
+      "algorithm": "sha256",
+      "hash": "d405d89aa04ce0476a48ff898edc30bdc73474fc5797f91dcee6feda85357aac"
+    },
+    "assets/experience/vision-company-model.png": {
+      "algorithm": "sha256",
+      "hash": "54be314c0efa438af4d66a87cdf2bad93ee5a4a7edc58615124aca8c9aff2262"
+    },
+    "assets/favicon.svg": {
+      "algorithm": "sha256",
+      "hash": "d0f90643ef53acf6766bdefb82b647bbd8765e836471d434497a8b828cd574cc"
+    },
+    "assets/fonts/OFL.txt": {
+      "algorithm": "sha256",
+      "hash": "8073cbd760d6a6485271ce8b803777ece85dca8461453a789991bc364d94f642"
+    },
+    "assets/fonts/jetbrains-mono.woff2": {
+      "algorithm": "sha256",
+      "hash": "2c32b9b3ee358c119e210f6f5195f9bd34894d78a785ff2e95d60e718e400af4"
+    },
+    "assets/fonts/oswald.woff2": {
+      "algorithm": "sha256",
+      "hash": "9dde3797547520f762f4ba3a822d417a0872b962bc78753a7ee9f955382b6b85"
+    },
+    "assets/fonts/space-grotesk.woff2": {
+      "algorithm": "sha256",
+      "hash": "a0d054c4af557de20afd6ca59f47ab353bcaec49c63ff04b6c9d39d0f8910557"
+    },
+    "assets/mockups/nova-journey/README.md": {
+      "algorithm": "sha256",
+      "hash": "3840f3bee5c5c7d7722ba36ff2392460f0846f91ef2412cbd6d3ef751eaf51ae"
+    },
+    "assets/mockups/nova-journey/index.html": {
+      "algorithm": "sha256",
+      "hash": "81f910df4ed13de9df105d24ac92e324f466c1bd3b35444682488c21b602a075"
+    },
+    "assets/mockups/nova-journey/mockup.css": {
+      "algorithm": "sha256",
+      "hash": "49655d08598f8cbc844e9467812af98b21f985f67679ebb1c7aa288f368f6e5e"
+    },
+    "assets/mockups/nova-journey/mockup.mjs": {
+      "algorithm": "sha256",
+      "hash": "aea5532b61007508bcc1397a2550737d4d3f6a348450b91205e408a9085e60d6"
+    },
+    "assets/og.png": {
+      "algorithm": "sha256",
+      "hash": "6e810c106b73e35d7597c2453976a77353f026b03e592ba647fa61603faa77ce"
+    },
+    "assets/team/alessandro-spano-studio-v3-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "934025ec8024407101ef2e80e5ab8519d03288f66dce8a4541d1a053a903916d"
+    },
+    "assets/team/amaury-dalleur-studio-v2-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "e0b687d0151e1c7449d3acc7e1e607b2fc67ef511f07cfa17577a4f71a1f1bae"
+    },
+    "assets/team/ava-research-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "9d81100fab1d535fe1bafee78e947224c2149518cbe894164ea1a1297e60e1eb"
+    },
+    "assets/team/ava-research-thumb.jpg": {
+      "algorithm": "sha256",
+      "hash": "138a65c5325ef06c66cb66947b9984eb93b3a856749729634d6e687b6b051eb8"
+    },
+    "assets/team/devon-developer-relations-halo-wide-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "be476a494f8457d51d1be19290b85c02fc624111e85632ed74571dfb362d38c0"
+    },
+    "assets/team/ibby-benali-studio-v2-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "ae26a68ea63396813e5d914b057edc8ff5f4df4947d07989321e805f65f38cc1"
+    },
+    "assets/team/ibby-benali-studio-v4-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "db85398a63237a046e4540a328d31b7bb271cf7b6b761a0ccede5ef8b8496e60"
+    },
+    "assets/team/mario-casiraghi-warm-background-v5-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "690d5d4309f2e7fdab1e50446d7af82da899423ce421a23b564dd9621d4dbda7"
+    },
+    "assets/team/nova-roster-preview-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "55b3299463c4242362f1324c0ddca2301b0d1e10461d138ab45b268d195fee68"
+    },
+    "assets/team/nova-roster-thumb.jpg": {
+      "algorithm": "sha256",
+      "hash": "bb6094fbb802703799d3fcff1edfa98c1c5a267b2b22c2b47a22cd6ca75ad6d3"
+    },
+    "assets/team/vera-cmo-gold-lotus-card.jpg": {
+      "algorithm": "sha256",
+      "hash": "012d6c3319afd955fa9c1272cadbb5bd45e7a484442e3f8ab5c074aa288996d0"
+    },
+    "assets/team/vera-cmo-thumb.jpg": {
+      "algorithm": "sha256",
+      "hash": "f8402ff35d41510f7784c70c48c2baa93655eb70ade5af06c9b2a9555bf2ef7c"
+    },
+    "assets/vendor/model-viewer-LICENSE.txt": {
+      "algorithm": "sha256",
+      "hash": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "assets/vendor/model-viewer.min.js": {
+      "algorithm": "sha256",
+      "hash": "283b0672384614b4847636c306fc93fe4b1fcadc76d668b4e47f0ca76bcf033b"
+    },
+    "atlas.html": {
+      "algorithm": "sha256",
+      "hash": "f9355fa30438dba1d88d2934fd0beed21b26f59bde1e48cc796835fe0975550b"
+    },
+    "brain.html": {
+      "algorithm": "sha256",
+      "hash": "af4469af4c873e306daff9815f095ee143a70695adbe7cbbc15bc8c16e990b27"
+    },
+    "chatrooms.html": {
+      "algorithm": "sha256",
+      "hash": "e80928eb437009a4b69324b0ce64772b2cd11efb56952e4f384a3db919eb0290"
+    },
+    "company-brain.html": {
+      "algorithm": "sha256",
+      "hash": "ab37067c850df28d513eb921f9d36d09117222d63b5f28b8952fa768a415e852"
+    },
+    "company.html": {
+      "algorithm": "sha256",
+      "hash": "99fcceae0eca8984d4adadd3ce92e816cca949fed59760e1f655aece781bf6a0"
+    },
+    "contact.html": {
+      "algorithm": "sha256",
+      "hash": "5a769e769a2836b589f6e9bd5ba2801dcc740bf17a54f7266d4b99b371a622bb"
+    },
+    "download.html": {
+      "algorithm": "sha256",
+      "hash": "edd4dca8aa2114d42ed754525e4ccd0faa7bb4ed9f9254de99473ad869a699ac"
+    },
+    "govern.html": {
+      "algorithm": "sha256",
+      "hash": "3d9199bac204ef561f5376d2205f0a4ea95439566dd9289662e611848a05e69e"
+    },
+    "index.html": {
+      "algorithm": "sha256",
+      "hash": "b760312052e38c07390ce0fb2f41009edcceb406d35fbdedd9dc22855dd45e79"
+    },
+    "legal.html": {
+      "algorithm": "sha256",
+      "hash": "c9235207d3d623773222a3a7f7432d37436e496db6221be2100046a4f08eb39b"
+    },
+    "partners.html": {
+      "algorithm": "sha256",
+      "hash": "16ac9204daf5de4ceed56d9056a5106b1361b1f3f926296e7cafc5e170b6aaa6"
+    },
+    "privacy.html": {
+      "algorithm": "sha256",
+      "hash": "9a64a650f5515118d605330f897e4e1232eb2d535d0c649195a149d61a5302c4"
+    },
+    "product.html": {
+      "algorithm": "sha256",
+      "hash": "9386d4874e4a8ab93abb85fad545569925f1295214d21525922eb2cb34798471"
+    },
+    "roadmap.html": {
+      "algorithm": "sha256",
+      "hash": "ed068163460c15bb4266a2b23afe047eaf241c41fe77185c72428e3ee86d6b15"
+    },
+    "robots.txt": {
+      "algorithm": "sha256",
+      "hash": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    "site.css": {
+      "algorithm": "sha256",
+      "hash": "efa6b0dbb743426c1fa75b119e4de191ab22ad48fa07b70cc5355c68249a3f94"
+    },
+    "sitemap.xml": {
+      "algorithm": "sha256",
+      "hash": "a3acf5dea7133d014613d79313ae5dbf0ff7f5c5531d5d81b971f34d52aadec3"
+    },
+    "start.html": {
+      "algorithm": "sha256",
+      "hash": "aacadd570e9215ce5511310f5f4d92212810321728044bdfb5780b317adde61c"
+    },
+    "technology.html": {
+      "algorithm": "sha256",
+      "hash": "794ed6ea4918261a4dae04efc67bdd3647179d8771914542a701dcbfd64a7c98"
+    },
+    "terms.html": {
+      "algorithm": "sha256",
+      "hash": "4aa59cb86afdd9602d6020b929fc2d9cf411d38712bd6afb18d63999abb426d5"
+    },
+    "unsubscribe.html": {
+      "algorithm": "sha256",
+      "hash": "714c1e9145f42003bd060ab6ee0778da33068aa1e8be240607c74f185da2d818"
+    },
+    "verify-email.html": {
+      "algorithm": "sha256",
+      "hash": "9ecfbe12fda510adff17ea7e9b6bbcbfd685faed9d0fceaed761d211e94b6440"
+    },
+    "vision.html": {
+      "algorithm": "sha256",
+      "hash": "d0f833f701a59da70486908cf785c4ad20bb64a55eaec9dd1ad2876330a09062"
+    }
+  }
+}

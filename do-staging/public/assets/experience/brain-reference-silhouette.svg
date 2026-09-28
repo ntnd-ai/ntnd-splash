@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <!-- Browser alpha mask, hand traced in the unchanged reference image coordinates.
+       Outside the sculpture and nerve threads is fully transparent, not a vignette. -->
+  <defs>
+    <filter id="soft-edge" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="nerve-edge" x="-10%" y="-40%" width="120%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <linearGradient id="nerve-fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset="0.16" stop-color="white" stop-opacity="0.7"/>
+      <stop offset="0.3" stop-color="white"/>
+    </linearGradient>
+  </defs>
+  <path fill="white" stroke="white" stroke-width="10" stroke-linejoin="round" filter="url(#soft-edge)" d="
+    M 607 149
+    C 601 127 590 107 561 101
+    C 531 94 502 99 469 110
+    C 443 119 425 126 405 128
+    C 369 135 339 155 314 185
+    C 280 196 256 215 235 242
+    C 207 258 191 289 183 322
+    C 158 346 139 378 125 416
+    C 113 441 108 462 107 482
+    L 109 507
+    C 91 532 81 558 81 593
+    C 80 627 88 661 102 687
+    C 99 708 107 737 126 759
+    C 136 784 158 804 183 814
+    C 199 838 215 850 241 851
+    C 253 850 268 842 276 843
+    C 299 857 315 853 334 845
+    C 340 879 356 909 382 930
+    C 413 958 451 971 480 971
+    C 511 986 539 1003 573 989
+    C 589 995 602 1004 611 1025
+    L 614 1092
+    C 614 1116 630 1132 642 1135
+    C 660 1139 675 1126 681 1098
+    L 694 1049
+    C 699 1032 704 1025 705 1014
+    C 731 1048 765 1049 805 1035
+    C 850 1027 889 1003 927 986
+    C 969 981 1007 964 1027 934
+    C 1072 939 1087 926 1105 899
+    C 1133 877 1145 854 1153 830
+    C 1170 809 1183 764 1187 719
+    C 1199 682 1193 645 1184 610
+    C 1182 607 1165 544 1147 502
+    C 1137 470 1137 436 1120 408
+    C 1102 385 1087 361 1063 341
+    C 1051 311 1039 286 1014 265
+    C 1000 239 982 225 960 216
+    C 942 200 922 197 910 195
+    C 877 167 850 154 817 147
+    C 794 129 772 114 743 106
+    C 709 96 678 96 649 101
+    C 629 109 615 131 607 149 Z"/>
+  <g fill="none" stroke="url(#nerve-fade)" stroke-width="23" stroke-linecap="round" filter="url(#nerve-edge)">
+    <path d="M 630 913 C 650 1000 578 1047 448 1081 C 297 1120 143 1126 2 1115"/>
+    <path d="M 640 913 C 668 1019 596 1092 444 1127 C 282 1165 131 1152 2 1126"/>
+    <path d="M 625 914 C 646 984 569 1040 438 1070 C 289 1104 192 1088 18 1084"/>
+  </g>
+</svg>
