@@ -718,7 +718,7 @@ html.motion-paused *,html.motion-paused *:before,html.motion-paused *:after{anim
 /* Mobile walkthrough controls are adjacent to the surface they change. */
 .mobile-tour-controls{display:none}
 @media(max-width:820px){
- .mobile-tour-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 18px}
+ .mobile-tour-controls{position:sticky;top:8px;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 18px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#1c0d18f5;box-shadow:0 8px 24px #0005;backdrop-filter:blur(12px)}
  .mobile-tour-controls label{grid-column:1/-1;display:grid;gap:8px;color:var(--muted);font-size:.8rem}
  .mobile-tour-controls select,.mobile-tour-controls button{min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#271522;color:var(--text);font:inherit}
  .mobile-tour-controls select{width:100%;font-size:1rem}
