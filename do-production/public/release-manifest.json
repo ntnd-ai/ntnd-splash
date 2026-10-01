@@ -26,15 +26,15 @@
     },
     "alpha-access.html": {
       "algorithm": "sha256",
-      "hash": "351ebd38bd0ef504142fcee11dd7062856785b2ec14baf2548d86d4655911022"
+      "hash": "cac03e608f9612f331c1285f539532d01aa83b31e8cc51223465ded89c261a51"
     },
     "alpha-licence.html": {
       "algorithm": "sha256",
-      "hash": "624b4ea6430eebb111ef59af9b67a5196e104091f78378d44bad7ffd00259001"
+      "hash": "ee930131e9a05c0605d487d1072c56368b4cd7bbe2b52cd1a1086df683bbf19b"
     },
     "app-privacy.html": {
       "algorithm": "sha256",
-      "hash": "3677d7fab78036f6a908d55b2bb67c4027c53cc5c6a7669e5f9f8e6733eec4bd"
+      "hash": "78762f106504349deb83c827c122d07abfcb7c35a439314c5bc479eed5bf780a"
     },
     "apply.html": {
       "algorithm": "sha256",
@@ -406,7 +406,7 @@
     },
     "privacy.html": {
       "algorithm": "sha256",
-      "hash": "b337be83255b49791948aa53180edba5ecdd3dc18412ab7044c9a05d1c8ebb84"
+      "hash": "135a167b3b8f3541c479b8a9f4922d2ff9a6429ff2df8454f7dc101841f049c2"
     },
     "product.html": {
       "algorithm": "sha256",
@@ -438,7 +438,7 @@
     },
     "terms.html": {
       "algorithm": "sha256",
-      "hash": "31b3764cf25febbe9e46439e0b5d5df5217979acc8f8ec27f7597de800fce436"
+      "hash": "465b2d6703c0e5ce6c3460749712f1a7c9bcf43c9d0cda93f17665a89cfd28e1"
     },
     "unsubscribe.html": {
       "algorithm": "sha256",
