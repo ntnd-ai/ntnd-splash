@@ -246,7 +246,7 @@
     },
     "assets/experience/site.mjs": {
       "algorithm": "sha256",
-      "hash": "126cb2c30584c8c367aaaa9cfcde849dab221f419fffc18984796f1225cef6ef"
+      "hash": "3071a13271c32d17f51de901041252be83fd77f0ed28c364b71b306ad5bdc7b2"
     },
     "assets/experience/state.mjs": {
       "algorithm": "sha256",
@@ -370,7 +370,7 @@
     },
     "chatrooms.html": {
       "algorithm": "sha256",
-      "hash": "91a66e00057236de68586d6801fbd0eda41883841110f4170bbcf3b9285f7ec7"
+      "hash": "f5f3dfc8ffac8988f28f6c8b26d1f9417c73612d7648e96dce8d7eab921a0d4e"
     },
     "company-brain.html": {
       "algorithm": "sha256",
