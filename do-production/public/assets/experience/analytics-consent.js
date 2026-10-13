@@ -13,8 +13,6 @@
   function showBanner(opener = null) {
     focusReturn = opener;
     banner.hidden = false;
-    // A notice appearing on page load should not steal focus or acquire the
-    // browser's dialog outline. Move focus only when someone reopens it.
     if (opener) banner.focus({ preventScroll: true });
   }
 
@@ -28,7 +26,6 @@
     loaded = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = gtag;
-    // Basic Consent Mode: no Google script or request exists before this point.
     gtag('consent', 'default', {
       ad_storage: 'denied', ad_user_data: 'denied',
       ad_personalization: 'denied', analytics_storage: 'denied',
@@ -69,8 +66,6 @@
       window['ga-disable-' + id] = true;
       if (loaded) window.gtag('consent', 'update', { analytics_storage: 'denied' });
       clearAnalyticsCookies();
-      // Remove an already loaded Google script from the active document. The
-      // saved refusal prevents it loading again on this or later pages.
       if (loaded) location.reload();
     }
   }

@@ -1,5 +1,3 @@
-// A single intact image plane; light routes are traced in its 1254px coordinates.
-// No depth reconstruction, mesh deformation, or independently moving jewels.
 const root = document.querySelector('[data-brain-reference]');
 
 if (root) {
@@ -11,19 +9,13 @@ if (root) {
   const hero = root.closest('.hero-orbit');
   const size = 1254;
   const routes = [
-    // All three trailing nerves meet the visible central socket, not empty space.
     {d:'M 631 914 C 646 997 578 1047 448 1081 C 297 1120 143 1126 18 1115', delay:0, period:10.4, power:0.9},
     {d:'M 638 913 C 668 1019 596 1092 444 1127 C 282 1165 131 1152 17 1126', delay:0.65, period:10.4, power:0.82},
     {d:'M 625 914 C 646 984 569 1040 438 1070 C 289 1104 192 1088 69 1084', delay:1.3, period:10.4, power:0.62},
-    // Inner fissure: the socket joins the continuous metal-lined central channel.
     {d:'M 632 912 C 626 866 578 861 562 813 C 546 755 533 681 533 613 C 532 550 528 489 536 424 C 544 355 552 294 573 232 C 584 197 602 161 632 133', delay:0.3, period:9.7, power:0.65},
-    // Left inferior fold, then up the narrow wiring channel inside the gold rim.
     {d:'M 626 907 C 595 876 575 858 548 833 C 522 810 505 795 477 795 C 408 797 359 775 302 766 C 257 758 228 758 208 736 C 174 700 152 660 143 617 C 129 566 130 525 143 487 C 157 452 169 423 192 395', delay:1.8, period:11.8, power:0.54},
-    // Right gold fold: continuous, curved, recessed channels between gold and stones.
     {d:'M 644 913 C 661 866 689 823 717 792 C 742 765 765 727 802 706 C 841 684 892 693 933 672 C 961 657 961 619 964 588 C 966 548 978 517 981 484 C 986 452 969 416 944 396 C 912 370 900 345 896 317 C 890 286 879 267 855 252 C 827 237 801 241 776 229', delay:2.6, period:12.4, power:0.64},
-    // Fine wiring above the right cerebellum follows the existing bundled nerves.
     {d:'M 653 914 C 692 888 729 874 776 856 C 828 837 874 832 916 816 C 961 802 1005 782 1046 774 C 1083 766 1114 746 1133 720', delay:3.7, period:10.8, power:0.48},
-    // Small branch at the left gem bed, kept in the rim instead of crossing facets.
     {d:'M 476 794 C 495 781 504 759 503 736 C 503 715 491 703 482 687 C 471 665 470 641 478 618 C 491 583 504 552 509 517', delay:4.7, period:11.8, power:0.40},
   ].map(route => {
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -60,7 +52,6 @@ if (root) {
   function paint(time, moving = true) {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // In reduced-motion mode the unaltered artwork supplies the static light.
     if (!moving) return;
     ctx.setTransform(scale, 0, 0, scale, 0, 0);
     ctx.globalCompositeOperation = 'lighter';
@@ -71,7 +62,6 @@ if (root) {
       const envelope = Math.min(1, progress * 10, (1 - progress) * 9) * route.power;
       const last = Math.floor(progress * (route.points.length - 1));
       const trail = Math.max(10, Math.round(95 / route.length * route.points.length));
-      // A soft reflection spreads a few pixels into the adjacent polished gold.
       ctx.beginPath();
       route.points.slice(Math.max(0, last - trail), last + 1).forEach(([px, py], i) => i ? ctx.lineTo(px, py) : ctx.moveTo(px, py));
       ctx.strokeStyle = `rgba(196,255,40,${0.13 * envelope})`;
@@ -94,7 +84,6 @@ if (root) {
       ctx.fillStyle = `rgba(248,255,199,${0.78 * envelope})`;
       ctx.fill();
     }
-    // Slow breathing in the actual nerve socket, with no flashing or random sparks.
     const breath = 0.5 + 0.5 * Math.sin(time * Math.PI * 2 / 6.8);
     glow(636, 928, 39, 0.11 + breath * 0.12);
     glow(631, 965, 20, 0.05 + breath * 0.09);

@@ -1,5 +1,3 @@
-// Keep chapter selection and its preview together on narrow screens. The desktop
-// scroll theatre and the original chapter buttons remain the no-JS fallback.
 export function mobileTour(tour,chapters,activate){
  const controls=document.createElement('div');
  controls.className='mobile-tour-controls';
@@ -30,8 +28,6 @@ export function mobileTour(tour,chapters,activate){
  const choose=index=>{
   const wasPinned=controls.getBoundingClientRect().top<=12;
   activate(chapters[index]);sync();
-  // A long panel may leave us halfway down the next, shorter one. Return to
-  // its start while keeping the controls in the same pinned position.
   if(wasPinned&&window.innerWidth<=820){
    window.scrollTo({top:anchor.getBoundingClientRect().top+window.scrollY-8,behavior:'instant'});
   }

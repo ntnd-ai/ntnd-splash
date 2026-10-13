@@ -1,4 +1,3 @@
-// Public explanatory content shared by the interactive and text maps.
 export const atlasLayers=[
  {title:'Local foundation',description:'The local engine and separate stores hold company knowledge and operational state.',connection:'Supports every layer above it.',link:'technology.html',cta:'Explore the technology',color:'#a9cde9',nodes:['Knowledge store','Operational state','Local engine']},
  {title:'Tools & models',description:'Configured tools and a model give an agent ways to work. Their capabilities and authority remain distinct.',connection:'Used by agents through conversations and workflows.',link:'technology.html#models',cta:'Explore models and tools',color:'#d5f45a',nodes:['Local models','Cloud providers','Connected tools']},

@@ -1,4 +1,3 @@
-// Standalone, authored interaction study. No network calls, storage, or app mutations.
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const jobs = {

@@ -1,4 +1,3 @@
-// Selected original Silk surface. Public illustration only; no connection to the local core.
 const root = document.querySelector('[data-context-journey]');
 const canvas = root.querySelector('canvas'), ctx = canvas.getContext('2d');
 const buttons = [...root.querySelectorAll('[data-context-floor]')];
@@ -25,7 +24,6 @@ const edgeStars=[[.06,.12],[.23,.05],[.45,.08],[.69,.04],[.88,.1],[.96,.24],[.94
 const starExclusion=Array.from({length:96},(_,i)=>point(i%12/12*T,Math.floor(i/12)/8*T));
 const backdrop=document.createElement('canvas'), back=backdrop.getContext('2d');
 let w=1,h=1,dpr=1,progress=reduced.matches?1:0,target=progress,selected=-1,time=0;
-// Prefer crisp high-density rendering; reduce only after sustained expensive frames.
 const pixelBudgets=[4000000,2500000,1500000];
 let qualityTier=0,renderSamples=0,renderTotal=0;
 let hovered=-1,zoom=1,focusY=0,userYaw=0,userPitch=0,panX=0,panY=0;
@@ -54,8 +52,6 @@ function drawEdgeStars(project){
 }
 function drawDimensionConnectors(project){
  if(progress<.9||w<=720)return;
- // Align the selector's Governance row to the resting plane center by moving
- // only the selector. Its title and expanded descriptions affect row positions.
  const nav=dimensions.getBoundingClientRect(),governance=buttons[3].getBoundingClientRect();
  const alignment=nav.height/2-(governance.top-nav.top+governance.height/2);
  dimensions.style.setProperty('--governance-align',`${alignment}px`);
@@ -77,7 +73,6 @@ function drawExamples(project){
  const seenTypes=new Set();
  const floors=selected<0?(mobile?[1,2,3]:[0,1,2,3,4,5,6]):[selected];
  const items=[];
- // Give every dimension a first example before placing additional labels.
  for(let j=0;j<(selected<0?1:3);j++)for(const floor of floors){
   const type=exampleTypes[floor][j];
   if(selected<0&&seenTypes.has(type))continue;
@@ -113,8 +108,6 @@ function drawExamples(project){
    box=available.find(candidate=>clearance(candidate)>=(mobile?32:56))||available.sort((a,b)=>clearance(b)-clearance(a))[0]||box;
   }
   occupied.push(box);
-  // Route an orthogonal bracket toward the nearest label edge, never across to
-  // an arbitrary list-order slot on the opposite side of the plane.
   const above=box.y+height<=q.y,below=box.y>=q.y;
   ctx.globalAlpha=alpha;ctx.beginPath();ctx.moveTo(q.x,q.y);
   if((above||below)&&q.x>=box.x-12&&q.x<=box.x+box.w+12){
@@ -125,7 +118,6 @@ function drawExamples(project){
    ctx.lineTo(elbowX,q.y);ctx.lineTo(elbowX,edgeY);ctx.lineTo(edgeX,edgeY);
   }
   ctx.strokeStyle=rgba(colors[floor],.58);ctx.lineWidth=.9;ctx.stroke();
-  // Quiet HUD corners leave the wireframe visible; type and title carry the hierarchy.
   ctx.fillStyle='rgba(23,13,25,.58)';ctx.fillRect(box.x,box.y,box.w,box.h);
   ctx.beginPath();ctx.moveTo(box.x,box.y+7);ctx.lineTo(box.x,box.y);ctx.lineTo(box.x+7,box.y);
   ctx.moveTo(box.x+box.w-7,box.y+box.h);ctx.lineTo(box.x+box.w,box.y+box.h);ctx.lineTo(box.x+box.w,box.y+box.h-7);
@@ -146,8 +138,6 @@ function paint() {
  if(dirty) {
   hitPlanes.length=0;
   back.setTransform(dpr,0,0,dpr,0,0);back.clearRect(0,0,w,h);
-  // Feathered light follows each layer's plane and the same camera as its nodes.
-  // No opaque surfaces or hard rims: the wireframe remains visible through the glow.
   back.globalCompositeOperation='screen';
   layers.forEach((layer,i)=>{
    const center=project({x:0,y:layer.y,z:0}),radius=layer.radius*1.35;
@@ -163,7 +153,6 @@ function paint() {
   back.globalCompositeOperation='source-over';
   for(const line of lines) {back.beginPath();line.points.forEach((p,i)=>{const q=project(p);if(i)back.lineTo(q.x,q.y);else back.moveTo(q.x,q.y);});back.strokeStyle=rgba(line.color,Math.min(1,line.alpha*(w<=720?1.5:1)));back.lineWidth=line.weight*(w<=720?1.12:1);back.stroke();}
   const dimensionsReveal=clamp((progress-.6)/.08);
-  // Reveal the title and all seven controls as one unit on both layouts.
   dimensions.style.opacity=String(dimensionsReveal);
   dimensions.style.visibility=dimensionsReveal>0?'visible':'hidden';
   buttons.forEach(button=>{button.tabIndex=dimensionsReveal>0?0:-1;});
@@ -179,12 +168,10 @@ function paint() {
   hitNodes.push({x:p.x,y:p.y,floor:dot.floor});
   if(hovered===dot.floor){ctx.beginPath();ctx.arc(p.x,p.y,5,0,T);ctx.strokeStyle=rgba(colors[dot.floor],.7);ctx.lineWidth=1;ctx.stroke();}
   const pulse=.5+.5*Math.sin(time*(.72+.055*Math.sin(dot.seed))+dot.seed),color=colors[dot.floor],fade=selected<0||selected===dot.floor?1:.2;
-  // Fixed-size soft marks: no frame history, textures or per-dot bitmap allocation.
   ctx.fillStyle=rgba(color,fade*(.025+pulse*.065));ctx.beginPath();ctx.arc(p.x,p.y,7+pulse*3,0,T);ctx.fill();
   ctx.fillStyle=rgba(color,fade*(.43+pulse*.42));ctx.beginPath();ctx.arc(p.x,p.y,1.3+pulse*.55,0,T);ctx.fill();
   ctx.fillStyle=rgba('#fff4fa',fade*Math.pow(pulse,10)*.5);ctx.beginPath();ctx.arc(p.x,p.y,.8,0,T);ctx.fill();
  }
- // One independent signal travels the green loop; it is not a Functions item.
  if(progress>.7){
   const alpha=clamp((progress-.7)/.3)*(selected<0||selected===1?1:.3);
   for(let i=6;i>=0;i--){
@@ -222,7 +209,6 @@ function measure(){const r=canvas.getBoundingClientRect();w=Math.max(1,r.width);
  dirty=true;wake();
 }
 function setProgress(p){const next=selected>=0?1:clamp(p);if(next===target)return;target=next;dirty=true;wake();}
-// Reveal while this full-width section enters the viewport; never capture the wheel or pin the page.
 function onScroll(){if(!inView)return;const r=root.getBoundingClientRect(),vh=window.innerHeight;setProgress(reduced.matches?1:(vh*.65-r.top)/(vh*.63));}
 function highlightDimension(i){
  hovered=i;
@@ -232,8 +218,6 @@ function highlightDimension(i){
 function selectDimension(i){
 
  selected=i<0||selected===i?-1:i;highlightDimension(-1);
- // A deliberate choice completes the reveal immediately; the labels must not
- // depend on a further page scroll after the dimension has been selected.
  if(selected>=0)setProgress(1);else onScroll();
  buttons.forEach((button,j)=>{
   const expanded=selected===j;

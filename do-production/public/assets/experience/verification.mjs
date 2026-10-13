@@ -1,6 +1,5 @@
 export function takeVerificationToken(location, history) {
   const token = new URLSearchParams(location.hash.slice(1)).get('token') || '';
-  // Drop both fragment and query from the visible/history URL before any request.
   history.replaceState(null, '', location.pathname);
   return /^[a-f0-9]{64}$/.test(token) ? token : '';
 }
@@ -37,7 +36,6 @@ export function mountVerification({ document, location, history, fetcher = globa
   button.disabled = preview || !token || !endpoint;
   if (!preview && !endpoint) message.textContent = 'Verification is not configured. Please use the contact form for help.';
   if (!token && !preview) message.textContent = 'Open the complete link in your verification email, or request a new one below.';
-  // Explicit confirmation, not a GET effect: email link scanners do not consume a token.
   button.addEventListener('click', async () => {
     if (button.disabled) return;
     button.disabled = true;

@@ -1,7 +1,7 @@
-/* The bitmap and all light share one plane so the jewel settings stay intact. */
+
 .brain-reference{position:relative;aspect-ratio:1;perspective:1100px;isolation:isolate}
 .brain-reference-plane{position:absolute;inset:0;transform-origin:51% 49%;
- /* Remove the image backdrop from display, rather than feathering a rectangle. */
+ 
  mask-image:url('./brain-reference-silhouette.svg?v=1');
  mask-mode:alpha;mask-size:100% 100%;mask-position:center;mask-repeat:no-repeat;
 }

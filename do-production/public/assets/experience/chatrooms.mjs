@@ -44,8 +44,6 @@ if(tour){
   const position=(window.scrollY+readingLine-trackTop)/pitch;
   const index=Math.max(0,Math.min(chapters.length-1,Math.round(position)));
   activate(chapters[index]);
-  // The actual app panels are taller than the pinned theatre. Track the page
-  // scroll through each chapter so their complete form is shown in sequence.
   if(activeStep==='passport'||activeStep==='permission'){
    const card=tour.querySelector(activeStep==='passport'?'.room-passport-paper':'.room-permission-paper');
    if(card){const progress=Math.max(0,Math.min(1,position-index+.5));card.scrollTop=(card.scrollHeight-card.clientHeight)*progress;}

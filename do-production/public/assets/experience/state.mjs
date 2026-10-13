@@ -28,7 +28,6 @@ export function applicationPayload(fields){
  const name=String(fields.name||'').trim(),email=String(fields.email||'').trim(),company=String(fields.company||'').trim();
  const building=String(fields.building||'').trim(),platform=String(fields.platform||'').trim(),interest=String(fields.interest||'').trim();
  if(!name||name.length>120||!email||email.length>254||company.length>160||building.length<20||building.length>1900||!platform||!interest)throw Error('Complete the required fields, including your platform and main interest.');
- // Submission of the explicitly labelled joint form, followed by email confirmation.
  return {name,email,company,building,platform,interest,website:String(fields.website||''),signupConsent:{accepted:true,wordingVersion:'joint-alpha-product-updates-2026-09-20'}};
 }
 export async function submitApplication(fields,{preview=false,endpoint='',fetcher=globalThis.fetch}={}){

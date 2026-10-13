@@ -1,5 +1,4 @@
 import {atlasLayers as layers} from './atlas-data.mjs';
-// A public explanatory graph, projected from 3D. No company or visitor data is loaded.
 const canvas=document.querySelector('[data-atlas-canvas]'),context=canvas.getContext('2d'),wrap=canvas.parentElement;
 const $=s=>document.querySelector(s),buttons=[...document.querySelectorAll('[data-layer]')];
 
@@ -10,7 +9,6 @@ function point(x,l,z){return project(x,(3-l)*heightStep(),z);}
 function polygon(points,fill,stroke){context.beginPath();points.forEach((p,i)=>i?context.lineTo(p.x,p.y):context.moveTo(p.x,p.y));context.closePath();if(fill){context.fillStyle=fill;context.fill()}if(stroke){context.strokeStyle=stroke;context.stroke()}}
 function line(a,b,color,width=1){context.beginPath();context.moveTo(a.x,a.y);context.lineTo(b.x,b.y);context.strokeStyle=color;context.lineWidth=width;context.stroke();context.lineWidth=1;}
 function draw(){if(!context||!w||!h)return;context.clearRect(0,0,w,h);hit=[];const r=size();
- // Continuous columns expose the relationships between the seven explanatory layers.
  for(const [x,z] of [[-r*.72,-r*.62],[r*.72,r*.62],[0,0]])line(point(x,0,z),point(x,6,z),'#b8a2b728');
  for(let l=6;l>=0;l--){const chosen=l===selected,col=layers[l].color;const corners=[point(-r,l,-r*.63),point(r,l,-r*.63),point(r,l,r*.63),point(-r,l,r*.63)];
   context.save();context.lineWidth=chosen?1.5:1;polygon(corners,chosen?'#492b3bbd':'#261622a3',chosen?col:col+'45');
