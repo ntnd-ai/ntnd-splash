@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://ntnd.ai/sitemap.xml
