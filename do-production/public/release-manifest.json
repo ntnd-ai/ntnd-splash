@@ -150,7 +150,7 @@
     },
     "assets/brand/logo.css": {
       "algorithm": "sha256",
-      "hash": "27bbbf41142c9dcb4eb955ba8d0c41a9c46c3d9df2160398b100c2b8486b6ea0"
+      "hash": "f02f8303a9d2a44fa104ac6116991af9d4706bf964a027c2e45522483d5bd1c4"
     },
     "assets/brand/logo.svg": {
       "algorithm": "sha256",
@@ -158,15 +158,15 @@
     },
     "assets/experience/analytics-consent.js": {
       "algorithm": "sha256",
-      "hash": "e15e7490274434ed619d69b170f62e014c993d1c5bfa377dff92791a0b6902e7"
+      "hash": "e546bcc005a0f9cbf7a67c7bf3e61608b8bed44fb879c236f133fff16189f37a"
     },
     "assets/experience/atlas-data.mjs": {
       "algorithm": "sha256",
-      "hash": "d8e6f64597f4c1f89b56407f2e4bf2466b12a308166faa7f935be6c5b4257bc1"
+      "hash": "148f86b0f37dc44d4ddbac8e875968540ccc97d858315a8a0f19547a418b7b3b"
     },
     "assets/experience/atlas.mjs": {
       "algorithm": "sha256",
-      "hash": "cdbbb774a1304603ef02432a08c9d724081536e8d1a70391e20bccb0e10800f3"
+      "hash": "30917771498ada89ac21cca3fa276d44c669454f6e6a3483de0d21ac77058905"
     },
     "assets/experience/brain-motion.mp4": {
       "algorithm": "sha256",
@@ -182,15 +182,15 @@
     },
     "assets/experience/brain-reference-motion.mjs": {
       "algorithm": "sha256",
-      "hash": "f0f32c618170bcea7bd0a23cee9556e16babccf878dca2a3910c99d43e0e6213"
+      "hash": "2a65d7b85de2da1161b101e165df914989e14ccf2b36b4bc0452eda01da415ed"
     },
     "assets/experience/brain-reference-silhouette.svg": {
       "algorithm": "sha256",
-      "hash": "a3c88b87b827e7a1aeb0ee9b77b852d56f407e20e6ea782fbc27940a6f2ed4ac"
+      "hash": "76a48fca77e81325322b1a093e7e8af4959d40862df80ac0837765fa91f48f36"
     },
     "assets/experience/brain-reference.css": {
       "algorithm": "sha256",
-      "hash": "b42031a02eb7daee495ef7197d49d6f0b2a680326754f43cefc7c8b59288893d"
+      "hash": "f63189378414e9c8c6a6ba3d6759348383be20aba5d00aaa2029dc6b0eb6be90"
     },
     "assets/experience/brain-reference.jpg": {
       "algorithm": "sha256",
@@ -202,7 +202,7 @@
     },
     "assets/experience/chatrooms.mjs": {
       "algorithm": "sha256",
-      "hash": "e3220711fb15f824e27fcd133a141f66c4f4e6b9573efda93a980781da1421a5"
+      "hash": "b3c0613676762b0e5f0294efbda59e67ac3e84734216f59296b1c8ac93c69773"
     },
     "assets/experience/company-brain.mjs": {
       "algorithm": "sha256",
@@ -218,7 +218,7 @@
     },
     "assets/experience/context-loop.mjs": {
       "algorithm": "sha256",
-      "hash": "2e5ab39e3085453414d827de9ab9f99681a9ebaf01ab00bdab5f928250e14324"
+      "hash": "19aa0d3703284f67a98d63514a8de97c2233ec3948a2ca3b7b186a947828caae"
     },
     "assets/experience/flow.png": {
       "algorithm": "sha256",
@@ -230,7 +230,7 @@
     },
     "assets/experience/mobile-tour.mjs": {
       "algorithm": "sha256",
-      "hash": "3454473735150a6fda67f44e9332dadb08dd593cccc9f16eaa51f8c84c4d3517"
+      "hash": "6e468311ba7bbf2ed307d83e3debd45014e2f2f2ef7d4bf30f0b29a8a3bf6d53"
     },
     "assets/experience/nova-guide.png": {
       "algorithm": "sha256",
@@ -246,11 +246,11 @@
     },
     "assets/experience/site.mjs": {
       "algorithm": "sha256",
-      "hash": "3071a13271c32d17f51de901041252be83fd77f0ed28c364b71b306ad5bdc7b2"
+      "hash": "4221c12f41a511cfd74c0edc225ba7e6cf60d66faacab26c01d5148f67c58c5a"
     },
     "assets/experience/state.mjs": {
       "algorithm": "sha256",
-      "hash": "a9155815d55dc7ff32d204921640adf42fce1c4976ee8bf878fd4eb296c9c2d3"
+      "hash": "508d2d798183531f5a39ef6f3d9a446424f8a0fbb90eefb5d16b5f5016ef46cd"
     },
     "assets/experience/surface.png": {
       "algorithm": "sha256",
@@ -258,7 +258,7 @@
     },
     "assets/experience/verification.mjs": {
       "algorithm": "sha256",
-      "hash": "d405d89aa04ce0476a48ff898edc30bdc73474fc5797f91dcee6feda85357aac"
+      "hash": "dbe2226397d9f3b3ff1b1570c93fc81969fe30b882763b947ac302962e979e3e"
     },
     "assets/experience/vision-company-model.png": {
       "algorithm": "sha256",
@@ -284,21 +284,17 @@
       "algorithm": "sha256",
       "hash": "a0d054c4af557de20afd6ca59f47ab353bcaec49c63ff04b6c9d39d0f8910557"
     },
-    "assets/mockups/nova-journey/README.md": {
-      "algorithm": "sha256",
-      "hash": "3840f3bee5c5c7d7722ba36ff2392460f0846f91ef2412cbd6d3ef751eaf51ae"
-    },
     "assets/mockups/nova-journey/index.html": {
       "algorithm": "sha256",
       "hash": "81f910df4ed13de9df105d24ac92e324f466c1bd3b35444682488c21b602a075"
     },
     "assets/mockups/nova-journey/mockup.css": {
       "algorithm": "sha256",
-      "hash": "49655d08598f8cbc844e9467812af98b21f985f67679ebb1c7aa288f368f6e5e"
+      "hash": "0461b76950d6f53fea5aaba79defcfedb9945f557d47f0f581d3371e3dfb706a"
     },
     "assets/mockups/nova-journey/mockup.mjs": {
       "algorithm": "sha256",
-      "hash": "aea5532b61007508bcc1397a2550737d4d3f6a348450b91205e408a9085e60d6"
+      "hash": "36c2e18a86461757b530f6ce1124318487ff0b56b863ae7bffcd16c8157c46a4"
     },
     "assets/og.png": {
       "algorithm": "sha256",
@@ -414,7 +410,7 @@
     },
     "roadmap.html": {
       "algorithm": "sha256",
-      "hash": "6e34e7c64d9b71a8d166368e5b4aa06225a7e9f1858bffdab80a3b96b9e6157c"
+      "hash": "c65f9413d330b0ae7eb24fcddd9c814f741752ea17f0cb34240acd57c09eec51"
     },
     "robots.txt": {
       "algorithm": "sha256",
@@ -422,7 +418,7 @@
     },
     "site.css": {
       "algorithm": "sha256",
-      "hash": "9dbd968ba60f0ed41d63a9460769dc4819281cdb6962c04d1d370eb0d0daa188"
+      "hash": "c2e3c3115b33349c0fc0752fba1e28b7561e7bd291b9167b67b4c9d30ba1b6cf"
     },
     "sitemap.xml": {
       "algorithm": "sha256",
