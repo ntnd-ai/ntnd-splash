@@ -6,10 +6,96 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "80476a14a0a3f1937f984d91c6f7191de151c9e3"
+    "commit": "8fb35467a039ec078b5212f854fea24c8af0b4e0"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
+  },
+  "pages": {
+    "index": {
+      "text": "a631069a7f29f74025d1474f81ca6a98c8c443a243654cb41d191fb917a9aa73",
+      "lastmod": "2026-10-20"
+    },
+    "product": {
+      "text": "1e9f2d29588dc8a8e73033a264316bd8173973ff265089f5e5aff8e7819a708b",
+      "lastmod": "2026-10-20"
+    },
+    "agents": {
+      "text": "7fe0ebf6ea3a64e08145ed18c6e3d8149c5a1ff0613205efd6c785767e584257",
+      "lastmod": "2026-10-20"
+    },
+    "govern": {
+      "text": "fba5f5b9f51962df770e43fb71cf8826a5de2e79b07e9fdf5594c891bd1ceded",
+      "lastmod": "2026-10-20"
+    },
+    "company-brain": {
+      "text": "ad9ca5dea370909f94837f0346f02d7f455aa0fbf6ff48758056ff3ed667c5d6",
+      "lastmod": "2026-10-20"
+    },
+    "chatrooms": {
+      "text": "5318fe8f7aaa4bce0ba3ab616ab645a4545aa58f8cbd3411fc2019f332483f41",
+      "lastmod": "2026-10-20"
+    },
+    "technology": {
+      "text": "39565d28a09f9d4055e7d4d09cdbba46adeddc88f9f76000190eddb08d5d0562",
+      "lastmod": "2026-10-20"
+    },
+    "roadmap": {
+      "text": "a9ee933ef658675ffb08fa935867b2ffecce75db4e37795feafe2ed096a27390",
+      "lastmod": "2026-10-20"
+    },
+    "partners": {
+      "text": "dcc4669677ee874ab052b5c28440950cf2560cbda4d1044d587babe1cd2d8393",
+      "lastmod": "2026-10-20"
+    },
+    "company": {
+      "text": "2b6cb1da94c5857c294847ca839b99900d5a1ab97ef716fb29de77b484f97ef7",
+      "lastmod": "2026-10-20"
+    },
+    "legal": {
+      "text": "c7b3044c83ab6c7090d0101d49954e5c5fb9913fbd98f7e3de0eb19254019bea",
+      "lastmod": "2026-10-20"
+    },
+    "vision": {
+      "text": "a5f17ae353f15da41e525ac064b110eb4ad324ed52bd5671fff2c6292df5dcf0",
+      "lastmod": "2026-10-20"
+    },
+    "start": {
+      "text": "7807b402ea9d57ab2d43d0bd7176f78528811d74e2605cbf851b49016784525c",
+      "lastmod": "2026-10-20"
+    },
+    "download": {
+      "text": "31d31f64f98c04c915270438e68165d53174f7baebe8fba74ac87ab81a0e762f",
+      "lastmod": "2026-10-20"
+    },
+    "apply": {
+      "text": "43b5d32c6c3777f47bb341c011d24c15381db5cb8c527ffa95d6f96e4e5c2344",
+      "lastmod": "2026-10-20"
+    },
+    "privacy": {
+      "text": "1d93b2a02016ba3c3bebac1e431e173be0bc77c65d06947758cbce8f4b9a9913",
+      "lastmod": "2026-10-20"
+    },
+    "terms": {
+      "text": "3bbcfdb0088387b17a5a2b4813942dbbdeb55e2c1bdb7b4861eecadfa36d888f",
+      "lastmod": "2026-10-20"
+    },
+    "app-privacy": {
+      "text": "acc25d733f6084f511ba73cfbda45420a336b997014512b70dd0ca7a168f50f6",
+      "lastmod": "2026-10-20"
+    },
+    "community-privacy": {
+      "text": "d9aadcdbf10e6a3becf108acb8e20ea7f0e375807ae064a3c592ea7ee0689126",
+      "lastmod": "2026-10-20"
+    },
+    "alpha-access": {
+      "text": "36212293c6cbb1731c42a4bed9363119aca696ffc8f483e7f8d71881e4656b77",
+      "lastmod": "2026-10-20"
+    },
+    "contact": {
+      "text": "0326ba710cb8b08f82ccea15389ec5315722fe788897ee0e20ed3b6049b3dfc1",
+      "lastmod": "2026-10-20"
+    }
   },
   "files": {
     "404.html": {
@@ -430,7 +516,7 @@
     },
     "sitemap.xml": {
       "algorithm": "sha256",
-      "hash": "f1245bcebcadce28760ef366fb2e38be7df33d8a787224567c3a24d86ae84e82"
+      "hash": "91ad114610f69d2d23a686acca2bd42f24c29358560851a56a1dfe3fde37b465"
     },
     "start.html": {
       "algorithm": "sha256",
