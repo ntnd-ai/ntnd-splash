@@ -6,19 +6,19 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "0b3b3f3fdc5a7709591fd2b83afec824cb523c3c"
+    "commit": "106ad09f73deb5d458709784e02f973a89446b6b"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
   },
   "pages": {
     "index": {
-      "text": "a631069a7f29f74025d1474f81ca6a98c8c443a243654cb41d191fb917a9aa73",
-      "lastmod": "2026-10-20"
+      "text": "f1cd6c216e10dbebc6133721aa2f91375d0a3ea71f9def7ad78147e775866c0e",
+      "lastmod": "2026-10-23"
     },
     "product": {
-      "text": "1e9f2d29588dc8a8e73033a264316bd8173973ff265089f5e5aff8e7819a708b",
-      "lastmod": "2026-10-20"
+      "text": "76e32caf388a8bdeea344aea079d8afd89e6faab621ccf97430d4b8a8b488ef6",
+      "lastmod": "2026-10-23"
     },
     "agents": {
       "text": "7fe0ebf6ea3a64e08145ed18c6e3d8149c5a1ff0613205efd6c785767e584257",
@@ -37,8 +37,8 @@
       "lastmod": "2026-10-20"
     },
     "technology": {
-      "text": "39565d28a09f9d4055e7d4d09cdbba46adeddc88f9f76000190eddb08d5d0562",
-      "lastmod": "2026-10-20"
+      "text": "a7c4370efeab4b7c3f9cda10373bb2e345b4e3dcb12db52c6040a0fec5898c2f",
+      "lastmod": "2026-10-23"
     },
     "roadmap": {
       "text": "a9ee933ef658675ffb08fa935867b2ffecce75db4e37795feafe2ed096a27390",
@@ -488,7 +488,7 @@
     },
     "index.html": {
       "algorithm": "sha256",
-      "hash": "4cb2ddca8af570fc72de6ff5ea641c1c6552fda583a5e19e5c7337502e8359ea"
+      "hash": "43b61b5c6138d7206ba0625497487d3cc0fec5a7393b82000a828d9db5201c6a"
     },
     "legal.html": {
       "algorithm": "sha256",
@@ -504,7 +504,7 @@
     },
     "product.html": {
       "algorithm": "sha256",
-      "hash": "e72a887dbbae2f71af26a7e6b860bda0bb8025d9f827bcbb53a713e408e2be0c"
+      "hash": "b34ecb932b43e79e66f9bcde79944de43d07db87679a5000c6f428fda55cde3a"
     },
     "roadmap.html": {
       "algorithm": "sha256",
@@ -520,7 +520,7 @@
     },
     "sitemap.xml": {
       "algorithm": "sha256",
-      "hash": "03420b85db977572bd0c9b9ff188d2c046a76d361d264889eaa13255611bf313"
+      "hash": "5dc19ef9841d1e8a7fa0a00c22c4b005728c0577922c623108597793e0a9b702"
     },
     "start.html": {
       "algorithm": "sha256",
@@ -528,7 +528,7 @@
     },
     "technology.html": {
       "algorithm": "sha256",
-      "hash": "0fa98b56cddd4ca5acc0ca0e53222376455729e92ce0455a2ee20b036634542e"
+      "hash": "b55d51bc7a63a7becc5c002f92863f60eab9d6fa01a186e2ee17045baec1a412"
     },
     "terms.html": {
       "algorithm": "sha256",
