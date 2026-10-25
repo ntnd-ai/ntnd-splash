@@ -6,66 +6,66 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "be36212e7c35b093c538cee2a29987f1606372cb"
+    "commit": "6a7c3d6dcaef205a9e0ddd85569dca6969e37bdc"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
   },
   "pages": {
     "index": {
-      "text": "f1cd6c216e10dbebc6133721aa2f91375d0a3ea71f9def7ad78147e775866c0e",
+      "text": "b522c7e99bcab5fe37e7e49a5ec6782d1648385247b04b660413480003a87269",
       "lastmod": "2026-10-23"
     },
     "product": {
-      "text": "76e32caf388a8bdeea344aea079d8afd89e6faab621ccf97430d4b8a8b488ef6",
+      "text": "b004bb949c54201a55778e3b6dad37e054a747ed00ccf1b89f72a8ef05a1dd1b",
       "lastmod": "2026-10-23"
     },
     "agents": {
-      "text": "7fe0ebf6ea3a64e08145ed18c6e3d8149c5a1ff0613205efd6c785767e584257",
+      "text": "b9227c43e106a4f470b5e9d1ea42e113fcd4e74ff842408fabe21cb08c9994c8",
       "lastmod": "2026-10-20"
     },
     "govern": {
-      "text": "fba5f5b9f51962df770e43fb71cf8826a5de2e79b07e9fdf5594c891bd1ceded",
+      "text": "b919a795eaea78a33f81fd8fb964c2e0321cfaa1fe7a4b61201275816d5c1d93",
       "lastmod": "2026-10-20"
     },
     "company-brain": {
-      "text": "ad9ca5dea370909f94837f0346f02d7f455aa0fbf6ff48758056ff3ed667c5d6",
+      "text": "60346bd2e4bf99192e4c135eb20867e4e975ed24e051d6d41b32140a06ba796d",
       "lastmod": "2026-10-20"
     },
     "chatrooms": {
-      "text": "5318fe8f7aaa4bce0ba3ab616ab645a4545aa58f8cbd3411fc2019f332483f41",
+      "text": "19d1312c454a14bf44f10256a10410eda3fa63f6bfa80355ef5162bd56fcb5bb",
       "lastmod": "2026-10-20"
     },
     "technology": {
-      "text": "a7c4370efeab4b7c3f9cda10373bb2e345b4e3dcb12db52c6040a0fec5898c2f",
+      "text": "80ea8f6e058b762cee7eeecdcdf5b16c96fd20b39a112c9a8cd12bf15f723d32",
       "lastmod": "2026-10-23"
     },
     "roadmap": {
-      "text": "a9ee933ef658675ffb08fa935867b2ffecce75db4e37795feafe2ed096a27390",
+      "text": "5f30ce76ad6dbe3f670a362fc8d9bc40aade532917bdc491b8316204f89c035d",
       "lastmod": "2026-10-20"
     },
     "partners": {
-      "text": "dcc4669677ee874ab052b5c28440950cf2560cbda4d1044d587babe1cd2d8393",
+      "text": "5d18349c632122c8add8bb63e2acbf8b1dc1b8885c8970005abe78f6c0445cd9",
       "lastmod": "2026-10-20"
     },
     "company": {
-      "text": "2b6cb1da94c5857c294847ca839b99900d5a1ab97ef716fb29de77b484f97ef7",
+      "text": "bbae1663c1809d1e5bbcd6dfc20685ac73478ec8052369e764e6cdb7beaaf5ad",
       "lastmod": "2026-10-20"
     },
     "legal": {
-      "text": "c7b3044c83ab6c7090d0101d49954e5c5fb9913fbd98f7e3de0eb19254019bea",
+      "text": "58a0b990394151c01a5ba87197d2156159ccd5f5738fc7bc305de457676a2731",
       "lastmod": "2026-10-20"
     },
     "vision": {
-      "text": "a5f17ae353f15da41e525ac064b110eb4ad324ed52bd5671fff2c6292df5dcf0",
+      "text": "52767b393fa927210ad33c8dc6d0e2fb5bbafa575c1ed03941c574f7d70d64db",
       "lastmod": "2026-10-20"
     },
     "start": {
-      "text": "7807b402ea9d57ab2d43d0bd7176f78528811d74e2605cbf851b49016784525c",
+      "text": "0f5289b601528cd26a9bd64a730424102f265cd5eb9f77ee92cd5a7f473d6d5b",
       "lastmod": "2026-10-20"
     },
     "download": {
-      "text": "31d31f64f98c04c915270438e68165d53174f7baebe8fba74ac87ab81a0e762f",
+      "text": "7d9fcf01814bf9c10faadeccb5ccde4a0ce9098c4078e7e28ce216491a9be327",
       "lastmod": "2026-10-20"
     },
     "apply": {
@@ -100,7 +100,7 @@
   "files": {
     "404.html": {
       "algorithm": "sha256",
-      "hash": "00b88f0236875a102784f3d873cbf324b19bde7262eda848d7e7010a4aafbaa7"
+      "hash": "d76c9f90ada29538c276bdeeb1caf5c43fbf0b287424430e82edec3107d8508c"
     },
     "CNAME": {
       "algorithm": "sha256",
@@ -108,23 +108,23 @@
     },
     "agents.html": {
       "algorithm": "sha256",
-      "hash": "969f4977441f213b453732567c46d23f9f10e612e13fed9e4beecabab5334279"
+      "hash": "54217a72b4f3b229be08ac403f8d39f3255b0fc09ad513b3590e8ab4a567a4d2"
     },
     "alpha-access.html": {
       "algorithm": "sha256",
-      "hash": "3a5cb2e20f358a565ce0a384559cc03b21abb52354e7d616b0554a52ae4793cd"
+      "hash": "bad085c091d0bf462f350977f8a61a275963ff4125d01fcc1e063902bbb9caf6"
     },
     "alpha-licence.html": {
       "algorithm": "sha256",
-      "hash": "52dc958df530e94b272e3fe3b2d60b481f01fd56d1dd48b7825acbba383e8abb"
+      "hash": "a957aab4839dc5870dccdaba39a6ccb077cc5ac86ec6874bff9717ff0e69962a"
     },
     "app-privacy.html": {
       "algorithm": "sha256",
-      "hash": "b81c068a1f51bc0b6664975dfc1bbbc7227aac9b8d0f80ed435d51fa7203df10"
+      "hash": "4a4b5fc81d0eccb67b1a915c1a7f112c598eeb6a3ad8e727c2752c538347e81a"
     },
     "apply.html": {
       "algorithm": "sha256",
-      "hash": "61fa0e3cd28f4c09c7511f37f2e0e1ba6bb527047ef77b5781208bea78f7dcbf"
+      "hash": "2d8f01b71e6b7c3986cb8157cfaa188b56aebd94d8e11e7c007c96f08ca95433"
     },
     "assets/app-agents-2026-09-08.jpg": {
       "algorithm": "sha256",
@@ -448,27 +448,27 @@
     },
     "atlas.html": {
       "algorithm": "sha256",
-      "hash": "5568c6c0862027916548161e8efc1a233be5212b7d01bc12e67a88ee23fe0bd6"
+      "hash": "1cdc937035a908acb54e84bd5baee216e0441db00cfe588267a4b17fee8256bb"
     },
     "brain.html": {
       "algorithm": "sha256",
-      "hash": "49f48e1dfe8480e500be756329fddc812fd809b6b555766e2e1dfcc295363f47"
+      "hash": "025edee6aa9dd506d5b4a77b18cc6c03ab7a5cf1b41ae4d1025a9e6e8eb9b6ba"
     },
     "chatrooms.html": {
       "algorithm": "sha256",
-      "hash": "ad8ef7377f9359876ac329711a46c9914f67424ecc755c204bdb682b3a520970"
+      "hash": "bb1cd7822da130432ff9eda079a1d251f87f4fc55e8fea05d4eb0fb3bf8944f5"
     },
     "community-privacy.html": {
       "algorithm": "sha256",
-      "hash": "af8c7a3f85fd4bb57702de1ce82467477072588cd134d0c7b50ecff72fdc2565"
+      "hash": "23e2c0580fcd96482638f3a342896b339598d506719f608806347172931fb335"
     },
     "company-brain.html": {
       "algorithm": "sha256",
-      "hash": "f5bbeef1803802275aaf67eddb7ff0ba58eaa4653481e770fed294de08483534"
+      "hash": "df02d228068a6c9fbbc8e2645c0f2e28b070461d159cc3486ab660866365137f"
     },
     "company.html": {
       "algorithm": "sha256",
-      "hash": "2bb7faa70adf71a9a3bd98f494d816e973efd3514e6862e6e858df92f9fd45dc"
+      "hash": "61b03feb95b69738ca475bd54e922aa6aea32ca39ae2b0438d248855be2d2e2f"
     },
     "contact-preferences.css": {
       "algorithm": "sha256",
@@ -476,39 +476,39 @@
     },
     "contact.html": {
       "algorithm": "sha256",
-      "hash": "eff8078c41ad98ec4c505106ba7f478c864048fdeec34fedfe00ffe97a3c2a43"
+      "hash": "84628d69b0953a7b3b1e049fea65e6632eb774947c29f4b2126e3d6d88d77d78"
     },
     "download.html": {
       "algorithm": "sha256",
-      "hash": "27e279d1bc4344029a202e67552fcd76282e953c10c1c95ccf890a266b52deb7"
+      "hash": "52fe70d4b66a33c8c6e128779f8cdf957b66af93646ba77b01a69bbcf6441187"
     },
     "govern.html": {
       "algorithm": "sha256",
-      "hash": "e3677880e33f4ac85bb9281c56bea0b34cf1733c14479682bf859cecb7ae2042"
+      "hash": "481382a7e05b8ac4b6185351e9bc3be0eb507eee01755cfb65a70a3568a241f2"
     },
     "index.html": {
       "algorithm": "sha256",
-      "hash": "43b61b5c6138d7206ba0625497487d3cc0fec5a7393b82000a828d9db5201c6a"
+      "hash": "64ece5d6c66c612ec7f265678e9603f26c94a68175c01f78183bddbfea74c28e"
     },
     "legal.html": {
       "algorithm": "sha256",
-      "hash": "7b71638f7b117e4e141017d3eb75cf08058e3b955f277a78480192696da91f70"
+      "hash": "86eeef2193b01f163364e38b2fd7f249577a8dbde9bd1c5ebae571c2a529ed12"
     },
     "partners.html": {
       "algorithm": "sha256",
-      "hash": "2323ca976245426ea9c2b2719a1b2f72db28e2c73a0c793003ec0175d13ff094"
+      "hash": "5bbd2303b75c51244ed5bf0b8c76ed77bfd02387a9a1308e0dbef77cb1a973c3"
     },
     "privacy.html": {
       "algorithm": "sha256",
-      "hash": "0f562c79834d749d66c69e3f08c286914f385b4b96ab02061debb67c7e343775"
+      "hash": "8b0c4dd99a2f9b174cd8208fc1047cdbe5bbbc6e301726bba1ece2afc525bdb0"
     },
     "product.html": {
       "algorithm": "sha256",
-      "hash": "b34ecb932b43e79e66f9bcde79944de43d07db87679a5000c6f428fda55cde3a"
+      "hash": "6b7b78901af087008b51b6acd57721216f93c3b631ec1669edaed3f5d1be8c7a"
     },
     "roadmap.html": {
       "algorithm": "sha256",
-      "hash": "52876aecfe50beec5f1f8f36d1fb44bfcfb2f2e48ace1fab8935286cac71da4c"
+      "hash": "29aa854d5cc22381a88bd6f1f4669a079a8db26e3c2ed0fcb89d34935b504814"
     },
     "robots.txt": {
       "algorithm": "sha256",
@@ -516,7 +516,7 @@
     },
     "site.css": {
       "algorithm": "sha256",
-      "hash": "7168b1357d780ef2b090a4a233fadd28af0e5ef671a2e57f9e452bb57fbd38d3"
+      "hash": "8ba4d90954ff31bee65bf08cbbf7644317c28f78360584cd9b4424d8377ded7f"
     },
     "sitemap.xml": {
       "algorithm": "sha256",
@@ -524,15 +524,15 @@
     },
     "start.html": {
       "algorithm": "sha256",
-      "hash": "8e7d138f1a6ba163d7826e83082d8d1f9d0e696b7b918c1cacaa7817b8b82cf3"
+      "hash": "9734a6b9f99bed2f3dfbefcfc60663d2982d9edfeaa19e0bcf1050915e71d71a"
     },
     "technology.html": {
       "algorithm": "sha256",
-      "hash": "b55d51bc7a63a7becc5c002f92863f60eab9d6fa01a186e2ee17045baec1a412"
+      "hash": "3f15ecee018732e472a306798375f0d5ee904537252a2b4e4230f3c325df99e1"
     },
     "terms.html": {
       "algorithm": "sha256",
-      "hash": "670ab6d96e60c16975b24b8a330f463769797931badda7de8c7e374c4be1bdb5"
+      "hash": "dd461297703ffbe53a259ad0a4ec1bcf4b273d8cbf4fb30527151bb6064c2770"
     },
     "unsubscribe.html": {
       "algorithm": "sha256",
@@ -548,7 +548,7 @@
     },
     "vision.html": {
       "algorithm": "sha256",
-      "hash": "a4af8cd5746d30607a053e1a58ed9b675af6be39fa4d60b7bd9f0e165708442b"
+      "hash": "d7dd467007b22291214c3d2b9c82f0c9ee126c7b4c7f904797730726d20507a0"
     }
   }
 }
