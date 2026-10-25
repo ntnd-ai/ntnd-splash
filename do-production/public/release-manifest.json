@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "106ad09f73deb5d458709784e02f973a89446b6b"
+    "commit": "be36212e7c35b093c538cee2a29987f1606372cb"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
@@ -85,8 +85,8 @@
       "lastmod": "2026-10-20"
     },
     "community-privacy": {
-      "text": "cb336d5a06e83ed180240697e90ebb4987856f3919374d42819ea9ff5f71d241",
-      "lastmod": "2026-10-21"
+      "text": "f4dfc73429dee9fbd23d171ab406f77d0427d772ddc7c1d2e955e970c7872be4",
+      "lastmod": "2026-10-25"
     },
     "alpha-access": {
       "text": "36212293c6cbb1731c42a4bed9363119aca696ffc8f483e7f8d71881e4656b77",
@@ -460,7 +460,7 @@
     },
     "community-privacy.html": {
       "algorithm": "sha256",
-      "hash": "147b058341eec6d5c542a938ae7e190943f126ad94913824c8608714c9c33271"
+      "hash": "af8c7a3f85fd4bb57702de1ce82467477072588cd134d0c7b50ecff72fdc2565"
     },
     "company-brain.html": {
       "algorithm": "sha256",
@@ -520,7 +520,7 @@
     },
     "sitemap.xml": {
       "algorithm": "sha256",
-      "hash": "5dc19ef9841d1e8a7fa0a00c22c4b005728c0577922c623108597793e0a9b702"
+      "hash": "8107cc04d1178036968a7eaef86b573810266b96d065df6bb93f3477f8021fa0"
     },
     "start.html": {
       "algorithm": "sha256",
