@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "c4d5bf2a1c4f6d72faa537f14d8eb02d17f8506f"
+    "commit": "6b1373584b2361ca89b86f42ebaa110107d9039b"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
@@ -89,7 +89,7 @@
       "lastmod": "2026-10-20"
     },
     "community-privacy": {
-      "text": "52ba0271c9faf2e79b42d64259866af311e5c40c626180d422d330d92173bc25",
+      "text": "20562cadb15e17a330aee629f8b3581dddc57c8c089bec8534242c1c14f85fed",
       "lastmod": "2026-10-25"
     },
     "alpha-access": {
@@ -464,7 +464,7 @@
     },
     "community-privacy.html": {
       "algorithm": "sha256",
-      "hash": "146859c2c87e30ba2d6478ddfab583704e41361e5c00860b69ff753da4f309f8"
+      "hash": "d004f8aad549cbbcfd67ca21be8de2ed34e3f70274fec36a16e6abc435d9b85d"
     },
     "company-brain.html": {
       "algorithm": "sha256",
