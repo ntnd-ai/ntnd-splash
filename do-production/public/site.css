@@ -858,3 +858,5 @@ body[data-page="contact"] .guide-dock,body[data-page="apply"] .guide-dock{displa
 .release-current b{color:var(--text);font-weight:600}
 .release-current a{color:var(--lime);text-decoration:none;border-bottom:1px solid currentColor}
 .rn-body{padding-block:0 24px}
+
+.rn-body p,.rn-body li{color:var(--text)}
