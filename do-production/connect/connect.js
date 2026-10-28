@@ -2,7 +2,7 @@
 // It sends nothing anywhere: no fetch, no beacon, no storage. Only her click on the button carries the code.
 (() => {
   // C1: the platform comes from the path, and only from this list
-  const PLATFORMS = { linkedin: "LinkedIn", instagram: "Instagram", facebook: "Facebook", threads: "Threads", pinterest: "Pinterest", tiktok: "TikTok" };
+  const PLATFORMS = { linkedin: "LinkedIn", instagram: "Instagram", facebook: "Facebook", threads: "Threads", pinterest: "Pinterest", tiktok: "TikTok", twitch: "Twitch" };
   // C2: bounded, plain characters only
   const SAFE = /^[A-Za-z0-9._~\-]{1,1024}$/;
   const line = document.getElementById("line");
