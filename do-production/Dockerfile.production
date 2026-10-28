@@ -1,4 +1,6 @@
 FROM nginxinc/nginx-unprivileged:stable-alpine
 COPY nginx-production.conf /etc/nginx/conf.d/default.conf
 COPY public/ /usr/share/nginx/html/
+# connect.ntnd.ai (Publish sign-ins): its own root, so ntnd.ai never serves these files
+COPY connect/ /usr/share/nginx/connect/
 EXPOSE 8080
