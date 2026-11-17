@@ -6,15 +6,15 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "fd6d90d70c13754ddb7ec76e7866189ef6a17b5e"
+    "commit": "0e2e2cdcc5fa046ce1b13d0383d7621178576beb"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
   },
   "pages": {
     "index": {
-      "text": "0ead77114d1d13d84037858b65d108bb1d07d8f1cae46f9516e7e2db08c723c9",
-      "lastmod": "2026-10-25"
+      "text": "8af879646c6ed642349640f52cc98415854af549b91c5b9a779730fb51da7cf5",
+      "lastmod": "2026-11-17"
     },
     "product": {
       "text": "c3c6aed5633794f82d37211829d746f986e9c2c39b041290084c53236911fdc7",
@@ -41,8 +41,8 @@
       "lastmod": "2026-10-23"
     },
     "roadmap": {
-      "text": "7adcf6b226b51d00f130d4225077b934c3747b7ed07baaf0e6a2803153e1db27",
-      "lastmod": "2026-10-25"
+      "text": "1a2c4f1b91d4fb031332c9e1d3a4f910dc99ec2300d674ac81f26ad0d7e472ca",
+      "lastmod": "2026-11-17"
     },
     "partners": {
       "text": "1a359ee50fa4dc574a91d6f2013a8b3728fb3991fe81578817f6153e3bbd2f42",
@@ -65,16 +65,16 @@
       "lastmod": "2026-10-20"
     },
     "download": {
-      "text": "85c63e0ce5d960c641ebb18fe80546dfa18c88bae9b7a9b3b0b25ed4e75d2f2c",
-      "lastmod": "2026-10-25"
+      "text": "8e3f67f2854b50d27f9dd738ea8043b1d34667466df67f6b8694440a32b13b4c",
+      "lastmod": "2026-11-17"
     },
     "apply": {
       "text": "57f22912d2315674e77829393415d8d70351169f586aa485590d87e1df81dca8",
       "lastmod": "2026-10-20"
     },
     "release-notes": {
-      "text": "78cf05f5a78aa464c1e749297ac634bfae48b784ccc9ce71eb8c443012cf3537",
-      "lastmod": "2026-10-25"
+      "text": "570544af7ffb12a6921b8f3f8f602c9b79d0bfe79818d02c96bdde7bbe83a759",
+      "lastmod": "2026-11-17"
     },
     "privacy": {
       "text": "9216687941422f647001caa956aa4fdc67f20c3fdb97ab50e60b8c424219e52b",
@@ -484,7 +484,7 @@
     },
     "download.html": {
       "algorithm": "sha256",
-      "hash": "1961d3b1c87e054d2702c209b3580c447bd168ef6c88f27de673d37943bb0e9f"
+      "hash": "4a2125a617447b0b4344eea82cfc3b5282bed4e43642a6cc8be87af40a10def3"
     },
     "govern.html": {
       "algorithm": "sha256",
@@ -492,7 +492,7 @@
     },
     "index.html": {
       "algorithm": "sha256",
-      "hash": "9f8940fbb43b115ad3eadf1e8494ff5dfa5c271c71c071637b99c020edc06bbb"
+      "hash": "504b7f9255b173ed4a893d8f3fde74e309867ce7278e20fa213ec56dd26e8ba8"
     },
     "legal.html": {
       "algorithm": "sha256",
@@ -512,11 +512,11 @@
     },
     "release-notes.html": {
       "algorithm": "sha256",
-      "hash": "713a670dc90733622e931faf9977bee7080094068d81b46f08b0ef513584110d"
+      "hash": "c37c0d1c6990951020dadc7645f13d980cf1339961717904369e14ea08bec4f6"
     },
     "roadmap.html": {
       "algorithm": "sha256",
-      "hash": "5f0ec42979eb0cd9fc6446a9dd36b74b355e010d4252742a41b05ea12930e570"
+      "hash": "85eef2328aa60bd6313c566d566b8eefff84e9dcda1daf6f58d78a5301c4f2f8"
     },
     "robots.txt": {
       "algorithm": "sha256",
@@ -528,7 +528,7 @@
     },
     "sitemap.xml": {
       "algorithm": "sha256",
-      "hash": "be76e704fbdc670d67812d95763ea63ae0d500658f14d754f77b9e026cf3429a"
+      "hash": "22f89c398984b9b73373581d76efef4a03c75c5cdee7015a7686fa2177a2b059"
     },
     "start.html": {
       "algorithm": "sha256",
