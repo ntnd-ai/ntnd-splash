@@ -6,7 +6,7 @@
     "access": "invite_only"
   },
   "source": {
-    "commit": "42f98fe27175b999efaae43847770e0cfb618466"
+    "commit": "9db1123f31cf49d23eb790b37902b2a8991e0edc"
   },
   "config": {
     "sha256": "20035b9ee821bfed5703e515e0a7955960111b73b32df2c6c2c4a59cc1c5991f"
@@ -73,7 +73,7 @@
       "lastmod": "2026-10-20"
     },
     "release-notes": {
-      "text": "39662eb392f02ba101342c0b8a5fe0411ba183b05fb7e9d5c1e567d2486e995f",
+      "text": "35e4b978eb02b1a01edfb4c895af0e71c2f9b478dfc95052c7ae7666ca53925d",
       "lastmod": "2026-11-18"
     },
     "privacy": {
@@ -512,7 +512,7 @@
     },
     "release-notes.html": {
       "algorithm": "sha256",
-      "hash": "495d6e3925667e30f29247d6f082c1ed767d1b61529abab9537e9b6e3017497a"
+      "hash": "9023d85961e82031400b8efc0d77ffb3c661aa377234b5801fc078a7bf65b724"
     },
     "roadmap.html": {
       "algorithm": "sha256",
